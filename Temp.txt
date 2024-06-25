@@ -1,0 +1,76 @@
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+const Tab = createBottomTabNavigator();
+
+import { HomeSvg, LibrarySvg, ProfileSvg, SearchSvg } from './Svg';
+import { colors, fonts } from './constants';
+
+
+   const HomeScreenStack = () => {
+    return (
+        <Stack.Navigator screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="home" component={Home} />
+            <Stack.Screen name="alllist" component={VerticalList} />
+        </Stack.Navigator>
+    );
+};
+
+   
+    // return (
+    //     <Tab.Navigator
+    //         initialRouteName="home"
+    //         screenOptions={{
+    //             headerShown: false,
+    //             presentation: 'modal',
+    //             animation: 'ios',
+    //             tabBarStyle: {
+    //                 height: 60,
+    //                 backgroundColor:colors.background,
+    //                 borderTopColor:colors.background
+    //             },
+    //             tabBarIconStyle: {
+    //                 marginTop: 10,
+    //             },
+    //             tabBarLabelPosition: 'below-icon',
+    //             tabBarLabelStyle: {
+    //                 paddingBottom: 10,
+    //                 fontFamily: fonts.gothammediumttf
+    //             },
+    //             tabBarItemStyle: {
+    //                 justifyContent: 'center',
+    //             },
+    //             tabBarHideOnKeyboard:true,
+    //             tabBarActiveTintColor:colors.dodgerBlueDeep,
+    //             tabBarInactiveTintColor:colors.text
+    //         }}
+
+    //         >
+    //         <Tab.Screen
+    //             options={{
+    //                 tabBarIcon: ({ color, size }) => <HomeSvg color={color} size={size} />,
+    //             }}
+    //             name="Home"
+    //             component={HomeScreenStack}
+    //         />
+    //         <Tab.Screen
+    //             options={{
+    //                 tabBarIcon: ({ color, size }) => <SearchSvg color={color} size={size} />,
+    //             }}
+    //             name="Search"
+    //             component={Search}
+    //         />
+    //         <Tab.Screen
+    //             options={{
+    //                 tabBarIcon: ({ color, size }) => <LibrarySvg color={color} size={size} />,
+    //             }}
+    //             name="Library"
+    //             component={Library}
+    //         />
+    //         <Tab.Screen
+    //             options={{
+    //                 tabBarIcon: ({ color, size }) => <ProfileSvg color={color} size={size} />,
+    //             }}
+    //             name="Profile"
+    //             component={Profile}
+    //         />
+    //     </Tab.Navigator>
+    // );

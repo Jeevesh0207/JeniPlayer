@@ -1,0 +1,13 @@
+{
+  "migIndex": 1,
+  "data": [
+    {
+      "path": "assets/fonts/jeni_medium.woff2",
+      "sha1": "6924b869f95fe607a76a878a6b47b1811835e56c"
+    },
+    {
+      "path": "assets/fonts/jeni_regular.woff2",
+      "sha1": "0aec70fb2ff1b69633ea38eb6cf94db683e5a9ad"
+    }
+  ]
+}

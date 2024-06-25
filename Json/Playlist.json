@@ -1,0 +1,389 @@
+{
+    "data": {
+      "getPlaylistById": {
+        "id": "903166403",
+        "title": "Best Of Romance - Hindi",
+        "type": "playlist",
+        "desc": "Pritam, Pritam, Arijit Singh, Amitabh Bhattacharya, Pritam, Arijit Singh &amp; Amitabh Bhattacharya, Amitabh Bhattacharya, Ranbir Kapoor, Alia Bhatt, Amitabh Bachchan, Anirudh Ravichander, Anirudh Ravichander, Shilpa Rao, Kumaar",
+        "image": "https://c.saavncdn.com/editorial/BestOfRomanceHindi_20240617055845.jpg",
+        "songs": [
+          {
+            "id": "EbFWakDs",
+            "title": "Kesariya (From &quot;Brahmastra&quot;)",
+            "type": "song",
+            "desc": "Pritam, Arijit Singh, Amitabh Bhattacharya",
+            "image": "https://c.saavncdn.com/191/Kesariya-From-Brahmastra-Hindi-2022-20220717092820-500x500.jpg",
+            "duration": "4:28"
+          },
+          {
+            "id": "7SobLOvo",
+            "title": "Chaleya (From &quot;Jawan&quot;)",
+            "type": "song",
+            "desc": "Anirudh Ravichander, Arijit Singh, Shilpa Rao",
+            "image": "https://c.saavncdn.com/026/Chaleya-From-Jawan-Hindi-2023-20230814014337-500x500.jpg",
+            "duration": "3:20"
+          },
+          {
+            "id": "1e0En7YX",
+            "title": "Pehle Bhi Main",
+            "type": "song",
+            "desc": "Vishal Mishra, Raj Shekhar",
+            "image": "https://c.saavncdn.com/092/ANIMAL-Hindi-2023-20231124191036-500x500.jpg",
+            "duration": "4:10"
+          },
+          {
+            "id": "qZtKBMZ_",
+            "title": "Apna Bana Le",
+            "type": "song",
+            "desc": "Sachin-Jigar, Arijit Singh",
+            "image": "https://c.saavncdn.com/815/Bhediya-Hindi-2023-20230927155213-500x500.jpg",
+            "duration": "4:21"
+          },
+          {
+            "id": "WDBRQntv",
+            "title": "Tum Kya Mile (From &quot;Rocky Aur Rani Kii Prem Kahaani&quot;)",
+            "type": "song",
+            "desc": "Amitabh Bhattacharya, Pritam, Arijit Singh, Shreya Ghoshal",
+            "image": "https://c.saavncdn.com/001/Rocky-Aur-Rani-Kii-Prem-Kahaani-Hindi-2024-20240515173546-500x500.jpg",
+            "duration": "4:37"
+          },
+          {
+            "id": "mPTrDSun",
+            "title": "Raataan Lambiyan",
+            "type": "song",
+            "desc": "Tanishk Bagchi, Jubin Nautiyal, Asees Kaur",
+            "image": "https://c.saavncdn.com/238/Shershaah-Original-Motion-Picture-Soundtrack--Hindi-2021-20210815181610-500x500.jpg",
+            "duration": "3:50"
+          },
+          {
+            "id": "aRZbUYD7",
+            "title": "Tum Hi Ho",
+            "type": "song",
+            "desc": "Mithoon, Arijit Singh",
+            "image": "https://c.saavncdn.com/430/Aashiqui-2-Hindi-2013-500x500.jpg",
+            "duration": "4:22"
+          },
+          {
+            "id": "Ke9TPSUf",
+            "title": "Tujhe Kitna Chahne Lage",
+            "type": "song",
+            "desc": "Arijit Singh",
+            "image": "https://c.saavncdn.com/807/Kabir-Singh-Hindi-2019-20240131131003-500x500.jpg",
+            "duration": "4:44"
+          },
+          {
+            "id": "zekEI3N6",
+            "title": "Ae Dil Hai Mushkil Title Track",
+            "type": "song",
+            "desc": "Pritam, Arijit Singh",
+            "image": "https://c.saavncdn.com/257/Ae-Dil-Hai-Mushkil-Hindi-2016-500x500.jpg",
+            "duration": "4:28"
+          },
+          {
+            "id": "t5DjvByS",
+            "title": "Pal Pal Dil Ke Paas - Title Track",
+            "type": "song",
+            "desc": "Arijit Singh, Parampara Tandon",
+            "image": "https://c.saavncdn.com/328/Pal-Pal-Dil-Ke-Paas-Hindi-2019-20200420150444-500x500.jpg",
+            "duration": "4:14"
+          },
+          {
+            "id": "zCCPXKQ5",
+            "title": "Mere Naam Tu",
+            "type": "song",
+            "desc": "Abhay Jodhpurkar",
+            "image": "https://c.saavncdn.com/586/Zero-Hindi-2018-20200902134005-500x500.jpg",
+            "duration": "5:38"
+          },
+          {
+            "id": "lR3vjGyV",
+            "title": "Raabta (Kehte Hain Khuda Ne)",
+            "type": "song",
+            "desc": "Pritam, Shreya Ghoshal, Arijit Singh",
+            "image": "https://c.saavncdn.com/603/Agent-Vinod-2012-500x500.jpg",
+            "duration": "4:50"
+          },
+          {
+            "id": "fvqIBi_Q",
+            "title": "Jag Ghoomeya",
+            "type": "song",
+            "desc": "Vishal &amp; Shekhar, Rahat Fateh Ali Khan, Irshad Kamil",
+            "image": "https://c.saavncdn.com/778/Sultan-Hindi-2016-20190329150247-500x500.jpg",
+            "duration": "4:41"
+          },
+          {
+            "id": "SvJpIrT9",
+            "title": "Ve Maahi",
+            "type": "song",
+            "desc": "Asees Kaur, Arijit Singh",
+            "image": "https://c.saavncdn.com/693/Kesari-Hindi-2019-20200605001133-500x500.jpg",
+            "duration": "3:43"
+          },
+          {
+            "id": "VQp1eXug",
+            "title": "Zara Sa",
+            "type": "song",
+            "desc": "Pritam, KK",
+            "image": "https://c.saavncdn.com/801/Jannat-Hindi-2008-20190629135803-500x500.jpg",
+            "duration": "5:02"
+          },
+          {
+            "id": "0duj-7K2",
+            "title": "Tu Hi Meri Shab Hai (From &quot;Gangster&quot;)",
+            "type": "song",
+            "desc": "Pritam, KK",
+            "image": "https://c.saavncdn.com/810/Gangster-Hindi-2024-20240330053536-500x500.jpg",
+            "duration": "6:27"
+          },
+          {
+            "id": "x1rnKrxV",
+            "title": "Jiya Dhadak Dhadak Jaye (From &quot;Kalyug&quot;)",
+            "type": "song",
+            "desc": "Rahat Fateh Ali Khan, Rohail Hyat, Faisal Rafi",
+            "image": "https://c.saavncdn.com/596/Kalyug-Hindi-2024-20240330053536-500x500.jpg",
+            "duration": "5:16"
+          },
+          {
+            "id": "erx8dagO",
+            "title": "Tere Naam",
+            "type": "song",
+            "desc": "Alka Yagnik, Udit Narayan",
+            "image": "https://c.saavncdn.com/516/Tere-Naam-Hindi-2003-500x500.jpg",
+            "duration": "6:32"
+          },
+          {
+            "id": "WdqMxZ6u",
+            "title": "Chand Sifarish",
+            "type": "song",
+            "desc": "Shaan, Kailash Kher, Jatin-Lalit, Prasoon Joshi",
+            "image": "https://c.saavncdn.com/146/Fanaa-Hindi-2006-20190329181154-500x500.jpg",
+            "duration": "4:35"
+          },
+          {
+            "id": "nrt-2lCH",
+            "title": "Kaho Naa Pyar Hai - Happy",
+            "type": "song",
+            "desc": "Udit Narayan, Alka Yagnik",
+            "image": "https://c.saavncdn.com/446/Kaho-Naa-Pyar-Hai-Hindi-2000-20200901153916-500x500.jpg",
+            "duration": "7:04"
+          },
+          {
+            "id": "TC5PSqsJ",
+            "title": "Chura Ke Dil Mera",
+            "type": "song",
+            "desc": "Kumar Sanu, Alka Yagnik",
+            "image": "https://c.saavncdn.com/474/Main-Khiladi-Tu-Anari-Hindi-1994-20240125094217-500x500.jpg",
+            "duration": "7:48"
+          },
+          {
+            "id": "EfsTgKZD",
+            "title": "Dil Ne Yeh Kaha Hain Dil Se",
+            "type": "song",
+            "desc": "Udit Narayan, Alka Yagnik",
+            "image": "https://c.saavncdn.com/454/Dhadkan-Hindi-2000-20210226131403-500x500.jpg",
+            "duration": "7:30"
+          },
+          {
+            "id": "4ht8pg-2",
+            "title": "Waada Raha Sanam (Duet Version)",
+            "type": "song",
+            "desc": "Abhijeet, Alka Yagnik",
+            "image": "https://c.saavncdn.com/142/Khiladi-Hindi-1994-20210226141109-500x500.jpg",
+            "duration": "6:08"
+          },
+          {
+            "id": "Q5BFsc4s",
+            "title": "Jab Se Tumhen Dekha",
+            "type": "song",
+            "desc": "Kumar Sanu, Sadhana Sargam",
+            "image": "https://c.saavncdn.com/483/Damini-Hindi-1993-20200905113933-500x500.jpg",
+            "duration": "5:14"
+          },
+          {
+            "id": "TX73Q0ZS",
+            "title": "Pehla Nasha",
+            "type": "song",
+            "desc": "Udit Narayan, Sadhana Sargam",
+            "image": "https://c.saavncdn.com/852/Jo-Jeeta-Wohi-Sikandar-Hindi-1992-500x500.jpg",
+            "duration": "4:53"
+          },
+          {
+            "id": "WC7CNfrf",
+            "title": "Jaadu Teri Nazar",
+            "type": "song",
+            "desc": "Udit Narayan",
+            "image": "https://c.saavncdn.com/582/Darr-Hindi-1993-20200901173931-500x500.jpg",
+            "duration": "4:40"
+          },
+          {
+            "id": "uwPrF1hP",
+            "title": "O Rey Chhori",
+            "type": "song",
+            "desc": "A.R. Rahman, Udit Narayan, Alka Yagnik, Vasundhara Das",
+            "image": "https://c.saavncdn.com/072/Lagaan-Hindi-2001-20190603122008-500x500.jpg",
+            "duration": "5:59"
+          },
+          {
+            "id": "rtdvmBBB",
+            "title": "Kuch Kuch Hota Hai",
+            "type": "song",
+            "desc": "Jatin-Lalit, Udit Narayan",
+            "image": "https://c.saavncdn.com/907/Kuch-Kuch-Hota-Hai-Hindi-1998-20190516130035-500x500.jpg",
+            "duration": "4:57"
+          },
+          {
+            "id": "42OIsTLs",
+            "title": "Suraj Hua Maddham",
+            "type": "song",
+            "desc": "Sandesh Shandilya, Sonu Nigam, Alka Yagnik",
+            "image": "https://c.saavncdn.com/778/Kabhi-Khushi-Kabhie-Gham-Hindi-2001-20190516150535-500x500.jpg",
+            "duration": "7:08"
+          },
+          {
+            "id": "s_r2DTVX",
+            "title": "Dilko Tumse Pyar Hua",
+            "type": "song",
+            "desc": "Roopkumar Rathod",
+            "image": "https://c.saavncdn.com/724/Rehnaa-Hai-Terre-Dil-Mein-Hindi-2001-20200901153925-500x500.jpg",
+            "duration": "5:31"
+          },
+          {
+            "id": "spYCdzkE",
+            "title": "Soniye",
+            "type": "song",
+            "desc": "KK, Sunidhi Chauhan",
+            "image": "https://c.saavncdn.com/644/Aksar-Hindi-2005-20221118062219-500x500.jpg",
+            "duration": "4:56"
+          },
+          {
+            "id": "st2Dycrf",
+            "title": "Gerua (From &quot;Dilwale&quot;)",
+            "type": "song",
+            "desc": "Pritam, Arijit Singh, Antara Mitra",
+            "image": "https://c.saavncdn.com/821/Dilwale-Hindi-2015-500x500.jpg",
+            "duration": "5:46"
+          },
+          {
+            "id": "DmFM4XiZ",
+            "title": "Guzarish",
+            "type": "song",
+            "desc": "Javed Ali",
+            "image": "https://c.saavncdn.com/464/Ghajini-Hindi-2008-20221125182010-500x500.jpg",
+            "duration": "5:27"
+          },
+          {
+            "id": "Oia4dLr5",
+            "title": "Bol Na Halke Halke",
+            "type": "song",
+            "desc": "Shankar-Ehsaan-Loy, Mahalakshmi Iyer, Rahat Fateh Ali Khan, Gulzar",
+            "image": "https://c.saavncdn.com/478/Jhoom-Barabar-Jhoom-Hindi-2007-20190329181232-500x500.jpg",
+            "duration": "4:54"
+          },
+          {
+            "id": "T1_ZbnIF",
+            "title": "Haule Haule",
+            "type": "song",
+            "desc": "Salim-Sulaiman, Sukhwinder Singh, Jaideep Sahni",
+            "image": "https://c.saavncdn.com/344/Rab-Ne-Bana-Di-Jodi-Hindi-2008-500x500.jpg",
+            "duration": "4:23"
+          },
+          {
+            "id": "o2z76xv5",
+            "title": "Tere Mast Mast Do Nain",
+            "type": "song",
+            "desc": "Rahat Fateh Ali Khan",
+            "image": "https://c.saavncdn.com/765/Dabangg-Hindi-2010-20221211114032-500x500.jpg",
+            "duration": "5:57"
+          },
+          {
+            "id": "MMELyze6",
+            "title": "Saathiya",
+            "type": "song",
+            "desc": "Sonu Nigam, A.R. Rahman, Gulzar",
+            "image": "https://c.saavncdn.com/753/Saathiya-Hindi-2002-20190329145814-500x500.jpg",
+            "duration": "5:57"
+          },
+          {
+            "id": "juVn_mOz",
+            "title": "Hum Tum",
+            "type": "song",
+            "desc": "Jatin-Lalit, Babul Supriyo, Alka Yagnik, Prasoon Joshi",
+            "image": "https://c.saavncdn.com/543/Hum-Tum-Hindi-2004-20190329150857-500x500.jpg",
+            "duration": "5:29"
+          },
+          {
+            "id": "OzqgInTJ",
+            "title": "Chup Chup Ke",
+            "type": "song",
+            "desc": "Sonu Nigam, Mahalakshmi Iyer, Shankar-Ehsaan-Loy, Gulzar",
+            "image": "https://c.saavncdn.com/018/Bunty-Aur-Babli-Hindi-2005-20190329180713-500x500.jpg",
+            "duration": "7:13"
+          },
+          {
+            "id": "qS41sYCN",
+            "title": "Zara Zara",
+            "type": "song",
+            "desc": "Bombay Jayashri",
+            "image": "https://c.saavncdn.com/724/Rehnaa-Hai-Terre-Dil-Mein-Hindi-2001-20200901153925-500x500.jpg",
+            "duration": "4:58"
+          },
+          {
+            "id": "HanHOlp-",
+            "title": "Tumhe Jo Maine Dekha",
+            "type": "song",
+            "desc": "Abhijeet, Shreya Ghoshal",
+            "image": "https://c.saavncdn.com/388/Main-Hoon-Na-Hindi-2004-20221202051448-500x500.jpg",
+            "duration": "5:41"
+          },
+          {
+            "id": "ibcCsCOi",
+            "title": "Tu Hi Re (From &quot;Bombay&quot;)",
+            "type": "song",
+            "desc": "Hariharan, Kavita Krishnamurthy",
+            "image": "https://c.saavncdn.com/029/Bombay-Hindi-1994-20190924060934-500x500.jpg",
+            "duration": "7:15"
+          },
+          {
+            "id": "jrYztmcz",
+            "title": "Pehla Pehla Pyar-Spbalasubhramaniam",
+            "type": "song",
+            "desc": "S. P. Balasubrahmanyam",
+            "image": "https://c.saavncdn.com/428/Hum-Aapke-Hain-Koun-Hindi-1994-20200901153945-500x500.jpg",
+            "duration": "4:24"
+          },
+          {
+            "id": "Fe22kixd",
+            "title": "Bahut Pyar Karte Hai (Male Version)",
+            "type": "song",
+            "desc": "S. P. Balasubrahmanyam",
+            "image": "https://c.saavncdn.com/blob/461/Saajan-Hindi-1991-20220616044407-500x500.jpg",
+            "duration": "3:04"
+          },
+          {
+            "id": "ZRJ1sIuW",
+            "title": "Satarangi Re",
+            "type": "song",
+            "desc": "Sonu Nigam, Kavita Krishnamurthy",
+            "image": "https://c.saavncdn.com/430/Dil-Se-Hindi-1998-20210226142402-500x500.jpg",
+            "duration": "7:23"
+          },
+          {
+            "id": "6wM_13Hy",
+            "title": "Pyar Hua Chupke Se",
+            "type": "song",
+            "desc": "Kavita Krishnamurthy",
+            "image": "https://c.saavncdn.com/023/1942-A-Love-Story-Hindi-1994-20221206173549-500x500.jpg",
+            "duration": "5:13"
+          },
+          {
+            "id": "7col8PHm",
+            "title": "Dil To Pagal Hai",
+            "type": "song",
+            "desc": "Uttam Singh, Lata Mangeshkar, Udit Narayan",
+            "image": "https://c.saavncdn.com/410/Dil-To-Pagal-Hai-Hindi-1997-20190329145756-500x500.jpg",
+            "duration": "5:37"
+          }
+        ]
+      }
+    }
+  }

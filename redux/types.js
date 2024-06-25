@@ -1,0 +1,15 @@
+export const GET_FETCH_REQUESTED = 'GET_FETCH_REQUESTED';
+export const GET_FETCH_SUCCESS = 'GET_FETCH_SUCCESS';
+export const GET_FETCH_FAILED = 'GET_FETCH_FAILED';
+
+
+export const SET_DATA = 'SET_DATA'
+
+
+export const SET_LAUNCH_DATA = 'SET_LAUNCH_DATA'
+
+export const SET_VERTICAL_LIST_DATA = 'SET_VERTICAL_LIST_DATA'
+
+export const SET_TRACK_LIST_ID = 'SET_TRACK_LIST_ID'
+
+export const SET_THEME = 'SET_THEME'

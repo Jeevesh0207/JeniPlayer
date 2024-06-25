@@ -1,0 +1,2666 @@
+{
+    "data": [
+        {
+            "id": "hz2nU2Vr",
+            "title": "Barcelona",
+            "subtitle": "Alan Walker, Ina Wroldsen - Barcelona",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/barcelona/GBJZXyECYUE",
+            "image": "https://c.saavncdn.com/750/Barcelona-English-2024-20240528161515-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "6546",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Alan Walker, Gunnar Greve, Fredrik Borch Olsen, Marcus Arnbekk, Mats Lie Skåre, Ina Wroldesen, Nick Gale",
+                "album_id": "54723063",
+                "album": "Barcelona",
+                "label": "Kreatell Music",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDywZoFPi7XYNYPIieb/67h0W5tvUSjUL0Gg2e7vQR9pqT1awhu8xKH2xw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD879QMty6iOC75p0u2UmJ/UePNdQBL7bhDv+92RUNqPz2iViOl4EHjgI92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/barcelona/fq,8iTH8Y4c_",
+                "duration": "205",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "false",
+                "lyrics_snippet": "",
+                "starred": "false",
+                "copyright_text": "© 2024 Kreatell Music",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "1335467",
+                            "name": "Alan Walker",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Alan_Walker_003_20231116095443_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/alan-walker-songs/wbWcxgUNzyo_"
+                        },
+                        {
+                            "id": "566691",
+                            "name": "Ina Wroldsen",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/634/Strongest-Alan-Walker-Remix--English-2017-20171116203525-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/ina-wroldsen-songs/U5qtTuE0s,o_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "1335467",
+                            "name": "Alan Walker",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Alan_Walker_003_20231116095443_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/alan-walker-songs/wbWcxgUNzyo_"
+                        },
+                        {
+                            "id": "1625408",
+                            "name": "Gunnar Greve",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/gunnar-greve-songs/MYLcGokRN0w_"
+                        },
+                        {
+                            "id": "1584282",
+                            "name": "Fredrik Borch Olsen",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/fredrik-borch-olsen-songs/iq2hSfiwJTE_"
+                        },
+                        {
+                            "id": "3333917",
+                            "name": "Marcus Arnbekk",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/063/Sawarne-Lage-Tropical-House-Mix-From-Mitron--Hindi-2018-20180912142000-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/marcus-arnbekk-songs/aAij0Two6rU_"
+                        },
+                        {
+                            "id": "573891",
+                            "name": "Mats Lie Skåre",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/mats-lie-skare-songs/8EiYJglGDbk_"
+                        },
+                        {
+                            "id": "19682342",
+                            "name": "Ina Wroldesen",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/ina-wroldesen-songs/pkmT3Zt4qBU_"
+                        },
+                        {
+                            "id": "863412",
+                            "name": "Nick Gale",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/nick-gale-songs/KH,ILyLtkIc_"
+                        },
+                        {
+                            "id": "566691",
+                            "name": "Ina Wroldsen",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/634/Strongest-Alan-Walker-Remix--English-2017-20171116203525-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/ina-wroldsen-songs/U5qtTuE0s,o_"
+                        }
+                    ]
+                },
+                "release_date": "2024-06-13",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "ma11n5Yk",
+            "title": "Never Let Go",
+            "subtitle": "Jung Kook - Never Let Go",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/never-let-go/HQlaABoFblg",
+            "image": "https://c.saavncdn.com/656/Never-Let-Go-English-2024-20240607093154-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "27035",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Jung Kook, Anton Martin Mendo, Tobias Dekker, Sim Fane, Jesse Bluu, Bak, Melanie Fontana, Michel “Lindgren” Schulz",
+                "album_id": "55020507",
+                "album": "Never Let Go",
+                "label": "BIGHIT MUSIC",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDynub1vNDsA74SeH+e+ds1UebYNnQc2qavkIerOb5zp2fXp1ig/lHWvxw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8VumesuYVw71UD/YvJioy1+YcaLXM7c11hpw+zONoHwhC2p0CQESH1492mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/never-let-go/6PpZ02czMAE_",
+                "duration": "166",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "true",
+                "lyrics_snippet": "You fill my world with wonder (wonder)",
+                "starred": "false",
+                "copyright_text": "© 2024 BIGHIT MUSIC",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "8711782",
+                            "name": "Jung Kook",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Jung_Kook_004_20231120065514_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jung-kook-songs/H-uZ66aVWjo_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "8711782",
+                            "name": "Jung Kook",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Jung_Kook_004_20231120065514_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jung-kook-songs/H-uZ66aVWjo_"
+                        },
+                        {
+                            "id": "7672457",
+                            "name": "Anton Martin Mendo",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/anton-martin-mendo-songs/pjd-b6KMbVY_"
+                        },
+                        {
+                            "id": "2015558",
+                            "name": "Tobias Dekker",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/tobias-dekker-songs/sRf01048FWc_"
+                        },
+                        {
+                            "id": "4999457",
+                            "name": "Sim Fane",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/sim-fane-songs/YyKUhXuwJOw_"
+                        },
+                        {
+                            "id": "6718591",
+                            "name": "Jesse Bluu",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jesse-bluu-songs/s9nN6m5InYo_"
+                        },
+                        {
+                            "id": "1108969",
+                            "name": "Bak",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/682/Flower-English-2017-20170921042032-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/bak-songs/fLi7qfYExLo_"
+                        },
+                        {
+                            "id": "636139",
+                            "name": "Melanie Fontana",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/artists/Melanie_Fontana_000_20201212083559.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/melanie-fontana-songs/yW2QT9mtqIo_"
+                        },
+                        {
+                            "id": "8217055",
+                            "name": "Michel “Lindgren” Schulz",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/michel-%e2%80%9clindgren%e2%80%9d-schulz-songs/RP0se9uiBtU_"
+                        }
+                    ]
+                },
+                "release_date": "2024-06-07",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "HOkCeG4u",
+            "title": "Please Please Please",
+            "subtitle": "Sabrina Carpenter - Please Please Please",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/please-please-please/OCcAchF3A0Y",
+            "image": "https://c.saavncdn.com/812/Please-Please-Please-English-2024-20240607064757-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "30405",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Jack Antonoff, Sabrina Carpenter, Amy Allen",
+                "album_id": "55015050",
+                "album": "Please Please Please",
+                "label": "Island Records",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDy0uJblW0zUG1D03Cv/kJMx9R3w4sQzWGkVZkYxBJz60XBidc0qsmQ2xw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8DruibuifGlyQaFZ8q45yf2S0oia6k6MrT+Wj/y70i2qydigvYduE9492mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/please-please-please/AW-rERyB5ug_",
+                "duration": "186",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "true",
+                "lyrics_snippet": "Don't prove 'em right",
+                "starred": "false",
+                "copyright_text": "℗ 2024 Island Records, a division of UMG Recordings, Inc.",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "603814",
+                            "name": "Sabrina Carpenter",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Sabrina_Carpenter_20191130072028_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/sabrina-carpenter-songs/9rRDT4OgqsE_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "580548",
+                            "name": "Jack Antonoff",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/939/Me-and-Julio-Down-by-the-Schoolyard-English-2019-20190510155524-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jack-antonoff-songs/rdoVp6QHYCs_"
+                        },
+                        {
+                            "id": "603814",
+                            "name": "Sabrina Carpenter",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Sabrina_Carpenter_20191130072028_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/sabrina-carpenter-songs/9rRDT4OgqsE_"
+                        },
+                        {
+                            "id": "1662162",
+                            "name": "Amy Allen",
+                            "role": "music",
+                            "image": "https://c.saavncdn.com/966/Love-Won-English-2015-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/amy-allen-songs/LU1I9axzjRI_"
+                        }
+                    ]
+                },
+                "release_date": "2024-06-07",
+                "label_url": "",
+                "vcode": "010912292468476",
+                "vlink": "https://jiotunepreview.jio.com/content/Converted/010912292423461.mp3",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "Ue6qdstL",
+            "title": "Houdini",
+            "subtitle": "Eminem - Houdini",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/houdini/JQ1dQBBDQ38",
+            "image": "https://c.saavncdn.com/575/Houdini-English-2024-20240531103415-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "53909",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Steve Miller, Marshall Mathers, Jeff Bass, Kevin Bell, Anne Dudley, Trevor Horn, Malcolm Mclaren",
+                "album_id": "54820259",
+                "album": "Houdini",
+                "label": "Shady/Aftermath/Interscope Records",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDyMoJ/zAkgNjgvBZiokusgJ9pLx57FzDIevegZTvHDHUvS0P3B5YRydBw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8sMMra7f+9hv7FygZubdqyW8+mNQmie2VBDkzTSlSEyLyQ3zAJ5/gj492mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/houdini/xrXlJFX6vNY_",
+                "duration": "228",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "false",
+                "lyrics_snippet": "",
+                "starred": "false",
+                "copyright_text": "℗ 2024 Marshall B. Mathers III",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "610240",
+                            "name": "Eminem",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Eminem_003_20240403152835_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/eminem-songs/-f6Su9-0agk_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "531228",
+                            "name": "Steve Miller",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/557/Fly-Like-An-Eagle-English-2014-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/steve-miller-songs/KTIgQpLbn4Q_"
+                        },
+                        {
+                            "id": "2268618",
+                            "name": "Marshall Mathers",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/marshall-mathers-songs/P7P8sSCQD8A_"
+                        },
+                        {
+                            "id": "585478",
+                            "name": "Jeff Bass",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/386/The-Slim-Shady-LP-English-2015-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jeff-bass-songs/fgwcJtaAyrs_"
+                        },
+                        {
+                            "id": "600347",
+                            "name": "Kevin Bell",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/kevin-bell-songs/fcKcvt4Nzz0_"
+                        },
+                        {
+                            "id": "527807",
+                            "name": "Anne Dudley",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/360/Poldark-English-2015-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/anne-dudley-songs/dImACTVneDY_"
+                        },
+                        {
+                            "id": "521478",
+                            "name": "Trevor Horn",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/518/Sky-Show-English-2017-20170817085044-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/trevor-horn-songs/KQH0jWzNlH0_"
+                        },
+                        {
+                            "id": "517393",
+                            "name": "Malcolm Mclaren",
+                            "role": "music",
+                            "image": "https://c.saavncdn.com/727/Waltz-Darling-1989-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/malcolm-mclaren-songs/pwrOeN3PseY_"
+                        },
+                        {
+                            "id": "610240",
+                            "name": "Eminem",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Eminem_003_20240403152835_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/eminem-songs/-f6Su9-0agk_"
+                        }
+                    ]
+                },
+                "release_date": "2024-05-31",
+                "label_url": "",
+                "vcode": "010912292460847",
+                "vlink": "https://jiotunepreview.jio.com/content/Converted/010912292416015.mp3",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "k9IfCBVv",
+            "title": "Hero",
+            "subtitle": "Charlie Puth - Hero",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/hero/G1EiVzdyYUU",
+            "image": "https://c.saavncdn.com/909/Hero-English-2024-20240522224752-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "50655",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "",
+                "album_id": "54499522",
+                "album": "Hero",
+                "label": "Atlantic Records",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDyXdG3GFr4xy7zdZ+ip/mp4ouBFnEM3BODzxvYcI0U3xFL9rNvH6dYHBw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8O4H8fLgQNyxlQaGBHd37ey2Ydq8cg9IS23gzlBU0OAsJ72VpM/wmOo92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/hero/TgP9lnvFNd0_",
+                "duration": "196",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "false",
+                "lyrics_snippet": "",
+                "starred": "false",
+                "copyright_text": "℗ 2024 Atlantic Records Group LLC",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "755042",
+                            "name": "Charlie Puth",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Charlie_Puth_004_20221012071125_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/charlie-puth-songs/a3MTDwwQETo_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "755042",
+                            "name": "Charlie Puth",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Charlie_Puth_004_20221012071125_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/charlie-puth-songs/a3MTDwwQETo_"
+                        },
+                        {
+                            "id": "6987598",
+                            "name": "Jack Rochon",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jack-rochon-songs/7IRYIEJRcRY_"
+                        },
+                        {
+                            "id": "570206",
+                            "name": "Jacob Kasher Hindlin",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jacob-kasher-hindlin-songs/anqSKuozjn0_"
+                        },
+                        {
+                            "id": "2057037",
+                            "name": "John Byron",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/985/Across-That-Line-English-2016-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/john-byron-songs/gWLcwGCJjvM_"
+                        }
+                    ]
+                },
+                "release_date": "2024-05-24",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "Pp-WvwQ7",
+            "title": "Nice to Meet You",
+            "subtitle": "Imagine Dragons - Nice to Meet You",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/nice-to-meet-you/IBhGZgJHZgQ",
+            "image": "https://c.saavncdn.com/677/Nice-to-Meet-You-English-2024-20240524063312-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "28774",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Ben Mckee, Dan Reynolds, Mattias Larsson, ROBIN LENNART FREDRIKSSON, Wayne Sermon",
+                "album_id": "54582204",
+                "album": "Nice to Meet You",
+                "label": "KIDinaKORNER/Interscope Records",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDySTa3Om4UzhxzkwsgvaMQ4ZRZNFAUs3jVB+VoFDVdE/pR0AWVmQZVORw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8iLFT0f+Uu1W9XwdLIqJ+u4uCLgIjklwFezzwYAPQHqPBNwd2TwIp/492mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/nice-to-meet-you/9izBFkKhJAk_",
+                "duration": "191",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "false",
+                "lyrics_snippet": "",
+                "starred": "false",
+                "copyright_text": "℗ 2024 KIDinaKORNER/Interscope Records",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "599452",
+                            "name": "Imagine Dragons",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Imagine_Dragons_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/imagine-dragons-songs/f0aFxsa231o_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "599455",
+                            "name": "Ben Mckee",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/ben-mckee-songs/EA7FaJms-k8_"
+                        },
+                        {
+                            "id": "599453",
+                            "name": "Dan Reynolds",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/048/Skipping-Stones-English-2018-20180620230710-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/dan-reynolds-songs/xoeLrr0aTEU_"
+                        },
+                        {
+                            "id": "634862",
+                            "name": "Mattias Larsson",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/277/Kom-Swedish-2017-20171009155644-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/mattias-larsson-songs/d6thUM5GwSE_"
+                        },
+                        {
+                            "id": "1433426",
+                            "name": "ROBIN LENNART FREDRIKSSON",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/robin-lennart-fredriksson-songs/huLBRhlQou4_"
+                        },
+                        {
+                            "id": "599454",
+                            "name": "Wayne Sermon",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/wayne-sermon-songs/,WHkVDnJnD8_"
+                        },
+                        {
+                            "id": "599452",
+                            "name": "Imagine Dragons",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Imagine_Dragons_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/imagine-dragons-songs/f0aFxsa231o_"
+                        }
+                    ]
+                },
+                "release_date": "2024-05-24",
+                "label_url": "",
+                "vcode": "010912292455195",
+                "vlink": "https://jiotunepreview.jio.com/content/Converted/010912292409186.mp3",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "54389925",
+            "title": "HIT ME HARD AND SOFT",
+            "subtitle": "",
+            "header_desc": "",
+            "type": "album",
+            "perma_url": "https://www.jiosaavn.com/album/hit-me-hard-and-soft/WVO2wmBkfLc_",
+            "image": "https://c.saavncdn.com/707/HIT-ME-HARD-AND-SOFT-English-2024-20240517063536-150x150.jpg",
+            "language": "english",
+            "year": "",
+            "play_count": "",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "song_count": "0",
+                "release_date": "2024-05-17",
+                "artistMap": {
+                    "primary_artists": [],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "1918741",
+                            "name": "Billie Eilish",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/billie-eilish-songs/mjFXK2ZAlTQ_"
+                        }
+                    ]
+                }
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "qrJ2aEQy",
+            "title": "Not Like Us",
+            "subtitle": "Kendrick Lamar - Not Like Us",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/not-like-us/ARohAxV1Zko",
+            "image": "https://c.saavncdn.com/974/Not-Like-Us-English-2024-20240505084246-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "135053",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Kendrick Lamar",
+                "album_id": "54052203",
+                "album": "Not Like Us",
+                "label": "Kendrick Lamar, under exclusive license to Interscope Records",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDyzbNz2sBf42NIJMLjo9iDU+JP2fbvZdKR8j62GMOCN2uYBCcVlcitDBw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8Dzb3/VnrVbEC4aLjhQuZGJ8ujmrdnrFmNIAzcwYx2ByGWOCXVA6RFI92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/not-like-us/06F-PmOf1Bs_",
+                "duration": "274",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "true",
+                "lyrics_snippet": "They not like us, they not like us, they not like us",
+                "starred": "false",
+                "copyright_text": "℗ 2024 Kendrick Lamar, under exclusive license to Interscope Records",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "612060",
+                            "name": "Kendrick Lamar",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Kendrick_Lamar_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/kendrick-lamar-songs/44fbKDllOW0_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "612060",
+                            "name": "Kendrick Lamar",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Kendrick_Lamar_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/kendrick-lamar-songs/44fbKDllOW0_"
+                        }
+                    ]
+                },
+                "release_date": "2024-05-04",
+                "label_url": "",
+                "vcode": "010912292468872",
+                "vlink": "https://jiotunepreview.jio.com/content/Converted/010912292425783.mp3",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "53965513",
+            "title": "Radical Optimism",
+            "subtitle": "",
+            "header_desc": "",
+            "type": "album",
+            "perma_url": "https://www.jiosaavn.com/album/radical-optimism/-OBciCbRdqo_",
+            "image": "https://c.saavncdn.com/870/Radical-Optimism-English-2024-20240503014647-150x150.jpg",
+            "language": "english",
+            "year": "",
+            "play_count": "",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "song_count": "0",
+                "release_date": "2024-05-03",
+                "artistMap": {
+                    "primary_artists": [],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "1274170",
+                            "name": "Dua Lipa",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/dua-lipa-songs/r-OWIKgpX2I_"
+                        }
+                    ]
+                }
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "53584458",
+            "title": "THE TORTURED POETS DEPARTMENT: THE ANTHOLOGY",
+            "subtitle": "",
+            "header_desc": "",
+            "type": "album",
+            "perma_url": "https://www.jiosaavn.com/album/the-tortured-poets-department-the-anthology/2sMMmFDhnbs_",
+            "image": "https://c.saavncdn.com/298/THE-TORTURED-POETS-DEPARTMENT-THE-ANTHOLOGY-English-2024-20240419123250-150x150.jpg",
+            "language": "english",
+            "year": "",
+            "play_count": "",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "song_count": "0",
+                "release_date": "2024-04-19",
+                "artistMap": {
+                    "primary_artists": [],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "565990",
+                            "name": "Taylor Swift",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/taylor-swift-songs/bQVPhRbZO1I_"
+                        }
+                    ]
+                }
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "xy9WH3AT",
+            "title": "Adore U",
+            "subtitle": "Khalid - Adore U",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/adore-u/CBFSZjwDdmc",
+            "image": "https://c.saavncdn.com/197/adore-u-English-2024-20240606065200-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "433",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Khalid Robinson, Jamil Chammas, Justin Scott Lucas",
+                "album_id": "54982393",
+                "album": "Adore U",
+                "label": "Right Hand Music Group, LLC/RCA Records",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDydjCFyqW3xuqRh510nfQGiOjNq0zQ+us4lGx2wgPpGInyjjJa3KEmnxw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD86XeLjeGDT1M0L6OjzyVGRbAURJzs6hIh0UltHm5G5SOZcz3IGqo5AY92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/adore-u/Df2dTECopu8_",
+                "duration": "164",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "false",
+                "lyrics_snippet": "",
+                "starred": "false",
+                "copyright_text": "(P) 2024 RCA Records, in conjunction with Right Hand Music Group",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "464729",
+                            "name": "Khalid",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Khalid_20190823071706_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/khalid-songs/EAaDu4WxQfQ_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "2127113",
+                            "name": "Khalid Robinson",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/artists/Khalid_Robinson_20190927140526_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/khalid-robinson-songs/yIlpHzRxZiU_"
+                        },
+                        {
+                            "id": "1898750",
+                            "name": "Jamil Chammas",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jamil-chammas-songs/-BQGq56mC34_"
+                        },
+                        {
+                            "id": "4008631",
+                            "name": "Justin Scott Lucas",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/justin-scott-lucas-songs/HXlJuxMqUB0_"
+                        },
+                        {
+                            "id": "464729",
+                            "name": "Khalid",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Khalid_20190823071706_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/khalid-songs/EAaDu4WxQfQ_"
+                        }
+                    ]
+                },
+                "release_date": "2024-06-14",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "cFcRQu80",
+            "title": "The End",
+            "subtitle": "Halsey - The End",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/the-end/Ey4IYyVFDwM",
+            "image": "https://c.saavncdn.com/638/The-End-English-2024-20240604210857-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "3170",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Halsey",
+                "album_id": "54955994",
+                "album": "The End",
+                "label": "Columbia",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDyISra4nBrl4j0SkdGGtIni4cXXT3hIGQPn4arqn5sXu4XpMOl2JxLHRw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8Y73F01HJDxQOXsqjQk+7TA+27JbA6bzn2iaJ7MH871rGkuIEPTdBkY92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/the-end/rk-7hbP-ZxI_",
+                "duration": "197",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "true",
+                "lyrics_snippet": "If you knew it was the end of the world, could you love me like a child?",
+                "starred": "false",
+                "copyright_text": "(P) 2024 Columbia Records, a Division of Sony Music Entertainment, under exclusive license from Anti-Pop, LLC",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "842096",
+                            "name": "Halsey",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Halsey_002_20231227080519_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/halsey-songs/WwynGI7pUBI_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "842096",
+                            "name": "Halsey",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Halsey_002_20231227080519_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/halsey-songs/WwynGI7pUBI_"
+                        }
+                    ]
+                },
+                "release_date": "2024-06-04",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "HkLn2VAV",
+            "title": "I Had Some Help",
+            "subtitle": "Post Malone - I Had Some Help",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/i-had-some-help/OAMnX0ZmdmU",
+            "image": "https://c.saavncdn.com/137/I-Had-Some-Help-English-2024-20240510063706-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "60106",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Louis Bell, Hoskins, Morgan Wallen, Austin Post, Ryan Vojtesak, Ernest Smith, Chandler Paul Walters, Ashley Gorley",
+                "album_id": "54167997",
+                "album": "I Had Some Help",
+                "label": "Mercury Records/Republic Records",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDy9a73D27bmXuiLgLchJTfHCxj5Uo0O4WVGept2h18VmRrL4Agr/Qi8Rw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8wiHJcU8yJ7+39c/5GR/ZSryweH+6BpqkFGKfBlebtCcev76FTdKGCI92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/i-had-some-help/UkX15DA7CWU_",
+                "duration": "178",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "false",
+                "lyrics_snippet": "",
+                "starred": "false",
+                "copyright_text": "℗ 2024 Mercury Records / Republic Records, a division of UMG Recordings, Inc.",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "910050",
+                            "name": "Post Malone",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Post_Malone_004_20190911070147_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/post-malone-songs/Mbk23vKPwtY_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "1256967",
+                            "name": "Louis Bell",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/997/All-Power-EP-English-2016-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/louis-bell-songs/1CuDia,L968_"
+                        },
+                        {
+                            "id": "1075843",
+                            "name": "Hoskins",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/hoskins-songs/Rcnyc3jwA5A_"
+                        },
+                        {
+                            "id": "1168551",
+                            "name": "Morgan Wallen",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/artists/Morgan_Wallen_000_20211013124022.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/morgan-wallen-songs/a48LbgZTiRA_"
+                        },
+                        {
+                            "id": "910051",
+                            "name": "Austin Post",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/austin-post-songs/Pcv8Zj-yCdY_"
+                        },
+                        {
+                            "id": "752877",
+                            "name": "Ryan Vojtesak",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/ryan-vojtesak-songs/mSl4ApO-ceM_"
+                        },
+                        {
+                            "id": "572315",
+                            "name": "Ernest Smith",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/ernest-smith-songs/xyUKnI01cbM_"
+                        },
+                        {
+                            "id": "18879941",
+                            "name": "Chandler Paul Walters",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/chandler-paul-walters-songs/TMnY0IsdIB4_"
+                        },
+                        {
+                            "id": "569584",
+                            "name": "Ashley Gorley",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/ashley-gorley-songs/20pA8kuNgJA_"
+                        },
+                        {
+                            "id": "910050",
+                            "name": "Post Malone",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Post_Malone_004_20190911070147_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/post-malone-songs/Mbk23vKPwtY_"
+                        }
+                    ]
+                },
+                "release_date": "2024-05-10",
+                "label_url": "",
+                "vcode": "010912292447761",
+                "vlink": "https://jiotunepreview.jio.com/content/Converted/010912292404330.mp3",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "54374771",
+            "title": "ROOM UNDER THE STAIRS",
+            "subtitle": "",
+            "header_desc": "",
+            "type": "album",
+            "perma_url": "https://www.jiosaavn.com/album/room-under-the-stairs/D3RzKjlk60g_",
+            "image": "https://c.saavncdn.com/531/ROOM-UNDER-THE-STAIRS-English-2024-20240517064041-150x150.jpg",
+            "language": "english",
+            "year": "",
+            "play_count": "",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "song_count": "0",
+                "release_date": "2024-05-17",
+                "artistMap": {
+                    "primary_artists": [],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "1881894",
+                            "name": "ZAYN",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/zayn-songs/sG6-OV5nnNU_"
+                        }
+                    ]
+                }
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "55191491",
+            "title": "DOPAMINE",
+            "subtitle": "",
+            "header_desc": "",
+            "type": "album",
+            "perma_url": "https://www.jiosaavn.com/album/dopamine/b2ST07ULBV8_",
+            "image": "https://c.saavncdn.com/482/Dopamine-English-2024-20240612234543-150x150.jpg",
+            "language": "english",
+            "year": "",
+            "play_count": "",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "song_count": "0",
+                "release_date": "2024-06-14",
+                "artistMap": {
+                    "primary_artists": [],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "3452744",
+                            "name": "Normani",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/normani-songs/5Qy1RE,sY2s_"
+                        }
+                    ]
+                }
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "55235383",
+            "title": "HARDSTONE PSYCHO",
+            "subtitle": "",
+            "header_desc": "",
+            "type": "album",
+            "perma_url": "https://www.jiosaavn.com/album/hardstone-psycho/t4WJEYAsFIs_",
+            "image": "https://c.saavncdn.com/886/HARDSTONE-PSYCHO-English-2024-20240614061622-150x150.jpg",
+            "language": "english",
+            "year": "",
+            "play_count": "",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "song_count": "0",
+                "release_date": "2024-06-14",
+                "artistMap": {
+                    "primary_artists": [],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "3377268",
+                            "name": "Don Toliver",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/don-toliver-songs/XxNL-tlScyY_"
+                        }
+                    ]
+                }
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "55044373",
+            "title": "Brat and it’s the same but there’s three more songs so it’s not",
+            "subtitle": "",
+            "header_desc": "",
+            "type": "album",
+            "perma_url": "https://www.jiosaavn.com/album/brat-and-it%e2%80%99s-the-same-but-there%e2%80%99s-three-more-songs-so-it%e2%80%99s-not/Me12DAZuCQ0_",
+            "image": "https://c.saavncdn.com/087/Brat-and-it-s-the-same-but-there-s-three-more-songs-so-it-s-not-English-2024-20240608004815-150x150.jpg",
+            "language": "english",
+            "year": "",
+            "play_count": "",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "song_count": "0",
+                "release_date": "2024-06-10",
+                "artistMap": {
+                    "primary_artists": [],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "701967",
+                            "name": "Charli XCX",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/charli-xcx-songs/esXw,Kf0Kbo_"
+                        }
+                    ]
+                }
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "NvHNgXGK",
+            "title": "Unsure",
+            "subtitle": "Alan Walker, Kylie Cantrall - Unsure",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/unsure/Ph4jfxNocHg",
+            "image": "https://c.saavncdn.com/509/Unsure-English-2024-20240424224902-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "37867",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Jordan Miller, Kristoffer Haugan, Edvard Normann, Mats Lie Skåre, Alan Walker, Gunnar Greve",
+                "album_id": "53346853",
+                "album": "Unsure",
+                "label": "Kreatell Music",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDyOOG1YexWznOZvpduu7TBnNd1rujxTvmIvSKP63+AKXdGzLDrDMvaxRw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8ZXri45k0GZZshxXWZ/Vdr2GQ2AHT0chIUDF+SikyfdPiV0bt5kLyWY92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/unsure/YB5AVfDCCcg_",
+                "duration": "169",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "false",
+                "lyrics_snippet": "",
+                "starred": "false",
+                "copyright_text": "© 2024 Kreatell Music",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "1335467",
+                            "name": "Alan Walker",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Alan_Walker_003_20231116095443_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/alan-walker-songs/wbWcxgUNzyo_"
+                        },
+                        {
+                            "id": "6294515",
+                            "name": "Kylie Cantrall",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/082/That-s-What-I-m-Talkin-Bout-English-2019-20190418095445-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/kylie-cantrall-songs/jD6MPl4UiDU_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "868201",
+                            "name": "Jordan Miller",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/059/Mafia-Extended-Mix--English-2019-20190315142138-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jordan-miller-songs/zL5XhbNbR4E_"
+                        },
+                        {
+                            "id": "5389747",
+                            "name": "Kristoffer Haugan",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/063/Sawarne-Lage-Tropical-House-Mix-From-Mitron--Hindi-2018-20180912142000-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/kristoffer-haugan-songs/pUItffu,n-Y_"
+                        },
+                        {
+                            "id": "5389748",
+                            "name": "Edvard Normann",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/063/Sawarne-Lage-Tropical-House-Mix-From-Mitron--Hindi-2018-20180912142000-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/edvard-normann-songs/03mtQ3w8rws_"
+                        },
+                        {
+                            "id": "573891",
+                            "name": "Mats Lie Skåre",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/mats-lie-skare-songs/8EiYJglGDbk_"
+                        },
+                        {
+                            "id": "1335467",
+                            "name": "Alan Walker",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Alan_Walker_003_20231116095443_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/alan-walker-songs/wbWcxgUNzyo_"
+                        },
+                        {
+                            "id": "1625408",
+                            "name": "Gunnar Greve",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/gunnar-greve-songs/MYLcGokRN0w_"
+                        },
+                        {
+                            "id": "6294515",
+                            "name": "Kylie Cantrall",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/082/That-s-What-I-m-Talkin-Bout-English-2019-20190418095445-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/kylie-cantrall-songs/jD6MPl4UiDU_"
+                        }
+                    ]
+                },
+                "release_date": "2024-05-02",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "8gXw-34z",
+            "title": "DEVIL IS A LIE",
+            "subtitle": "Tommy Richman - DEVIL IS A LIE",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/devil-is-a-lie/SA8zRlkDA0k",
+            "image": "https://c.saavncdn.com/043/DEVIL-IS-A-LIE-English-2024-20240613053330-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "294",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Tommy Richman",
+                "album_id": "55200318",
+                "album": "DEVIL IS A LIE",
+                "label": "Pulse Records",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDyF2n7PInRVd2XZcVkLazIFz2dPixX0wbYwPFpFMwhljg0vaawgDbL2hw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD81UVrKWon7ojOP559RXkqu11w41UlxZY1gjRrbesAEzugOgvroWKNQY92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/devil-is-a-lie/zCPXHUUR7Rc_",
+                "duration": "130",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "false",
+                "lyrics_snippet": "",
+                "starred": "false",
+                "copyright_text": "℗ 2024 ISO Supremacy, Under exclusive license to PULSE Records., Distributed by Concord.",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "5830374",
+                            "name": "Tommy Richman",
+                            "role": "singer",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/tommy-richman-songs/n5V0mBkteTA_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "5830374",
+                            "name": "Tommy Richman",
+                            "role": "singer",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/tommy-richman-songs/n5V0mBkteTA_"
+                        }
+                    ]
+                },
+                "release_date": "2024-06-14",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "zMjCUaqN",
+            "title": "Double Life (From &quot;Despicable Me 4&quot;)",
+            "subtitle": "Pharrell Williams - Double Life (From &quot;Despicable Me 4&quot;)",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/double-life-from-despicable-me-4/CiUBciFRRn0",
+            "image": "https://c.saavncdn.com/007/Double-Life-From-Despicable-Me-4-English-2024-20240611030335-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "299",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Pharrell Williams",
+                "album_id": "55115813",
+                "album": "Double Life (From &quot;Despicable Me 4&quot;)",
+                "label": "Columbia",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDyh3/HTHiiA7Jd8srQGuvV9jwP6ZKV+MpbC8edXUwgAuR4lB566BBbYxw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8CAe/Ro6fI4PTSuz6QvrWMhbOk0rxRzbcohb5rom5s7Nj8MAl/CE6fo92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/double-life-from-despicable-me-4/DfBDwYuGscg_",
+                "duration": "190",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "false",
+                "lyrics_snippet": "",
+                "starred": "false",
+                "copyright_text": "(P) 2024 Universal Studios. Distributed by Columbia Records, a division of Sony Music Entertainment, under exclusive license by Universal Studios. Motion Picture Artwork & Photos (c) 2024 Universal Studios.",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "522132",
+                            "name": "Pharrell Williams",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Pharrell_Williams_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/pharrell-williams-songs/UKgAQUvEyjc_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "522132",
+                            "name": "Pharrell Williams",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Pharrell_Williams_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/pharrell-williams-songs/UKgAQUvEyjc_"
+                        },
+                        {
+                            "id": "693085",
+                            "name": "Shae Haley",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/shae-haley-songs/aYzYR,EeKtQ_"
+                        }
+                    ]
+                },
+                "release_date": "2024-06-14",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "54606644",
+            "title": "Right Place, Wrong Person",
+            "subtitle": "",
+            "header_desc": "",
+            "type": "album",
+            "perma_url": "https://www.jiosaavn.com/album/right-place-wrong-person/-f2neocQnqQ_",
+            "image": "https://c.saavncdn.com/283/Right-Place-Wrong-Person-English-2024-20240524100311-150x150.jpg",
+            "language": "english",
+            "year": "",
+            "play_count": "",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "song_count": "0",
+                "release_date": "2024-05-24",
+                "artistMap": {
+                    "primary_artists": [],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "1226073",
+                            "name": "Rm",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/rm-songs/yqnNslgbdAE_"
+                        }
+                    ]
+                }
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "p7V4FLp9",
+            "title": "2 The Moon",
+            "subtitle": "Pitbull, Ne-Yo, Afrojack - 2 The Moon",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/2-the-moon/AF89BTJ8Rwo",
+            "image": "https://c.saavncdn.com/337/2-The-Moon-English-2024-20240605011617-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "2790",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Armando C. Perez, Nick Van De Wall, Urales Vargas, Shaffer Smith",
+                "album_id": "54949472",
+                "album": "2 The Moon",
+                "label": "Mr. 305 Records",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDyiRI62ikbytT+5VHZP+KjvOUaW/oXO0SxwV4hwQA+/5EqbygDC51M7Rw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8Gd2Kj4KEg2AYbf7CYrfxjUScf92suKEslJqUWSq/6+6qiaWSzc7IZ492mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/2-the-moon/vD6bGJftN4s_",
+                "duration": "185",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "false",
+                "lyrics_snippet": "",
+                "starred": "false",
+                "copyright_text": "(P) 2024 Mr.305 Records",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "565589",
+                            "name": "Pitbull",
+                            "role": "singer",
+                            "image": "http://c.saavncdn.com/artists/Pitbull_004_20200502102251_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/pitbull-songs/GfqQ4Z4jpzc_"
+                        },
+                        {
+                            "id": "579656",
+                            "name": "Ne-Yo",
+                            "role": "",
+                            "image": "http://c.saavncdn.com/artists/Ne-Yo_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/ne-yo-songs/LfSlby4OaGA_"
+                        },
+                        {
+                            "id": "568666",
+                            "name": "Afrojack",
+                            "role": "",
+                            "image": "http://c.saavncdn.com/artists/Afrojack_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/afrojack-songs/2ce6DY82aW8_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "567322",
+                            "name": "Armando C. Perez",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/armando-c.-perez-songs/p-5JXRln74g_"
+                        },
+                        {
+                            "id": "568629",
+                            "name": "Nick Van De Wall",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/nick-van-de-wall-songs/OUZvqaEgDu8_"
+                        },
+                        {
+                            "id": "568641",
+                            "name": "Urales Vargas",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/urales-vargas-songs/MM6CQjnyPb4_"
+                        },
+                        {
+                            "id": "531036",
+                            "name": "Shaffer Smith",
+                            "role": "music",
+                            "image": "http://c.saavncdn.com/810/The-Apprenticeship-of-Mr-Smith-The-Birth-of-Ne-Yo--English-2011-20190524053126-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/shaffer-smith-songs/BtAN03sOw54_"
+                        },
+                        {
+                            "id": "565589",
+                            "name": "Pitbull",
+                            "role": "singer",
+                            "image": "http://c.saavncdn.com/artists/Pitbull_004_20200502102251_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/pitbull-songs/GfqQ4Z4jpzc_"
+                        },
+                        {
+                            "id": "579656",
+                            "name": "Ne-Yo",
+                            "role": "",
+                            "image": "http://c.saavncdn.com/artists/Ne-Yo_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/ne-yo-songs/LfSlby4OaGA_"
+                        },
+                        {
+                            "id": "568666",
+                            "name": "Afrojack",
+                            "role": "",
+                            "image": "http://c.saavncdn.com/artists/Afrojack_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/afrojack-songs/2ce6DY82aW8_"
+                        }
+                    ]
+                },
+                "release_date": "2024-06-07",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "eKpLlL0E",
+            "title": "Baby Blue Movie",
+            "subtitle": "Cigarettes After Sex - Baby Blue Movie",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/baby-blue-movie/FSMbfRh8B3Y",
+            "image": "https://c.saavncdn.com/008/Baby-Blue-Movie-English-2024-20240604230045-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "2524",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Greg Gonzalez",
+                "album_id": "54855810",
+                "album": "Baby Blue Movie",
+                "label": "Partisan Records",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDy9lzuAw+xydoKdvLs5NRunpkFLcPNx68/TOZ7SkANEOdH33MvYldHUBw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8w1miKTl1arRg3mdR/GqCNv2UOpxwb+02/KaAvNRaQhVZL/1TjLG0bI92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/baby-blue-movie/bVgAIyCpGr0_",
+                "duration": "244",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "true",
+                "lyrics_snippet": "Don't you understand?",
+                "starred": "false",
+                "copyright_text": "© 2024 Spanish Prayers under exclusive license to Partisan Records",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "2435211",
+                            "name": "Cigarettes After Sex",
+                            "role": "singer",
+                            "image": "http://c.saavncdn.com/artists/Cigarettes_After_Sex_001_20240228131346_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/cigarettes-after-sex-songs/1uqviPPdfUM_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "1298941",
+                            "name": "Greg Gonzalez",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/greg-gonzalez-songs/Z4IeGEj7vR0_"
+                        },
+                        {
+                            "id": "2435211",
+                            "name": "Cigarettes After Sex",
+                            "role": "singer",
+                            "image": "http://c.saavncdn.com/artists/Cigarettes_After_Sex_001_20240228131346_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/cigarettes-after-sex-songs/1uqviPPdfUM_"
+                        }
+                    ]
+                },
+                "release_date": "2024-06-04",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "z2LX7k-8",
+            "title": "Morning (with Galantis)",
+            "subtitle": "Cheat Codes, Jason Derulo, De La Ghetto - Morning (with Galantis)",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/morning-with-galantis/ClonaUNbGgs",
+            "image": "https://c.saavncdn.com/897/Morning-with-Galantis-English-2024-20240528124253-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "4039",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "",
+                "album_id": "54715374",
+                "album": "Morning (with Galantis)",
+                "label": "Big Beat Records/Atlantic",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDyvAlTBQeb961dzSOeRdug94a2//7CMjrTYyjZ7T1CVx95QTXnoYgtiBw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8kCj3BoECEVrB2IMf5T7FjYnrm8TdYyffYEPqaS32tLrmNHOu+AdfYY92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/morning-with-galantis/kZJ,Kvzfvh8_",
+                "duration": "184",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "false",
+                "lyrics_snippet": "",
+                "starred": "false",
+                "copyright_text": "℗ 2024 Big Beat Records, Inc. / Atlantic Recording Corporation",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "1054698",
+                            "name": "Cheat Codes",
+                            "role": "singer",
+                            "image": "http://c.saavncdn.com/artists/Cheat_Codes_001_20200226103520_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/cheat-codes-songs/04Ai9CnywBg_"
+                        },
+                        {
+                            "id": "712983",
+                            "name": "Jason Derulo",
+                            "role": "",
+                            "image": "http://c.saavncdn.com/artists/Jason_Derulo_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jason-derulo-songs/LcezFSfSDbQ_"
+                        },
+                        {
+                            "id": "629683",
+                            "name": "De La Ghetto",
+                            "role": "",
+                            "image": "http://c.saavncdn.com/451/La-Formula-Spanish-2017-20170831180402-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/de-la-ghetto-songs/Sq4P4ZhRQoU_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "1054698",
+                            "name": "Cheat Codes",
+                            "role": "singer",
+                            "image": "http://c.saavncdn.com/artists/Cheat_Codes_001_20200226103520_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/cheat-codes-songs/04Ai9CnywBg_"
+                        },
+                        {
+                            "id": "712983",
+                            "name": "Jason Derulo",
+                            "role": "",
+                            "image": "http://c.saavncdn.com/artists/Jason_Derulo_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jason-derulo-songs/LcezFSfSDbQ_"
+                        },
+                        {
+                            "id": "629683",
+                            "name": "De La Ghetto",
+                            "role": "",
+                            "image": "http://c.saavncdn.com/451/La-Formula-Spanish-2017-20170831180402-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/de-la-ghetto-songs/Sq4P4ZhRQoU_"
+                        },
+                        {
+                            "id": "572762",
+                            "name": "Jamie Scott",
+                            "role": "",
+                            "image": "http://c.saavncdn.com/artists/Jamie_Scott_20191203114054_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jamie-scott-songs/daPuJXNrfx8_"
+                        },
+                        {
+                            "id": "2985203",
+                            "name": "Enrique Inglesias",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/enrique-inglesias-songs/w3iGvt-,EjM_"
+                        },
+                        {
+                            "id": "613900",
+                            "name": "Richard Boardman",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/richard-boardman-songs/QKjc64fpqBo_"
+                        },
+                        {
+                            "id": "1335356",
+                            "name": "Mike Needle",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/mike-needle-songs/UJS0MOUdTN8_"
+                        },
+                        {
+                            "id": "566000",
+                            "name": "Christian Karlsson",
+                            "role": "",
+                            "image": "http://c.saavncdn.com/567/Good-Day-Instrumental--English-2018-20181104182808-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/christian-karlsson-songs/Q55NMJ6yZQo_"
+                        },
+                        {
+                            "id": "2619254",
+                            "name": "Mikhail Kofman",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/mikhail-kofman-songs/XZkn9w5TEoM_"
+                        },
+                        {
+                            "id": "4522061",
+                            "name": "Rafael Castillo Torres",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/rafael-castillo-torres-songs/FtqnBN4OIZY_"
+                        },
+                        {
+                            "id": "4272109",
+                            "name": "Joan Manuel Ubinas Jimenez",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/joan-manuel-ubinas-jimenez-songs/6LJb7mWTOh8_"
+                        },
+                        {
+                            "id": "11794801",
+                            "name": "Jesús David Valencia Izquierdo",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jesus-david-valencia-izquierdo-songs/zDjHKeuIkSU_"
+                        },
+                        {
+                            "id": "19680627",
+                            "name": "Oscar Manuel Paniagua Morales",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/oscar-manuel-paniagua-morales-songs/xxJxyNJGMws_"
+                        },
+                        {
+                            "id": "19680628",
+                            "name": "Alejandro Eduardo Giammattei Caceres",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/alejandro-eduardo-giammattei-caceres-songs/U9vZbLUmMIs_"
+                        },
+                        {
+                            "id": "881095",
+                            "name": "David Saint Fleur",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/david-saint-fleur-songs/fZq6udI4rIE_"
+                        },
+                        {
+                            "id": "877394",
+                            "name": "Trevor Dahl",
+                            "role": "",
+                            "image": "http://c.saavncdn.com/737/When-You-Come-Home-English-2015-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/trevor-dahl-songs/8YRogT8mvdQ_"
+                        },
+                        {
+                            "id": "2266503",
+                            "name": "Kevin Pederson",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/kevin-pederson-songs/gUMsriNV4cA_"
+                        },
+                        {
+                            "id": "2266500",
+                            "name": "Matthew Elifritz",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/matthew-elifritz-songs/mXKtTruV2dQ_"
+                        },
+                        {
+                            "id": "3738083",
+                            "name": "Daniel Blume",
+                            "role": "",
+                            "image": "http://c.saavncdn.com/617/Nights-Like-This-English-2020-20200122150253-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/daniel-blume-songs/1n10pwboe5M_"
+                        },
+                        {
+                            "id": "2905865",
+                            "name": "Joris Mur",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/joris-mur-songs/QcZ,3bXPZ4I_"
+                        }
+                    ]
+                },
+                "release_date": "2024-05-31",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "9U-KYx5o",
+            "title": "Ask &amp; You Shall Receive",
+            "subtitle": "Rita Ora - Ask &amp; You Shall Receive",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/ask-you-shall-receive/ST1Gei1IAlw",
+            "image": "https://c.saavncdn.com/741/Ask-You-Shall-Receive-English-2024-20240528124842-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "4410",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Oliver Peterhof, Rachel Keen",
+                "album_id": "54713346",
+                "album": "Ask &amp; You Shall Receive",
+                "label": "BMG Rights Management (UK) Limited",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDyfqUQqHxJ/Ei7od0MPcWRJdhL2jdF4gIj+MH1AL28F0wHf8jxth0TGRw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8/kdDysOyeUKdArUKCHvPI7BunoVkJ56VJy9cztNhUr+HiUJiFGSZcI92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/ask-you-shall-receive/NKjqhIBIT5k_",
+                "duration": "199",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "false",
+                "lyrics_snippet": "",
+                "starred": "false",
+                "copyright_text": "℗ 2024 Rita Ora under exclusive licence to BMG Rights Management (UK) Limited",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "589760",
+                            "name": "Rita Ora",
+                            "role": "singer",
+                            "image": "http://c.saavncdn.com/artists/Rita_Ora_004_20230418100656_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/rita-ora-songs/4OI3Ckkkk6Y_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "1825829",
+                            "name": "Oliver Peterhof",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/oliver-peterhof-songs/p0AEW8dXcZ8_"
+                        },
+                        {
+                            "id": "1202166",
+                            "name": "Rachel Keen",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/rachel-keen-songs/c6Es73Xhvv4_"
+                        },
+                        {
+                            "id": "589760",
+                            "name": "Rita Ora",
+                            "role": "singer",
+                            "image": "http://c.saavncdn.com/artists/Rita_Ora_004_20230418100656_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/rita-ora-songs/4OI3Ckkkk6Y_"
+                        }
+                    ]
+                },
+                "release_date": "2024-05-31",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "ivfW8ly4",
+            "title": "HE KNOWS",
+            "subtitle": "Camila Cabello, Lil Nas X - HE KNOWS",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/he-knows/GR4NZkxcTgc",
+            "image": "https://c.saavncdn.com/873/HE-KNOWS-English-2024-20240510063706-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "34297",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Jasper Harris, Daniel Aged, Camila Cabello, Pablo Diaz-Reixa, Montero Hill, Ojerime Smith",
+                "album_id": "54200565",
+                "album": "HE KNOWS",
+                "label": "Geffen/Interscope Records",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDySjzi79l8YAuPAvdyEQ33O+kX010gxsOrmfaJ2gWtPxQXPR8frlFRjBw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8yOBsiTB/G6F1zhr8oa2FiGiM4lGF7cSDHkLkH0IsbxpjbxsYDNbSI492mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/he-knows/VgejBV7I3Uo_",
+                "duration": "181",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "true",
+                "lyrics_snippet": "When I play with him like that",
+                "starred": "false",
+                "copyright_text": "℗ 2024 Camila Cabello",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "1342580",
+                            "name": "Camila Cabello",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Camila_Cabello_001_20240530122029_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/camila-cabello-songs/T8rykyjbKe4_"
+                        },
+                        {
+                            "id": "6122732",
+                            "name": "Lil Nas X",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/artists/Lil_Nas_X_20190823072008_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/lil-nas-x-songs/MbAVMW5ozFM_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "4983031",
+                            "name": "Jasper Harris",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jasper-harris-songs/SebqmRkTr,A_"
+                        },
+                        {
+                            "id": "776907",
+                            "name": "Daniel Aged",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/927/BH-English-2018-20200102093954-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/daniel-aged-songs/GC86alOYAAo_"
+                        },
+                        {
+                            "id": "1342580",
+                            "name": "Camila Cabello",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Camila_Cabello_001_20240530122029_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/camila-cabello-songs/T8rykyjbKe4_"
+                        },
+                        {
+                            "id": "1983444",
+                            "name": "Pablo Diaz-Reixa",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/pablo-diaz-reixa-songs/uY-yso-vEpU_"
+                        },
+                        {
+                            "id": "6410302",
+                            "name": "Montero Hill",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/montero-hill-songs/gSeCZ6ogmsE_"
+                        },
+                        {
+                            "id": "7465460",
+                            "name": "Ojerime Smith",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/ojerime-smith-songs/BvsB8en8Yiw_"
+                        },
+                        {
+                            "id": "6122732",
+                            "name": "Lil Nas X",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/artists/Lil_Nas_X_20190823072008_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/lil-nas-x-songs/MbAVMW5ozFM_"
+                        }
+                    ]
+                },
+                "release_date": "2024-05-10",
+                "label_url": "",
+                "vcode": "010912292447760",
+                "vlink": "https://jiotunepreview.jio.com/content/Converted/010912292404329.mp3",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "0vmLUvuL",
+            "title": "Cozy",
+            "subtitle": "Jeremy Zucker, Lauv, Alexander 23 - Cozy",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/cozy/QB4GfSFGQn8",
+            "image": "https://c.saavncdn.com/842/Cozy-English-2024-20240522063302-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "5963",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Jeremy Zucker, Alexander Glantz, Ari Leff",
+                "album_id": "54493257",
+                "album": "Cozy",
+                "label": "Mercury Records/Republic Owned",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDykPuwlsTFJD0Mc3g+qckv2evTGzHnaHALsa7lW82eUE18er3N1D9CQBw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8j5pS0y4avPutqNOf4wFu97S7AfSK7XBIpQusU8xWyO8VVpnrTGk8hY92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/cozy/czgR4Ptmc4Y_",
+                "duration": "165",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "true",
+                "lyrics_snippet": "When you hold me, you're so cozy",
+                "starred": "false",
+                "copyright_text": "℗ 2024 Mercury Records, a Division of UMG Recordings, Inc.",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "1913249",
+                            "name": "Jeremy Zucker",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Jeremy_Zucker_20200822045728.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jeremy-zucker-songs/yKvBgKxoVn4_"
+                        },
+                        {
+                            "id": "1171890",
+                            "name": "Lauv",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/artists/Lauv_004_20190729150940_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/lauv-songs/xKvFsfStzFI_"
+                        },
+                        {
+                            "id": "6142262",
+                            "name": "Alexander 23",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/342/I-Hate-You-So-Much-English-2020-20200211230831-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/alexander-23-songs/8JvuMnzH1tQ_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "1913249",
+                            "name": "Jeremy Zucker",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Jeremy_Zucker_20200822045728.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/jeremy-zucker-songs/yKvBgKxoVn4_"
+                        },
+                        {
+                            "id": "2094266",
+                            "name": "Alexander Glantz",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/alexander-glantz-songs/0FGxvR5WR1g_"
+                        },
+                        {
+                            "id": "2452047",
+                            "name": "Ari Leff",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/ari-leff-songs/,jd6muxPj2k_"
+                        },
+                        {
+                            "id": "1171890",
+                            "name": "Lauv",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/artists/Lauv_004_20190729150940_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/lauv-songs/xKvFsfStzFI_"
+                        },
+                        {
+                            "id": "6142262",
+                            "name": "Alexander 23",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/342/I-Hate-You-So-Much-English-2020-20200211230831-150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/alexander-23-songs/8JvuMnzH1tQ_"
+                        }
+                    ]
+                },
+                "release_date": "2024-05-22",
+                "label_url": "",
+                "vcode": "010912292455196",
+                "vlink": "https://jiotunepreview.jio.com/content/Converted/010912292409187.mp3",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "54549532",
+            "title": "Clancy",
+            "subtitle": "",
+            "header_desc": "",
+            "type": "album",
+            "perma_url": "https://www.jiosaavn.com/album/clancy/t0SHiCPyEk0_",
+            "image": "https://c.saavncdn.com/729/Clancy-English-2024-20240522225122-150x150.jpg",
+            "language": "english",
+            "year": "",
+            "play_count": "",
+            "explicit_content": "0",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "song_count": "0",
+                "release_date": "2024-05-24",
+                "artistMap": {
+                    "primary_artists": [],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "720746",
+                            "name": "Twenty One Pilots",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/twenty-one-pilots-songs/Dx5Vty3hXGs_"
+                        }
+                    ]
+                }
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "nysb4s21",
+            "title": "Next 2 U",
+            "subtitle": "Kehlani - Next 2 U",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/next-2-u/HhEYU0BDBQI",
+            "image": "https://c.saavncdn.com/763/Next-2-U-English-2024-20240530044705-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "4751",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "",
+                "album_id": "54715523",
+                "album": "Next 2 U",
+                "label": "TSNMI / Atlantic",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDyKM2wQt+Ek0Q3rxjfa+1cFMj+E3W/K7csj+tKJMyj1h7G3mP4w5e11Rw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8rh+pVhSFYfuAPsUhkdNcik7b3Re+TImTwh3hK5LtCML+n4kaWmTdNI92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/next-2-u/Tj3nzzo3lAs_",
+                "duration": "161",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "true",
+                "lyrics_snippet": "They gon' have to see about me to get next to you",
+                "starred": "false",
+                "copyright_text": "℗ 2024 Atlantic Records Group LLC",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "829673",
+                            "name": "Kehlani",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Kehlani_000_20240531084004_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/kehlani-songs/f-37mQj0Mrw_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "829673",
+                            "name": "Kehlani",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Kehlani_000_20240531084004_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/kehlani-songs/f-37mQj0Mrw_"
+                        },
+                        {
+                            "id": "1395591",
+                            "name": "Kehlani Parrish",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/kehlani-parrish-songs/NFN4lkH3LQg_"
+                        },
+                        {
+                            "id": "9615584",
+                            "name": "Darius Dixson",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/darius-dixson-songs/eeUpCphTX2c_"
+                        },
+                        {
+                            "id": "4588732",
+                            "name": "Anthony Clemons",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/anthony-clemons-songs/XWM721z2-Oo_"
+                        }
+                    ]
+                },
+                "release_date": "2024-05-31",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        },
+        {
+            "id": "OHPQsR_Z",
+            "title": "BAND4BAND",
+            "subtitle": "Central Cee, LiL Baby - BAND4BAND",
+            "header_desc": "",
+            "type": "song",
+            "perma_url": "https://www.jiosaavn.com/song/band4band/PyA7YAdiaGk",
+            "image": "https://c.saavncdn.com/188/BAND4BAND-English-2024-20240524041656-150x150.jpg",
+            "language": "english",
+            "year": "2024",
+            "play_count": "13078",
+            "explicit_content": "1",
+            "list_count": "0",
+            "list_type": "",
+            "list": "",
+            "more_info": {
+                "music": "Central Cee, Dominique Armani Jones, Dennis Atuahene Opoku, Gennaro Alessandro Frenken",
+                "album_id": "54598169",
+                "album": "BAND4BAND",
+                "label": "Columbia",
+                "origin": "none",
+                "is_dolby_content": false,
+                "320kbps": "true",
+                "encrypted_media_url": "ID2ieOjCrwfgWvL5sXl4B1ImC5QfbsDyvioQfvzp5aG2A+XIrGXEieyRmvshTN3tV17N/5spgmlsDidRLyra8hw7tS9a8Gtq",
+                "encrypted_cache_url": "",
+                "encrypted_drm_cache_url": "",
+                "encrypted_drm_media_url": "ID2ieOjCrwdjlkMElYlzWCptgNdUpWD8SLmXZknnMVClVmcAPebgr7iP/M8CW/voj9966J0jb0j/ryWxIV5ngo92mytrdt3FDnQW0nglPS4=",
+                "album_url": "https://www.jiosaavn.com/album/band4band/u6SHzF6hsGs_",
+                "duration": "140",
+                "rights": {
+                    "code": "0",
+                    "cacheable": "true",
+                    "delete_cached_object": "true",
+                    "reason": ""
+                },
+                "cache_state": "false",
+                "has_lyrics": "false",
+                "lyrics_snippet": "",
+                "starred": "false",
+                "copyright_text": "(P) 2024 Columbia Records, a Division of Sony Music Entertainment, under exclusive license from CC4L Limited",
+                "artistMap": {
+                    "primary_artists": [
+                        {
+                            "id": "3448908",
+                            "name": "Central Cee",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Central_Cee_000_20231120090544_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/central-cee-songs/cm5rNgdiRI8_"
+                        },
+                        {
+                            "id": "1986959",
+                            "name": "LiL Baby",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/artists/LiL_Baby_001_20221110200003_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/lil-baby-songs/kSWQLXOGuoQ_"
+                        }
+                    ],
+                    "featured_artists": [],
+                    "artists": [
+                        {
+                            "id": "3448908",
+                            "name": "Central Cee",
+                            "role": "singer",
+                            "image": "https://c.saavncdn.com/artists/Central_Cee_000_20231120090544_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/central-cee-songs/cm5rNgdiRI8_"
+                        },
+                        {
+                            "id": "8254395",
+                            "name": "Dominique Armani Jones",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/dominique-armani-jones-songs/Y7zni745zXI_"
+                        },
+                        {
+                            "id": "3119647",
+                            "name": "Dennis Atuahene Opoku",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/dennis-atuahene-opoku-songs/WqnPIOTh2sM_"
+                        },
+                        {
+                            "id": "6880686",
+                            "name": "Gennaro Alessandro Frenken",
+                            "role": "music",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/gennaro-alessandro-frenken-songs/C7NzV-WA-AU_"
+                        },
+                        {
+                            "id": "1986959",
+                            "name": "LiL Baby",
+                            "role": "",
+                            "image": "https://c.saavncdn.com/artists/LiL_Baby_001_20221110200003_150x150.jpg",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/lil-baby-songs/kSWQLXOGuoQ_"
+                        },
+                        {
+                            "id": "19654949",
+                            "name": "Central Cee &amp; Lil Baby",
+                            "role": "",
+                            "image": "",
+                            "type": "artist",
+                            "perma_url": "https://www.jiosaavn.com/artist/central-cee-lil-baby-songs/YlnudAhDdCE_"
+                        }
+                    ]
+                },
+                "release_date": "2024-05-23",
+                "label_url": "",
+                "triller_available": false,
+                "request_jiotune_flag": false,
+                "webp": ""
+            },
+            "button_tooltip_info": []
+        }
+    ],
+    "count": 30,
+    "last_page": true
+}
