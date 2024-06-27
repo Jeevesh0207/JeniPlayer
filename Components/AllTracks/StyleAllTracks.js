@@ -26,11 +26,19 @@ const createStyles = (colors) => {
             flexDirection: 'row',
             alignItems: 'center'
         },
+        outercontainer:{
+            flex:1,
+            // paddingLeft: 10,
+            // paddingRight: 10,
+            backgroundColor: colors.background,
+            position:'relative',
+            alignItems:'center'
+        },
         container: {
             flex: 1,
             paddingLeft: 10,
             paddingRight: 10,
-            backgroundColor: colors.background,
+            // backgroundColor: colors.background_C1,
         },
         top_banner: {
             width: '100%',
@@ -46,7 +54,6 @@ const createStyles = (colors) => {
             paddingRight: 10,
             position: 'absolute',
             zIndex: 1,
-            backgroundColor: 'transparent'
         },
         back_box: {
             width: 40,
@@ -55,15 +62,13 @@ const createStyles = (colors) => {
         back_btn: {
             width: 38,
             aspectRatio: 1,
-            backgroundColor: '#fff',
+            backgroundColor: colors.background,
             borderRadius: 5,
-            shadowColor: colors.dodgerBlueDeep,
-            elevation: 3
+
         },
         small_poster_box: {
             width: 55,
             aspectRatio: 1,
-            backgroundColor: '#fff',
             marginTop: 30,
             borderRadius: 3,
             overflow: 'hidden',
@@ -76,10 +81,9 @@ const createStyles = (colors) => {
         search_btn: {
             width: 38,
             aspectRatio: 1,
-            backgroundColor: '#fff',
+            backgroundColor: colors.background,
             borderRadius: 5,
-            shadowColor: colors.dodgerBlueDeep,
-            elevation: 3
+
         },
         poster_container: {
             width: '100%',
@@ -105,25 +109,27 @@ const createStyles = (colors) => {
             width: 45,
             aspectRatio: 1,
             borderRadius: 50,
-            backgroundColor: '#fff',
-            shadowColor: colors.dodgerBlueDeep,
-            elevation: 3
+            backgroundColor: colors.background,
+            paddingTop:2,
+            borderColor:colors.bordercolor,
+            borderWidth:0.5
         },
         option_play: {
             width: 45,
             aspectRatio: 1,
             borderRadius: 50,
-            backgroundColor: '#fff',
-            shadowColor: colors.dodgerBlueDeep,
-            elevation: 3
+            backgroundColor: colors.background,
+            borderColor:colors.bordercolor,
+            borderWidth:0.5
         },
         option_threedot: {
             width: 45,
             aspectRatio: 1,
             borderRadius: 50,
-            backgroundColor: '#fff',
-            shadowColor: colors.dodgerBlueDeep,
-            elevation: 3
+            backgroundColor: colors.background,
+            borderColor:colors.bordercolor,
+            borderWidth:0.5,
+            marginRight:2
         },
         track_title_box: {
             width: '100%',
@@ -131,19 +137,19 @@ const createStyles = (colors) => {
             marginTop: 5,
         },
         track_title: {
-            fontSize: 22,
-            fontFamily: fonts.regular,
+            fontSize: 17,
+            fontFamily: fonts.book,
             color: colors.text
         },
         track_desc_box: {
             width: '100%',
             height: 20,
-            marginBottom: 10
+            marginBottom: 15
         },
         track_desc: {
             fontSize: 13,
-            fontFamily: fonts.regular,
-            color: colors.text,
+            fontFamily: fonts.book,
+            color: colors.desc,
         },
         songs_container: {
             width: '100%',
@@ -175,15 +181,15 @@ const createStyles = (colors) => {
             justifyContent: 'center'
         },
         song_details_title: {
-            fontSize: 14,
-            fontFamily: fonts.regular,
+            fontSize: 12,
+            fontFamily: fonts.book,
             color: colors.text
         },
         song_details_desc: {
-            fontSize: 12,
+            fontSize: 11,
             fontFamily: fonts.regular,
             marginTop: 5,
-            color: 'gray'
+            color: colors.desc
         },
         song_right: {
             gap: gap - 6
@@ -231,7 +237,7 @@ const createStyles = (colors) => {
         error_btn: {
             width: 100,
             height: 40,
-            backgroundColor: colors.dodgerBlueDark,
+            backgroundColor: colors.background,
             borderRadius: 3
         },
         error_btn_report: {
@@ -240,6 +246,11 @@ const createStyles = (colors) => {
         error_btn_text: {
             fontSize: 14,
             fontFamily: fonts.regular
+        },
+        lineargradient:{
+            width:'100%',
+            height:200,
+            position:'absolute',
         }
     })
 }

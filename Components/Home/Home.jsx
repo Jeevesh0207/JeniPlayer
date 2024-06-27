@@ -1,4 +1,4 @@
-import React, {memo, useMemo, useState, useCallback} from 'react';
+import React, {memo, useMemo, useState, useEffect} from 'react';
 import {ScrollView} from 'react-native';
 import {GestureHandlerRootView} from 'react-native-gesture-handler';
 import {useSelector} from 'react-redux';
@@ -7,9 +7,7 @@ import {createStyles} from './StyleHome';
 import {Carousel, HorizontalList, TopNav} from './Section';
 import {useTheme} from '../../Theme/ThemeContext';
 
-
 const Home = () => {
-
   const {data} = useSelector(state => state.getLaunchData);
 
   const {theme} = useTheme();
@@ -21,11 +19,10 @@ const Home = () => {
       <TopNav />
       <ScrollView
         style={[styles.container]}
-        showsVerticalScrollIndicator={false}>
-        <Carousel />
-        <HorizontalList
-          data={data}
-        />
+        showsVerticalScrollIndicator={false}
+        >
+        <Carousel/>
+        <HorizontalList data={data} />
       </ScrollView>
     </GestureHandlerRootView>
   );

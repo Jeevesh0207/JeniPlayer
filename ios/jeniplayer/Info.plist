@@ -48,6 +48,11 @@
 	<key>UIViewControllerBasedStatusBarAppearance</key>
 	<false/>
 	<key>UIAppFonts</key>
-	<array/>
+	<array>
+		<string>GothamRndSSm-Bold.otf</string>
+		<string>GothamRndSSm-Book.otf</string>
+		<string>GothamRndSSm-Light.otf</string>
+		<string>GothamRndSSm-Medium.otf</string>
+	</array>
 </dict>
 </plist>

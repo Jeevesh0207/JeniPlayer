@@ -10,9 +10,9 @@ import { Provider as PaperProvider } from 'react-native-paper';
 import { ThemeProvider, useTheme } from './Theme/ThemeContext';
 
 //https://jeniplayerbackend.vercel.app/graphql
-//http://192.168.82.120:8000/graphql
+//http://192.168.68.120:8000/graphql
 const client = new ApolloClient({
-  uri: 'https://jeniplayerbackend.vercel.app/graphql',
+  uri: 'http://192.168.68.120:8000/graphql',
   cache: new InMemoryCache()
 });
 

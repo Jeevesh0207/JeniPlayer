@@ -1,4 +1,4 @@
-import React, { useState, memo, useEffect, useMemo, useCallback } from 'react';
+import React, {useState, memo, useEffect, useMemo, useCallback} from 'react';
 import {
   View,
   Text,
@@ -7,15 +7,14 @@ import {
   useWindowDimensions,
   FlatList,
 } from 'react-native';
-import { Image } from 'expo-image';
-import { createStyles } from './StyleVerticalList';
-import { BackSvg, SearchSvg, NoDataSvg } from '../../../../Svg';
-import { useNavigation } from '@react-navigation/native';
-import { useSelector, useDispatch } from 'react-redux';
-import { setTrackListID } from '../../../../redux/actions';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { useTheme } from '../../../../Theme/ThemeContext';
-
+import {Image} from 'expo-image';
+import {createStyles} from './StyleVerticalList';
+import {BackSvg, SearchSvg, NoDataSvg,CloseSvg} from '../../../../Svg';
+import {useNavigation} from '@react-navigation/native';
+import {useSelector, useDispatch} from 'react-redux';
+import {setTrackListID} from '../../../../redux/actions';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {useTheme} from '../../../../Theme/ThemeContext';
 
 //! ------------OUTER FUNCIONS ---------------
 const minCols = 3;
@@ -23,49 +22,60 @@ const calcNumColumns = (width, styles) => {
   const cols = width / styles.box.width;
   const colsFloor = Math.floor(cols) > minCols ? Math.floor(cols) : minCols;
   const colsMinusMargin = cols - 2 * colsFloor * styles.box.margin;
-  return colsMinusMargin < colsFloor && colsFloor > minCols ? colsFloor - 1 : colsFloor;
+  return colsMinusMargin < colsFloor && colsFloor > minCols
+    ? colsFloor - 1
+    : colsFloor;
 };
 
-const replace150with500 = (url) => {
+const replace150with500 = url => {
   return url?.replace('150x150', '500x500') || url;
 };
 
-const Box = memo(({ item, module_template, numColumns, GoToAllTracks, styles }) => (
-  <TouchableOpacity
-    style={styles.box(numColumns)}
-    accessibilityLabel={`Item ${item.title}`}
-    onPress={() => GoToAllTracks('tracks', item.token, item.type)}
-  >
-    <View>
-      <View style={styles.image_box(module_template)}>
-        <Image
-          style={styles.poster}
-          source={{ uri: replace150with500(item?.image) || '' }}
-          contentPosition={'top center'}
-          alt="poster"
-          onError={(error) => console.log('Image failed to load', error)}
-        />
+const Box = memo(
+  ({item, module_template, numColumns, GoToAllTracks, styles}) => (
+    <TouchableOpacity
+      style={styles.box(numColumns)}
+      accessibilityLabel={`Item ${item.title}`}
+      onPress={() => GoToAllTracks('tracks', item.token, item.type)}>
+      <View>
+        <View style={styles.image_box(module_template)}>
+          <Image
+            style={styles.poster}
+            source={{uri: replace150with500(item?.image) || ''}}
+            contentPosition={'top center'}
+            alt="poster"
+            onError={error => console.log('Image failed to load', error)}
+          />
+        </View>
+        <Text
+          style={styles.title(module_template)}
+          numberOfLines={1}
+          ellipsizeMode="tail">
+          {item?.title ?? ''}
+        </Text>
+        <Text
+          style={styles.desc(module_template)}
+          numberOfLines={1}
+          ellipsizeMode="tail">
+          {item?.desc}
+        </Text>
       </View>
-      <Text style={styles.title(module_template)} numberOfLines={1} ellipsizeMode="tail">
-        {item?.title ?? ''}
-      </Text>
-      <Text style={styles.desc(module_template)} numberOfLines={1} ellipsizeMode="tail">
-        {item?.desc}
-      </Text>
-    </View>
-  </TouchableOpacity>
-));
+    </TouchableOpacity>
+  ),
+);
 
 //! ------------COMPONENT START ---------------
 
 const VerticalList = () => {
   const navigation = useNavigation();
-  const {theme} = useTheme()
-  const {colors} = theme
+  const {theme} = useTheme();
+  const {colors} = theme;
   const styles = useMemo(() => createStyles(colors), [colors]);
   const dispatch = useDispatch();
-  const { TrackLists, type, title } = useSelector((state) => state.getVerticalListData);
-  const { width } = useWindowDimensions();
+  const {TrackLists, type, title} = useSelector(
+    state => state.getVerticalListData,
+  );
+  const {width} = useWindowDimensions();
   const [numColumns, setNumColumns] = useState(calcNumColumns(width, styles));
   const [query, setQuery] = useState('');
 
@@ -74,20 +84,27 @@ const VerticalList = () => {
   }, [width, styles]);
 
   const filterResult = useMemo(
-    () => TrackLists.filter((song) => song.title.toLowerCase().includes(query.toLowerCase())),
-    [TrackLists, query]
+    () =>
+      TrackLists.filter(song =>
+        song.title.toLowerCase().includes(query.toLowerCase()),
+      ),
+    [TrackLists, query],
   );
 
   const GoToAllTracks = useCallback(
     (route, token, type) => {
-      dispatch(setTrackListID({ token, type }));
+      dispatch(setTrackListID({token, type}));
       navigation.navigate(route);
     },
-    [dispatch, navigation]
+    [dispatch, navigation],
   );
 
+  const ClearQuery = () => {
+    setQuery('');
+  };
+
   const renderBox = useCallback(
-    ({ item }) => (
+    ({item}) => (
       <Box
         item={item}
         module_template={type}
@@ -96,7 +113,7 @@ const VerticalList = () => {
         styles={styles}
       />
     ),
-    [type, numColumns, GoToAllTracks, styles]
+    [type, numColumns, GoToAllTracks, styles],
   );
 
   return (
@@ -106,9 +123,8 @@ const VerticalList = () => {
           <TouchableOpacity
             onPress={() => navigation.goBack()}
             style={[styles.makecenter, styles.back_btn]}
-            accessibilityLabel="Go back"
-          >
-            <BackSvg color={colors.dodgerBlueDark} size={30} />
+            accessibilityLabel="Go back">
+            <BackSvg color={colors.solidcolor} size={30} />
           </TouchableOpacity>
         </View>
         <View style={[styles.makecenter, styles.head_title_box]}>
@@ -120,7 +136,7 @@ const VerticalList = () => {
           <TextInput
             style={styles.search_input}
             placeholder="Search"
-            placeholderTextColor={'#000'}
+            placeholderTextColor={colors.solidcolor}
             value={query}
             onChangeText={setQuery}
             keyboardType="default"
@@ -128,10 +144,16 @@ const VerticalList = () => {
           />
         </View>
         <View style={[styles.makecenter, styles.search_icon_box]}>
-          <SearchSvg color={colors.dodgerBlueDark} size={30} />
+          {query === '' ? (
+            <SearchSvg color={colors.solidcolor} size={30} />
+          ) : (
+            <TouchableOpacity onPress={ClearQuery}>
+              <CloseSvg color={colors.solidcolor} size={30} />
+            </TouchableOpacity>
+          )}
         </View>
       </View>
-      <GestureHandlerRootView style={{ flex: 1 }}>
+      <GestureHandlerRootView style={{flex: 1}}>
         <View style={styles.tracks_container}>
           {query === '' ? (
             <FlatList
@@ -157,7 +179,7 @@ const VerticalList = () => {
             />
           ) : (
             <View style={styles.noresult_container}>
-              <NoDataSvg color={colors.dodgerBlueDark} size={70} />
+              <NoDataSvg color={colors.solidcolor_C1} size={70} />
               <Text style={styles.noresult_text}>No Data Found</Text>
             </View>
           )}

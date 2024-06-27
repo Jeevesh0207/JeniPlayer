@@ -1,7 +1,8 @@
 import * as type from '../types';
 
 const initialState = {
-    theme:true
+    theme:true,
+    type:""
 }
 
 export default function Theme(state = initialState, action) {
@@ -9,7 +10,8 @@ export default function Theme(state = initialState, action) {
         case type.SET_THEME:
             return {
                 ...state,
-                theme: action.data
+                theme: action.data.mode,
+                type:action.data.type
             }
         default:
             return state;

@@ -1,10 +1,10 @@
-import React, { useState, useCallback, useMemo } from 'react';
-import { View, Dimensions } from 'react-native';
-import { Image } from 'expo-image';
+import React, {useState, useCallback, useMemo, useEffect} from 'react';
+import {View, Dimensions} from 'react-native';
+import {Image} from 'expo-image';
 import LinearGradient from 'react-native-linear-gradient';
 import Carousel from 'react-native-reanimated-carousel';
-import { createStyles } from './StyleCarousel';
-import { useTheme } from '../../../../Theme/ThemeContext';
+import {createStyles} from './StyleCarousel';
+import {useTheme} from '../../../../Theme/ThemeContext';
 
 const width = Dimensions.get('window').width;
 
@@ -21,33 +21,38 @@ const BannerData = [
 ];
 
 const CarouselContainer = () => {
-  const {theme} = useTheme()
-  const {colors} = theme
+  const {theme} = useTheme();
+  const {colors} = theme;
   const styles = useMemo(() => createStyles(colors), [colors]);
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const renderItem = useCallback(
-    ({ item }) => (
+    ({item}) => (
       <View style={styles.banner_container(width)}>
         <Image
           style={styles.banner_image(width)}
-          source={{ uri: item.img }}
+          source={{uri: item.img}}
           contentPosition={'top center'}
           alt="jpg"
         />
         <LinearGradient
+          // colors={[
+          //   'transparent',
+          //   `${colors?.bannerlinear}`,
+          //   `${colors?.background_C1}`,
+          // ]}
+          // locations={[0, 0.5, 1]}
           colors={[
             'transparent',
-            'rgba(255,255,255,0.2)',
-            `${colors.background}`,
+            `${colors?.slidergradient}`,
           ]}
-          locations={[0, 0.5, 1]}
+          // locations={[0, 0.5, 1]}
           style={styles.lineargradient}
           pointerEvents="none"
         />
       </View>
     ),
-    [styles, colors]
+    [styles, colors],
   );
 
   const paginationDots = useMemo(
@@ -61,7 +66,7 @@ const CarouselContainer = () => {
           ]}
         />
       )),
-    [currentIndex, styles]
+    [currentIndex, styles],
   );
 
   return (

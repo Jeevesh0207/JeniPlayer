@@ -107,9 +107,9 @@ const HorizontalList = ({data}) => {
   );
 
   const renderBox = useCallback(
-    ({item, module_template}) => (
+    ({list, module_template}) => (
       <Box
-        item={item}
+        item={list}
         module_template={module_template}
         GoToAllTracks={GoToAllTracks}
         styles={styles}
@@ -119,17 +119,17 @@ const HorizontalList = ({data}) => {
   );
   return (
     <>
-      {SongType.map((item, index) => (
+      {SongType.map((list, index) => (
         <View style={styles.container} key={index}>
           <View style={styles.head}>
-            <Text style={styles.module_name}>{item.module_name}</Text>
+            <Text style={styles.module_name}>{list.module_name}</Text>
             <TouchableOpacity
               onPress={() =>
                 GoToVertical(
                   'alllist',
-                  data[item.module_template],
-                  item.module_name,
-                  item.module_template,
+                  data[list.module_template],
+                  list.module_name,
+                  list.module_template,
                 )
               }>
               <Text style={styles.more}>See All</Text>
@@ -137,11 +137,11 @@ const HorizontalList = ({data}) => {
           </View>
           <View style={styles.box_container}>
             <FlatList
-              data={data[item.module_template]}
+              data={data[list.module_template]}
               horizontal
-              renderItem={renderBox}
+              renderItem={({ item }) => renderBox({ list: item, module_template: list.module_template })}
               initialNumToRender={20}
-              keyExtractor={(item, index) => index.toString()}
+              keyExtractor={(list, index) => index.toString()}
               showsHorizontalScrollIndicator={false}
               contentContainerStyle={{gap: 10}}
             />

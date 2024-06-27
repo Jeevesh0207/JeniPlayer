@@ -44,10 +44,10 @@ const createStyles = (colors) => {
             marginHorizontal: 4,
         },
         activeDot: {
-            backgroundColor: colors.dodgerBlueDeep,
+            backgroundColor: colors.solidcolor_C1,
         },
         inactiveDot: {
-            backgroundColor: 'gray',
+            backgroundColor: colors.solidcolor_NC1,
         },
         lineargradient: {
             position: 'absolute',

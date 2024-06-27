@@ -1,6 +1,8 @@
 const fonts = {
-    'regular':'jeni_regular',
-    'medium':'jeni_medium'
+    'light':'GothamRndSSm-Light',
+    'book':'GothamRndSSm-Book',
+    'regular':'GothamRndSSm-Medium',
+    'bold':'GothamRndSSm-Bold'
 }
 
 export default fonts

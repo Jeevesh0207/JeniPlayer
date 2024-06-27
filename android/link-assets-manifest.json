@@ -2,6 +2,22 @@
   "migIndex": 1,
   "data": [
     {
+      "path": "assets/fonts/GothamRndSSm-Bold.otf",
+      "sha1": "b387bfb2a621ab7de11bcbe0dc8a55349558c476"
+    },
+    {
+      "path": "assets/fonts/GothamRndSSm-Book.otf",
+      "sha1": "040c8b636dd5b0e22145e045dcd3154da58c0fc0"
+    },
+    {
+      "path": "assets/fonts/GothamRndSSm-Light.otf",
+      "sha1": "2c67cb8e8537eb6aaa389835f55fda3104996b85"
+    },
+    {
+      "path": "assets/fonts/GothamRndSSm-Medium.otf",
+      "sha1": "4af8c2f980494329c4b179a0707bf22f3e9944cc"
+    },
+    {
       "path": "assets/fonts/jeni_medium.woff2",
       "sha1": "6924b869f95fe607a76a878a6b47b1811835e56c"
     },

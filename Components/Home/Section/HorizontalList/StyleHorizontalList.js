@@ -5,7 +5,6 @@ import {
 import { fonts } from '../../../../constants'
 
 const createStyles = (colors) => {
-    console.log("Style Render")
     return StyleSheet.create({
         makecenter: {
             display: 'flex',
@@ -15,6 +14,8 @@ const createStyles = (colors) => {
         container: {
             width: '100%',
             height: 220,
+            paddingLeft:10,
+            paddingRight:10
         },
         head: {
             width: '100%',
@@ -25,14 +26,14 @@ const createStyles = (colors) => {
             alignItems: 'center'
         },
         module_name: {
-            fontSize: 17,
-            fontFamily: fonts.medium,
+            fontSize: 16,
+            fontFamily: fonts.book,
             color: colors.text
         },
         more: {
-            fontSize: 13,
+            fontSize: 12,
             fontFamily: fonts.regular,
-            color: colors.dodgerBlueDark,
+            color: colors.text,
             padding: 5
         },
         box_container: {
@@ -56,21 +57,21 @@ const createStyles = (colors) => {
             width: '100%',
             height: '100%',
             objectFit: 'cover',
-            opacity: 0.9
+            opacity: 1
         },
         title: (module_template) => ({
-            fontSize: 14,
-            fontFamily: fonts.regular,
+            fontSize: 12,
+            fontFamily: fonts.book,
             marginTop: 8,
             color: colors.text,
             overflow: 'hidden',
             textAlign: (module_template === "topArtist") ? 'center' : 'flex-start'
         }),
         desc: (module_template) => ({
-            fontSize: 12,
+            fontSize: 11,
             marginTop: 2,
             fontFamily: fonts.regular,
-            color: 'gray',
+            color: colors.desc,
             overflow: 'hidden',
             textAlign: (module_template === "topArtist") ? 'center' : 'flex-start'
         })

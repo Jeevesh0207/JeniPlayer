@@ -1,21 +1,36 @@
 import {
-    StyleSheet
-} from 'react-native'
+    StyleSheet,
+    Dimensions
+}from 'react-native'
 
-import { fonts } from '../../../../constants'
+import { fonts } from '../../../constants'
 
-const createStyles = (colors) => {
+const screenWidth = Dimensions.get('window').width;
+const imageBoxWidth = 50;
+const downloadBoxWidth = 50;
+const threeDotBoxWidth = 50;
+const gap = 8
+const padding = gap * 5 + 20;
+
+const songDetailsBoxWidth = screenWidth - (imageBoxWidth + downloadBoxWidth + threeDotBoxWidth + padding);
+
+const createStyles = (colors) =>{
     return StyleSheet.create({
         makecenter: {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
         },
-        container: {
+        makealigncenter: {
+            display: 'flex',
+            flexDirection: 'row',
+            alignItems: 'center'
+        },
+        container:{
             flex: 1,
             paddingLeft: 10,
             paddingRight: 10,
-            backgroundColor: colors.background
+            backgroundColor: colors.background_C1
         },
         head: {
             width: '100%',
@@ -28,7 +43,7 @@ const createStyles = (colors) => {
         head_title_text: {
             fontSize: 18,
             fontFamily: fonts.book,
-            color: colors.text
+            color: colors.text_C2
         },
         back_box: {
             width: 40,
@@ -43,6 +58,7 @@ const createStyles = (colors) => {
             borderRadius: 5,
             // shadowColor: colors.solidcolor_C1,
             // elevation: 3
+
         },
         search_box: {
             width: '100%',
@@ -54,7 +70,7 @@ const createStyles = (colors) => {
             marginTop: 5,
             marginBottom: 10,
             borderWidth: 1,
-            borderColor:colors.bordercolor
+            borderColor:colors.borders_C3
         },
         search_input_box: {
             width: '85%',
@@ -63,8 +79,8 @@ const createStyles = (colors) => {
         search_input: {
             width: '100%',
             height: '100%',
-            backgroundColor: colors.background,
-            color: colors.text,
+            backgroundColor: colors.background_C1,
+            color: colors.text_C2,
             paddingLeft: 10,
             letterSpacing: 0.4,
             fontFamily: fonts.book
@@ -72,45 +88,55 @@ const createStyles = (colors) => {
         search_icon_box: {
             width: '15%',
             height: '100%',
-            backgroundColor: colors.background,
+            backgroundColor: colors.background_C1,
         },
-        tracks_container: {
-            flex: 1,
-            marginTop: 5,
-        },
-        box: (numColumns) => ({
-            flex: 1 / numColumns,
-            height: 180,
-            margin: 5,
-        }),
-        image_box: (module_template) => ({
+        song_box: {
             width: '100%',
+            height: 60,
+            gap: gap,
+            // padding: 3,
+            justifyContent: 'space-between',
+        },
+        song_left: {
+            gap: gap
+        },
+        song_image_box: {
+            width: 50,
             aspectRatio: 1,
-            borderRadius: (module_template === "topArtist") ? 100 : 10,
-            overflow: 'hidden',
-        }),
-        poster: {
-            width: '100%',
-            height: '100%',
-            objectFit: 'cover',
-            opacity: 0.9
+            borderRadius: 3,
+            overflow: 'hidden'
         },
-        title: (module_template) => ({
+        song_image: {
+            width: '100%',
+            height: '100%'
+        },
+        song_details_box: {
+            width: songDetailsBoxWidth,
+            height: 50,
+            justifyContent: 'center',
+        },
+        song_details_title: {
             fontSize: 12,
             fontFamily: fonts.book,
-            marginTop: 8,
-            color: colors.text,
-            overflow: 'hidden',
-            textAlign: (module_template === "topArtist") ? 'center' : 'flex-start'
-        }),
-        desc: (module_template) => ({
+            color: colors.text_C2
+        },
+        song_details_desc: {
             fontSize: 11,
             fontFamily: fonts.regular,
-            marginTop: 2,
-            color: colors.desc,
-            overflow: 'hidden',
-            textAlign: (module_template === "topArtist") ? 'center' : 'flex-start'
-        }),
+            marginTop: 5,
+            color: colors.text_NC1
+        },
+        song_right: {
+            gap: gap - 6
+        },
+        song_download_box: {
+            width: 40,
+            aspectRatio: 1,
+        },
+        song_three_dot: {
+            width: 40,
+            aspectRatio: 1,
+        },
         noresult_container: {
             flex: 1,
             alignItems: 'center',
@@ -119,8 +145,10 @@ const createStyles = (colors) => {
         noresult_text: {
             fontSize: 18,
             fontFamily: fonts.regular,
-            color: colors.text
+            color: colors.text_C2
         }
     })
 }
-export { createStyles }
+
+
+export default createStyles

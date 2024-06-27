@@ -11,9 +11,8 @@ const createStyles = (colors) => {
         },
         container: {
             flex: 1,
-            paddingLeft: 10,
-            paddingRight: 10,
-            backgroundColor: colors.background
+            backgroundColor: colors.background,
+            position:'relative'
         },
         banner: {
             width: '100%',
@@ -28,6 +27,11 @@ const createStyles = (colors) => {
             width: '100%',
             height: '100%',
             objectFit: 'cover'
+        },
+        lineargradient:{
+            position:'absolute',
+            width:'100%',
+            height:200,
         }
     })
 }

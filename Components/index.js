@@ -11,6 +11,8 @@ import {VerticalList} from './Home';
 import AllTracks from './AllTracks/AllTracks';
 import ErrorPage from './Error/Error';
 import SpinnerPage from './Spinner/Spinner';
+import { TrackSearch } from './AllTracks';
+import { MiniPlayer,LargePlayer } from './Player';
 
 export {
   Home,
@@ -22,5 +24,8 @@ export {
   Loading,
   AllTracks,
   ErrorPage,
-  SpinnerPage
+  SpinnerPage,
+  TrackSearch,
+  MiniPlayer,
+  LargePlayer
 };

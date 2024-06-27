@@ -29,7 +29,7 @@ const createStyles = (colors) => {
         btn_text: {
             fontSize: 10,
             fontFamily: fonts.regular,
-            color: '#b8b8b8'
+            color: colors.desc
         }
     })
 

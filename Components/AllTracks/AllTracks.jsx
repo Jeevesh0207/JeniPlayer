@@ -9,11 +9,12 @@ import React, {
 import {View, Text, TouchableOpacity, FlatList, Animated} from 'react-native';
 import {createStyles} from './StyleAllTracks';
 import {Image} from 'expo-image';
-import { useTheme } from '../../Theme/ThemeContext';
+import {useTheme} from '../../Theme/ThemeContext';
 import he from 'he';
 import {
   BackSvg,
   HeartOutlineSvg,
+  OneBarMenuSvg,
   PlayFillSvg,
   SearchSvg,
   ThreeDotSvg,
@@ -21,7 +22,12 @@ import {
 import {useNavigation} from '@react-navigation/native';
 import {useSelector} from 'react-redux';
 import {useQuery, gql} from '@apollo/client';
-import {ErrorPage, SpinnerPage} from '../index';
+// import { ErrorPage,SpinnerPage } from '../index';
+import Error from '../Error/Error';
+import Spinner from '../Spinner/Spinner';
+
+import {getColors} from 'react-native-image-colors';
+import LinearGradient from 'react-native-linear-gradient';
 
 //! ------------OUTER FUNCIONS ---------------
 
@@ -56,10 +62,10 @@ const Box = memo(({item, styles, colors}) => (
     </View>
     <View style={[styles.makealigncenter, styles.song_right]}>
       <View style={[styles.makecenter, styles.song_download_box]}>
-        <HeartOutlineSvg color={colors.text} size={22} />
+        <HeartOutlineSvg color={colors.desc} size={22} />
       </View>
       <View style={[styles.makecenter, styles.song_three_dot]}>
-        <ThreeDotSvg color={colors.text} size={20} />
+        <OneBarMenuSvg color={colors.desc} size={32} />
       </View>
     </View>
   </View>
@@ -78,8 +84,8 @@ const SongType = {
 
 const AllTracks = () => {
   const navigation = useNavigation();
-  const {theme} = useTheme()
-  const {colors} = theme
+  const {theme} = useTheme();
+  const {colors} = theme;
   const styles = useMemo(() => createStyles(colors), [colors]);
   const {token, type} = useSelector(state => state.getTrackListID);
 
@@ -106,6 +112,8 @@ const AllTracks = () => {
     }
   `;
 
+  const [randomcolors, setrandomColors] = useState(null);
+
   const {loading, error, data} = useQuery(typedef, {
     variables: {token: token, type: type},
   });
@@ -123,10 +131,21 @@ const AllTracks = () => {
     }
   }, [data]);
 
+  useEffect(() => {
+    const currentUrl = trackData?.image || null;
+    if (currentUrl !== null) {
+      getColors(currentUrl, {
+        fallback: colors.background_C1,
+        cache: true,
+        key: currentUrl,
+      }).then(setrandomColors);
+    }
+  }, [trackData]);
+
   const handleScroll = useCallback(
     event => {
       const offsetY = event.nativeEvent.contentOffset.y;
-      if (offsetY >= mainHeight - 10) {
+      if (offsetY >= mainHeight - 50) {
         Animated.parallel([
           Animated.timing(fadeAnim, {
             toValue: 1,
@@ -174,13 +193,13 @@ const AllTracks = () => {
             setMainHeight(y);
           }}>
           <TouchableOpacity style={[styles.makecenter, styles.option_heart]}>
-            <HeartOutlineSvg color={colors.dodgerBlueDark} size={22} />
+            <HeartOutlineSvg color={colors.text} size={25} />
           </TouchableOpacity>
           <TouchableOpacity style={[styles.makecenter, styles.option_play]}>
-            <PlayFillSvg color={colors.dodgerBlueDark} size={22} />
+            <PlayFillSvg color={colors.text} size={20} />
           </TouchableOpacity>
           <TouchableOpacity style={[styles.makecenter, styles.option_threedot]}>
-            <ThreeDotSvg color={colors.dodgerBlueDark} size={22} />
+            <ThreeDotSvg color={colors.text} size={20} />
           </TouchableOpacity>
         </View>
         <View style={[styles.makealigncenter, styles.track_title_box]}>
@@ -211,12 +230,23 @@ const AllTracks = () => {
 
   const keyExtractor = useCallback(item => item.id.toString(), []);
 
-  if (loading) return <SpinnerPage color={colors.dodgerBlueDark} size={60} />;
+  if (loading) return <Spinner color={colors.solidcolor} size={60} />;
 
-  if (error) return <ErrorPage error_msg={error?.message} />;
+  if (error) return <Error error_msg={error?.message} />;
 
   return (
-    <>
+    <View style={styles.outercontainer}>
+      <LinearGradient
+        colors={[
+          randomcolors?.dominant || colors.background,
+          'transparent',
+        ]}
+        style={[
+          styles.lineargradient,
+          isHeadNavRelative && {display:'none'},
+        ]}
+        pointerEvents="none"
+      />
       <View
         style={[
           styles.head_nav,
@@ -228,7 +258,7 @@ const AllTracks = () => {
               navigation.goBack();
             }}
             style={[styles.makecenter, styles.back_btn]}>
-            <BackSvg color={colors.dodgerBlueDark} size={30} />
+            <BackSvg color={colors.solidcolor} size={30} />
           </TouchableOpacity>
         </View>
         <Animated.View
@@ -251,8 +281,14 @@ const AllTracks = () => {
           />
         </Animated.View>
         <View style={[styles.makecenter, styles.search_box]}>
-          <TouchableOpacity style={[styles.makecenter, styles.search_btn]}>
-            <SearchSvg color={colors.dodgerBlueDark} size={30} />
+          <TouchableOpacity
+            onPress={() => {
+              navigation.navigate('tracksearch', {
+                tracks: trackData.songs,
+              });
+            }}
+            style={[styles.makecenter, styles.search_btn]}>
+            <SearchSvg color={colors.solidcolor} size={30} />
           </TouchableOpacity>
         </View>
       </View>
@@ -272,7 +308,7 @@ const AllTracks = () => {
           index,
         })}
       />
-    </>
+    </View>
   );
 };
 

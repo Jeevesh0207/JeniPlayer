@@ -18,7 +18,7 @@ const createStyles = (colors) => {
             justifyContent: 'space-between',
             backgroundColor:colors.background,
             paddingLeft:10,
-            paddingRight:10
+            paddingRight:10,
         },
         home_nav_left: {
             width: 200,
@@ -35,7 +35,7 @@ const createStyles = (colors) => {
             width: 40,
             height: 40,
             backgroundColor: '#fff',
-            shadowColor: colors.dodgerBlueDeep,
+            shadowColor: colors.bordercolor,
             elevation: 3,
             borderRadius: 30
         },
@@ -58,16 +58,14 @@ const createStyles = (colors) => {
         username: {
             fontSize: 13,
             marginLeft: 8,
-            fontFamily: fonts.medium,
-            color: 'gray',
+            fontFamily: fonts.book,
+            color: colors.desc,
         },
         search_icon_box: {
             width: 38,
             aspectRatio: 1,
-            backgroundColor: '#fff',
+            backgroundColor: colors.background,
             borderRadius: 5,
-            shadowColor: colors.dodgerBlueDeep,
-            elevation: 3
         }
     })
 }

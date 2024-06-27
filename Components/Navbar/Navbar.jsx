@@ -8,11 +8,12 @@ import {useTheme} from '../../Theme/ThemeContext';
 const Navbar = () => {
   const Navigation = useNavigation();
   const {theme} = useTheme();
-  const styles = useMemo(() => createStyles(theme.colors), [theme.colors]);
+  const {colors} = theme
+  const styles = useMemo(() => createStyles(colors), [colors]);
 
   const [activeIndex, setActiveIndex] = useState(0);
-  const activeColor = theme.colors.dodgerBlueDeep;
-  const inactiveColor = theme.colors.text;
+  const activeColor = colors.iconactive;
+  const inactiveColor = colors.iconinactive;
 
   const MenuList = [
     {
