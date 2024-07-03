@@ -22,7 +22,7 @@ const TopNav = () => {
         </View>
         <View style={styles.name_box}>
           <Text style={styles.logo_text}>Welcome Back !</Text>
-          <Text style={styles.username}>Jeevesh Rai</Text>
+          <Text style={styles.username}>Guest</Text>
         </View>
       </View>
       <View style={[styles.makecenter, styles.home_nav_right]}>

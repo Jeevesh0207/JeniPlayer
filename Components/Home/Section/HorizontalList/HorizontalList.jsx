@@ -22,6 +22,7 @@ const Box = memo(({item, module_template, GoToAllTracks, styles}) => (
         style={styles.poster}
         source={{uri: replace150with500(item?.image) || ''}}
         contentPosition={'top center'}
+        onLoad={()=>{}}
         alt="poster"
         onError={error => console.log('Image failed to load', error)}
       />

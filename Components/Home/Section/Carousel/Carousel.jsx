@@ -36,17 +36,10 @@ const CarouselContainer = () => {
           alt="jpg"
         />
         <LinearGradient
-          // colors={[
-          //   'transparent',
-          //   `${colors?.bannerlinear}`,
-          //   `${colors?.background_C1}`,
-          // ]}
-          // locations={[0, 0.5, 1]}
           colors={[
             'transparent',
             `${colors?.slidergradient}`,
           ]}
-          // locations={[0, 0.5, 1]}
           style={styles.lineargradient}
           pointerEvents="none"
         />

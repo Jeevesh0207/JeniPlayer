@@ -11,8 +11,8 @@ const createStyles = (colors) => {
         },
         container: {
             flex: 1,
-            backgroundColor: colors.background,
-            position:'relative'
+            backgroundColor:colors.background,
+            position:'relative',
         },
         banner: {
             width: '100%',

@@ -49,6 +49,17 @@ const LightTheme = {
         "iconinactive": "#64B5F6",
         "slidergradient": "#FFFFFF"
     },
+    "midnight": {
+        "background": "#E6F7FF",
+        "text": "#000033",
+        "desc": "#666699",
+        "bordercolor": "#B0D9FF",
+        "solidcolor": "#1E90FF",
+        "iconactive": "#1E90FF",
+        "iconinactive": "#99BBFF",
+        "slidergradient": "#E6F7FF"
+    },
+    
 }
 
 export default LightTheme

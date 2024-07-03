@@ -30,7 +30,7 @@ const createStyles = (colors) =>{
             flex: 1,
             paddingLeft: 10,
             paddingRight: 10,
-            backgroundColor: colors.background_C1
+            backgroundColor: colors.background
         },
         head: {
             width: '100%',
@@ -43,7 +43,7 @@ const createStyles = (colors) =>{
         head_title_text: {
             fontSize: 18,
             fontFamily: fonts.book,
-            color: colors.text_C2
+            color: colors.text
         },
         back_box: {
             width: 40,
@@ -54,10 +54,7 @@ const createStyles = (colors) =>{
         back_btn: {
             width: 38,
             aspectRatio: 1,
-            // backgroundColor: '#fff',
             borderRadius: 5,
-            // shadowColor: colors.solidcolor_C1,
-            // elevation: 3
 
         },
         search_box: {
@@ -70,7 +67,7 @@ const createStyles = (colors) =>{
             marginTop: 5,
             marginBottom: 10,
             borderWidth: 1,
-            borderColor:colors.borders_C3
+            borderColor:colors.bordercolor
         },
         search_input_box: {
             width: '85%',
@@ -79,8 +76,8 @@ const createStyles = (colors) =>{
         search_input: {
             width: '100%',
             height: '100%',
-            backgroundColor: colors.background_C1,
-            color: colors.text_C2,
+            backgroundColor: colors.background,
+            color: colors.text,
             paddingLeft: 10,
             letterSpacing: 0.4,
             fontFamily: fonts.book
@@ -88,7 +85,7 @@ const createStyles = (colors) =>{
         search_icon_box: {
             width: '15%',
             height: '100%',
-            backgroundColor: colors.background_C1,
+            // backgroundColor: colors.background_C1,
         },
         song_box: {
             width: '100%',
@@ -118,13 +115,13 @@ const createStyles = (colors) =>{
         song_details_title: {
             fontSize: 12,
             fontFamily: fonts.book,
-            color: colors.text_C2
+            color: colors.text
         },
         song_details_desc: {
             fontSize: 11,
             fontFamily: fonts.regular,
             marginTop: 5,
-            color: colors.text_NC1
+            color: colors.desc
         },
         song_right: {
             gap: gap - 6
@@ -145,7 +142,7 @@ const createStyles = (colors) =>{
         noresult_text: {
             fontSize: 18,
             fontFamily: fonts.regular,
-            color: colors.text_C2
+            color: colors.text
         }
     })
 }

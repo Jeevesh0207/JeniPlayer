@@ -49,7 +49,17 @@ const DarkTheme = {
         "iconinactive": "#BBDEFB",
         "slidergradient": '#121212'
     },
-
+    "midnight": {
+        "background": "#000033",
+        "text": "#FFFFFF",
+        "desc": "#CCCCFF",
+        "bordercolor": "#000066",
+        "solidcolor": "#1E90FF",
+        "iconactive": "#1E90FF",
+        "iconinactive": "#666699",
+        "slidergradient": "#000033"
+    },
+    
 
 }
 

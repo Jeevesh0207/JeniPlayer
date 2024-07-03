@@ -15,7 +15,7 @@ const createStyles = (colors) => {
             width: '100%',
             height: 220,
             paddingLeft:10,
-            paddingRight:10
+            paddingRight:10,
         },
         head: {
             width: '100%',

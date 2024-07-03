@@ -3,6 +3,7 @@ import { useColorScheme } from 'react-native';
 import { DefaultTheme as PaperDefaultTheme, MD2DarkTheme as PaperDarkTheme } from 'react-native-paper';
 import LightTheme from './LightTheme';
 import DarkTheme from './DarkTheme';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const ThemeContext = createContext();
 
@@ -10,6 +11,25 @@ export const ThemeProvider = ({ children }) => {
   const systemScheme = useColorScheme();
   const [theme, setTheme] = useState(systemScheme);
   const [type,setType] = useState("default")
+
+  const getData = async (key) => {
+    try {
+      const Value = await AsyncStorage.getItem(key);
+      return Value != null ? JSON.parse(Value) : null;
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  useEffect(()=>{
+    async function getThemeType() {
+      const data = await getData('modetype');
+      if (data !== null) {
+        setType(data)
+      }
+    }
+    getThemeType();
+  },[])
 
   const lightTheme = useMemo(() => ({
     ...PaperDefaultTheme,
@@ -33,8 +53,18 @@ export const ThemeProvider = ({ children }) => {
     setTheme(prevTheme => (prevTheme === 'dark' ? 'light' : 'dark'));
   };
 
-  const toggleType = (type) =>{
+  const storeData = async (value, key) => {
+    try {
+      const Value = JSON.stringify(value);
+      await AsyncStorage.setItem(key, Value);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const toggleType = async(type) =>{
     setType(type)
+    await storeData(type,'modetype')
   }
 
   return (

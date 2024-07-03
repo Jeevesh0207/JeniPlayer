@@ -62,7 +62,7 @@ const createStyles = (colors) => {
         back_btn: {
             width: 38,
             aspectRatio: 1,
-            backgroundColor: colors.background,
+            // backgroundColor: colors.background,
             borderRadius: 5,
 
         },
@@ -81,7 +81,7 @@ const createStyles = (colors) => {
         search_btn: {
             width: 38,
             aspectRatio: 1,
-            backgroundColor: colors.background,
+            // backgroundColor: colors.background,
             borderRadius: 5,
 
         },
@@ -169,7 +169,17 @@ const createStyles = (colors) => {
             width: 50,
             aspectRatio: 1,
             borderRadius: 3,
-            overflow: 'hidden'
+            overflow: 'hidden',
+            position:'relative'
+        },
+        song_animated_box:{
+            position:'absolute',
+            top:0,
+            bottom:0,
+            left:0,
+            right:0,
+            zIndex:1,
+            backgroundColor:'rgba(0,0,0,0.8)'
         },
         song_image: {
             width: '100%',

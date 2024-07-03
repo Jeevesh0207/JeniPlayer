@@ -1,20 +1,20 @@
 import {combineReducers } from '@reduxjs/toolkit';
-import getImageData from './fetch' 
-import UploadData from "./uploadData"
 
 import LaunchData from './LaunchData';
 import VerticalListData from './VerticalListData';
 import TrackListID from './TrackListID';
 import Theme from './Theme';
 
-const rootReducer = combineReducers({
-    getImage:getImageData,
-    getUploadData:UploadData,
+import TrackPlayerData from './TrackPlayerData';
+import LyricsData from './LyricsData';
 
+const rootReducer = combineReducers({
     getLaunchData:LaunchData,
     getVerticalListData:VerticalListData,
     getTrackListID:TrackListID,
-    getTheme:Theme
+    getTheme:Theme,
+    getTrackPlayerData:TrackPlayerData,
+    getLyricsData:LyricsData
 });
 
 export default rootReducer;

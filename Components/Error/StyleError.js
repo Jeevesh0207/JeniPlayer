@@ -23,7 +23,7 @@ const createStyles =  (colors) =>{
             paddingRight: 10
         },
         error_text: {
-            fontSize: 16,
+            fontSize: 14,
             fontFamily: fonts.regular,
             marginTop: 10,
             textAlign: 'center',
@@ -41,8 +41,8 @@ const createStyles =  (colors) =>{
         error_btn: {
             width: 100,
             height: 40,
-            backgroundColor: colors.dodgerBlueDark,
-            borderRadius: 3
+            backgroundColor: colors.iconinactive,
+            borderRadius: 3,
         },
         error_btn_report: {
             backgroundColor: '#8B0000'
@@ -50,7 +50,7 @@ const createStyles =  (colors) =>{
         error_btn_text: {
             fontSize: 14,
             fontFamily: fonts.regular,
-            color:'#fff'
+            color:colors.text
         }
     })
 

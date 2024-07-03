@@ -11,7 +11,8 @@ const Outerpadding = 6
 const gap = 6
 const FixHeight = playerBoxHeight - 2 * Outerpadding
 const IconWidth = 35
-const DetailBoxWidth = (width * 0.95) - (2 * Outerpadding) - (3 * gap) - FixHeight - 2 * IconWidth - 6
+const MarginRightofPlay = 5
+const DetailBoxWidth = (width * 0.95) - (2 * Outerpadding) - (3 * gap) - FixHeight - 3 * IconWidth - 6 - MarginRightofPlay
 
 const createStyles = (colors) => {
     return StyleSheet.create({
@@ -32,7 +33,7 @@ const createStyles = (colors) => {
             bottom: 75,
             backgroundColor: 'transparent',
             paddingLeft:3,
-            paddingRight:3
+            paddingRight:3,
         },
         outerplayerbox: {
             width: '95%',
@@ -40,8 +41,8 @@ const createStyles = (colors) => {
             flexDirection: 'column',
             backgroundColor: colors.background,
             borderRadius: 6,
-            overflow: 'hidden',
-            alignItems: 'center'
+            alignItems: 'center',
+            overflow:'hidden'
         },
         playerbox: {
             width: '100%',
@@ -54,22 +55,48 @@ const createStyles = (colors) => {
         poster_box: {
             width: FixHeight,
             height: FixHeight,
-            backgroundColor: "pink",
-            borderRadius: 4
+            borderRadius: 4,
+            overflow:'hidden'
         },
         detailbox: {
             width: DetailBoxWidth,
             height: FixHeight,
             justifyContent: 'center'
         },
+        song_image: {
+            width: '100%',
+            height: '100%'
+        },
         title: {
             fontSize: 12,
             fontFamily: fonts.book,
-            marginBottom: 4
+            marginBottom: 4,
+            color:colors.text
         },
         desc: {
             fontSize: 11,
-            fontFamily: fonts.regular
+            fontFamily: fonts.regular,
+            color:colors.desc
+        },
+        volumebox:{
+            width: IconWidth,
+            height: FixHeight,
+        },
+        volumesliderbox:{
+           position:'absolute',
+           bottom:50,
+           width:40,
+           height:120,
+           backgroundColor:colors.desc,
+           alignItems:'center',
+           justifyContent:'center',
+           paddingTop:20,
+           paddingBottom:20,
+           borderRadius:10
+        },
+        volumeslider:{
+            width:'85%',
+            height:'100%',
         },
         fav_box: {
             width: IconWidth,
@@ -78,11 +105,12 @@ const createStyles = (colors) => {
         playpausebox: {
             width: IconWidth,
             height: FixHeight,
+            marginRight:MarginRightofPlay,
         },
         progressbox: {
-            width: '100%',
+            width: '95%',
             height: 3,
-            justifyContent:'flex-end',
+            justifyContent:'center',
             alignItems:'center',
             position:'absolute',
             bottom:0,
@@ -91,11 +119,14 @@ const createStyles = (colors) => {
         },
         progressbar: {
             width: '100%',
-            height: 3,
-            zIndex:1,
-            marginLeft:-10,
-            marginRight:-10,
-            transform:[{scaleY:1.1}]
+        },
+        lineargradient:{
+            position:'absolute',
+            top:0,
+            left:0,
+            right:0,
+            bottom:0,
+            alignItems:'center'
         }
     })
 }

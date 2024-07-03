@@ -1,84 +1,102 @@
-import {useMemo, useState, useCallback, memo} from 'react';
-import {View, Text, TouchableOpacity, TextInput, FlatList} from 'react-native';
+import { useMemo, useState, useCallback, memo } from 'react';
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  TextInput,
+  FlatList
+} from 'react-native';
 import createStyles from './StyleTrackSearch';
-import {useTheme} from '../../../Theme/ThemeContext';
+import { useTheme } from '../../../Theme/ThemeContext';
 import {
   BackSvg,
   SearchSvg,
   HeartOutlineSvg,
   OneBarMenuSvg,
   NoDataSvg,
-  CloseSvg,
+  CloseSvg
 } from '../../../Svg';
-import {useNavigation} from '@react-navigation/native';
-import {Image} from 'expo-image';
+import { useNavigation } from '@react-navigation/native';
+import { Image } from 'expo-image';
 import he from 'he';
+import { useDispatch, useSelector } from 'react-redux';
+import { addOneSong } from '../../../constants';
 
-const Box = memo(({item, styles, colors}) => (
-  <View style={[styles.makealigncenter, styles.song_box]}>
+const Box = memo(({ item, styles, colors, dispatch }) => (
+  <TouchableOpacity
+    onPress={() => {
+      addOneSong(item, dispatch);
+    }}
+    style={[styles.makealigncenter, styles.song_box]}
+  >
     <View style={[styles.makealigncenter, styles.song_left]}>
       <View style={styles.song_image_box}>
         <Image
           style={styles.song_image}
-          source={{uri: item.image || ''}}
+          source={{ uri: item.image || '' }}
           contentPosition={'top center'}
           alt="poster"
-          onError={error => console.log('Image failed to load', error)}
+          onError={(error) => console.log('Image failed to load', error)}
         />
       </View>
       <View style={styles.song_details_box}>
         <Text
           style={styles.song_details_title}
           numberOfLines={1}
-          ellipsizeMode="tail">
+          ellipsizeMode="tail"
+        >
           {decodeHtmlEntities(item.title)}
         </Text>
         <Text
           style={styles.song_details_desc}
           numberOfLines={1}
-          ellipsizeMode="tail">
+          ellipsizeMode="tail"
+        >
           {item.desc}
         </Text>
       </View>
     </View>
     <View style={[styles.makealigncenter, styles.song_right]}>
       <View style={[styles.makecenter, styles.song_download_box]}>
-        <HeartOutlineSvg color={colors.text_C2} size={22} />
+        <HeartOutlineSvg color={colors.desc} size={22} />
       </View>
       <View style={[styles.makecenter, styles.song_three_dot]}>
-        <OneBarMenuSvg color={colors.text_C2} size={32} />
+        <OneBarMenuSvg color={colors.desc} size={32} />
       </View>
     </View>
-  </View>
+  </TouchableOpacity>
 ));
-const decodeHtmlEntities = html => he.decode(html);
+const decodeHtmlEntities = (html) => he.decode(html);
 
-const TrackSearch = ({route}) => {
+const TrackSearch = ({ route }) => {
   const navigation = useNavigation();
-  const {theme} = useTheme();
-  const {colors} = theme;
+  const dispatch = useDispatch();
+  const { theme } = useTheme();
+  const { colors } = theme;
   const styles = useMemo(() => createStyles(colors), [colors]);
   const [query, setQuery] = useState('');
-  const {tracks} = route.params;
-
+  const { tracks } = route.params;
+  const { isDisplay } = useSelector((state) => state.getTrackPlayerData);
   const renderBox = useCallback(
-    ({item}) => <Box item={item} styles={styles} colors={colors} />,
-    [styles, colors],
+    ({ item }) => (
+      <Box item={item} styles={styles} colors={colors} dispatch={dispatch} />
+    ),
+    [styles, colors, dispatch]
   );
 
   const filterResult = useMemo(
     () =>
-      tracks.filter(song =>
-        song.title.toLowerCase().includes(query.toLowerCase()),
+      tracks.filter((song) =>
+        song.title.toLowerCase().includes(query.toLowerCase())
       ),
-    [tracks, query],
+    [tracks, query]
   );
 
-  const ClearQuery = () =>{
-    setQuery('')
-  }
+  const ClearQuery = () => {
+    setQuery('');
+  };
 
-  const keyExtractor = useCallback(item => item.id.toString(), []);
+  const keyExtractor = useCallback((item) => item.id.toString(), []);
 
   return (
     <View style={styles.container}>
@@ -87,8 +105,9 @@ const TrackSearch = ({route}) => {
           <TouchableOpacity
             onPress={() => navigation.goBack()}
             style={[styles.makecenter, styles.back_btn]}
-            accessibilityLabel="Go back">
-            <BackSvg color={colors.solidcolor_C1} size={30} />
+            accessibilityLabel="Go back"
+          >
+            <BackSvg color={colors.solidcolor} size={30} />
           </TouchableOpacity>
         </View>
         <View style={[styles.makecenter, styles.head_title_box]}>
@@ -109,10 +128,10 @@ const TrackSearch = ({route}) => {
         </View>
         <View style={[styles.makecenter, styles.search_icon_box]}>
           {query === '' ? (
-            <SearchSvg color={colors.solidcolor_C1} size={30} />
+            <SearchSvg color={colors.solidcolor} size={30} />
           ) : (
             <TouchableOpacity onPress={ClearQuery}>
-                <CloseSvg color={colors.solidcolor_C1} size={30} />
+              <CloseSvg color={colors.solidcolor} size={30} />
             </TouchableOpacity>
           )}
         </View>
@@ -128,8 +147,11 @@ const TrackSearch = ({route}) => {
           getItemLayout={(data, index) => ({
             length: 60,
             offset: 60 * index,
-            index,
+            index
           })}
+          contentContainerStyle={{
+            paddingBottom: isDisplay ? 70 : 0
+          }}
         />
       ) : filterResult.length > 0 ? (
         <FlatList
@@ -142,12 +164,15 @@ const TrackSearch = ({route}) => {
           getItemLayout={(data, index) => ({
             length: 60,
             offset: 60 * index,
-            index,
+            index
           })}
+          contentContainerStyle={{
+            paddingBottom: isDisplay ? 70 : 0
+          }}
         />
       ) : (
         <View style={styles.noresult_container}>
-          <NoDataSvg color={colors.solidcolor_C1} size={70} />
+          <NoDataSvg color={colors.solidcolor} size={70} />
           <Text style={styles.noresult_text}>No Data Found</Text>
         </View>
       )}

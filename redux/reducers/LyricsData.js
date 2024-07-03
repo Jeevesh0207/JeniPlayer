@@ -1,35 +1,35 @@
 import * as type from '../types';
 
 const initialState = {
-    img: "",
-    loading: false,
-    error: null,
+    "data": {},
+    "loading": false,
+    "error": null
 }
 
-export default function getImageData(state = initialState, action) {
+export default function LyricsData(state = initialState, action) {
     switch (action.type) {
-        case type.GET_FETCH_REQUESTED:
+        case type.FETCH_LYRICS:
             return {
                 ...state,
-                img: "",
+                data: {},
                 loading: true,
                 error: null
             }
-        case type.GET_FETCH_SUCCESS:
+        case type.FETCH_LYRICS_SUCCESS || type.SET_LYRICS:
             return {
                 ...state,
-                img: action.data,
+                data: action.data,
                 loading: false,
                 error: null
             }
-        case type.GET_FETCH_FAILED:
+        case type.FETCH_LYRICS_FAILED:
             return {
                 ...state,
-                img: "",
+                data: {},
                 loading: false,
-                error: action.message,
+                error: action.message
             }
         default:
-            return state
+            return state;
     }
 }
