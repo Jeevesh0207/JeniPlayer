@@ -1,29 +1,33 @@
-import { useMemo, useState, useCallback, memo } from 'react';
 import {
-  View,
   Text,
-  TouchableOpacity,
+  View,
   TextInput,
+  TouchableOpacity,
   FlatList,
-  Modal
+  Modal,
+  ActivityIndicator
 } from 'react-native';
-import createStyles from './StyleTrackSearch';
-import { useTheme } from '../../../Theme/ThemeContext';
+import React, { memo, useCallback, useEffect, useState, useMemo } from 'react';
+import { createStyles } from './StyleSearch';
+import { useTheme } from '../../Theme/ThemeContext';
 import {
-  BackSvg,
   SearchSvg,
+  CloseSvg,
   HeartOutlineSvg,
   OneBarMenuSvg,
-  NoDataSvg,
-  CloseSvg
-} from '../../../Svg';
+  AnimatedPlaySong,
+  NoDataSvg
+} from '../../Svg';
 import { useNavigation } from '@react-navigation/native';
+import { useDispatch, useSelector } from 'react-redux';
+import ThreeBar from '../AllTracks/ThreeBar';
+import { useQuery, gql } from '@apollo/client';
 import { Image } from 'expo-image';
 import he from 'he';
-import { useDispatch, useSelector } from 'react-redux';
-import { addInQueue } from '../../../constants';
-import ThreeBar from '../ThreeBar';
-import { GestureHandlerRootView } from 'react-native-gesture-handler';
+
+import Spinner from '../Spinner/Spinner';
+import Error from '../Error/Error';
+import { addInQueue } from '../../constants';
 
 const Box = memo(
   ({
@@ -31,23 +35,30 @@ const Box = memo(
     styles,
     colors,
     dispatch,
-    tracks,
-    setThreeBarData,
-    setModalVisible
+    trackData,
+    currentTrackId,
+    setModalVisible,
+    setThreeBarData
   }) => (
     <TouchableOpacity
       onPress={() => {
-        addInQueue(tracks, item, dispatch);
+        addInQueue(trackData?.songs, item, dispatch);
       }}
       style={[styles.makealigncenter, styles.song_box]}
     >
       <View style={[styles.makealigncenter, styles.song_left]}>
         <View style={styles.song_image_box}>
+          {currentTrackId === item.id && (
+            <View style={[styles.makecenter, styles.song_animated_box]}>
+              <AnimatedPlaySong color={colors.solidcolor} size={30} />
+            </View>
+          )}
           <Image
             style={styles.song_image}
-            source={{ uri: item.image || '' }}
+            source={{ uri: item?.image || '' }}
             contentPosition={'top center'}
             alt="poster"
+            onLoad={() => {}}
             onError={(error) => console.log('Image failed to load', error)}
           />
         </View>
@@ -73,7 +84,8 @@ const Box = memo(
           <HeartOutlineSvg color={colors.desc} size={22} />
         </View>
         <TouchableOpacity
-          onPress={() => {
+          onPress={(e) => {
+            e.stopPropagation();
             setThreeBarData(item);
             setModalVisible(true);
           }}
@@ -85,21 +97,115 @@ const Box = memo(
     </TouchableOpacity>
   )
 );
+
 const decodeHtmlEntities = (html) => he.decode(html);
 
-const TrackSearch = ({ route }) => {
+const typedef = gql`
+  query GET_DEFAULT_SEARCH {
+    getSearchTemplate {
+      id
+      title
+      type
+      desc
+      image
+      songs {
+        id
+        title
+        type
+        desc
+        image
+        album
+        artist
+        duration
+        downloadUrl {
+          url
+          quality
+        }
+      }
+    }
+  }
+`;
+
+const searchtypedef = gql`
+  query GET_SEARCH($query: String) {
+    getSearch(query: $query) {
+      id
+      title
+      type
+      desc
+      image
+      album
+      artist
+      duration
+      downloadUrl {
+        url
+        quality
+      }
+    }
+  }
+`;
+
+const Search = () => {
   const navigation = useNavigation();
   const dispatch = useDispatch();
   const { theme } = useTheme();
   const { colors } = theme;
   const styles = useMemo(() => createStyles(colors), [colors]);
+
   const [query, setQuery] = useState('');
-  const { tracks } = route.params;
+  const [defaultTrackList, setDefaultTrackList] = useState([]);
+  const [currentTrackId, setCurrentTrackId] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
   const [ThreeBarData, setThreeBarData] = useState(null);
-  const { isDisplay, currentTrack } = useSelector(
+  const [refreshing, setRefreshing] = useState(false);
+  const [searchresult, setSeatchResult] = useState(null);
+
+  const { loading, error, data, refetch } = useQuery(typedef);
+
+  const {
+    loading: searchloading,
+    error: searcherror,
+    data: searchdata
+  } = useQuery(searchtypedef, {
+    variables: {
+      query: query
+    }
+  });
+
+  const { currentTrack, isDisplay } = useSelector(
     (state) => state.getTrackPlayerData
   );
+
+  useEffect(() => {
+    if (data && defaultTrackList.length === 0) {
+      setDefaultTrackList(data['getSearchTemplate']);
+    }
+  }, [data, defaultTrackList]);
+
+  useEffect(() => {
+    if (currentTrack !== null) {
+      setCurrentTrackId(currentTrack?.songId);
+    }
+  }, [currentTrack]);
+
+  useEffect(() => {
+    if (searchdata !== null && searchdata?.getSearch.length) {
+      setSeatchResult(searchdata.getSearch);
+    }
+  }, [searchdata]);
+
+  //   useEffect(() => {
+  //     async function queryRefresh() {
+  //       if (query) {
+  //         refetch();
+  //         if (searchdata !== null && searchdata?.getSearch.length) {
+  //           setSeatchResult(searchdata.getSearch);
+  //         }
+  //       }
+  //     }
+  //     queryRefresh();
+  //   }, [query, refetch]);
+
   const renderBox = useCallback(
     ({ item }) => (
       <Box
@@ -107,45 +213,39 @@ const TrackSearch = ({ route }) => {
         styles={styles}
         colors={colors}
         dispatch={dispatch}
-        tracks={tracks}
-        currentTrack={currentTrack}
-        setThreeBarData={setThreeBarData}
+        trackData={defaultTrackList}
+        currentTrackId={currentTrackId}
         setModalVisible={setModalVisible}
+        setThreeBarData={setThreeBarData}
       />
     ),
-    [styles, colors, dispatch]
+    [styles, colors, dispatch, currentTrackId, defaultTrackList]
   );
 
-  const filterResult = useMemo(
-    () =>
-      tracks.filter((song) =>
-        song.title.toLowerCase().includes(query.toLowerCase())
-      ),
-    [tracks, query]
-  );
+  const keyExtractor = useCallback((item) => item.id.toString(), []);
 
   const ClearQuery = () => {
     setQuery('');
   };
 
-  const keyExtractor = useCallback((item) => item.id.toString(), []);
+  const refresh = async () => {
+    try {
+      setRefreshing(true);
+      await refetch();
+    } catch (error) {
+      console.error('Refetch error:', error);
+    } finally {
+      setRefreshing(false);
+    }
+  };
+
+  if (loading || refreshing)
+    return <Spinner color={colors.solidcolor} size={60} />;
+
+  if (error) return <Error error_msg={error?.message} refresh={refresh} />;
 
   return (
-    <GestureHandlerRootView style={styles.container}>
-      <View style={[styles.makecenter, styles.head]}>
-        <View style={[styles.makecenter, styles.back_box]}>
-          <TouchableOpacity
-            onPress={() => navigation.goBack()}
-            style={[styles.makecenter, styles.back_btn]}
-            accessibilityLabel="Go back"
-          >
-            <BackSvg color={colors.solidcolor} size={30} />
-          </TouchableOpacity>
-        </View>
-        <View style={[styles.makecenter, styles.head_title_box]}>
-          {/* <Text style={styles.head_title_text}>Track</Text> */}
-        </View>
-      </View>
+    <View style={styles.container}>
       <View style={styles.search_box}>
         <View style={styles.search_input_box}>
           <TextInput
@@ -168,9 +268,9 @@ const TrackSearch = ({ route }) => {
           )}
         </View>
       </View>
-      {query == '' ? (
+      {query === '' ? (
         <FlatList
-          data={tracks || []}
+          data={defaultTrackList.songs || []}
           renderItem={renderBox}
           keyExtractor={keyExtractor}
           initialNumToRender={12}
@@ -178,17 +278,19 @@ const TrackSearch = ({ route }) => {
           scrollEventThrottle={16}
           keyboardShouldPersistTaps="handled"
           getItemLayout={(data, index) => ({
-            length: 60,
-            offset: 60 * index,
+            length: 70,
+            offset: 70 * index,
             index
           })}
           contentContainerStyle={{
             paddingBottom: isDisplay ? 70 : 0
           }}
         />
-      ) : filterResult.length > 0 ? (
+      ) : searchloading ? (
+        <ActivityIndicator color={colors.solidcolor} />
+      ) :  (searchresult?.length > 0) ? (
         <FlatList
-          data={filterResult || []}
+          data={searchresult || []}
           renderItem={renderBox}
           keyExtractor={keyExtractor}
           initialNumToRender={12}
@@ -196,8 +298,8 @@ const TrackSearch = ({ route }) => {
           scrollEventThrottle={16}
           keyboardShouldPersistTaps="handled"
           getItemLayout={(data, index) => ({
-            length: 60,
-            offset: 60 * index,
+            length: 70,
+            offset: 70 * index,
             index
           })}
           contentContainerStyle={{
@@ -206,7 +308,7 @@ const TrackSearch = ({ route }) => {
         />
       ) : (
         <View style={styles.noresult_container}>
-          <NoDataSvg color={colors.solidcolor} size={70} />
+          <NoDataSvg color={colors.solidcolor_C1} size={70} />
           <Text style={styles.noresult_text}>No Data Found</Text>
         </View>
       )}
@@ -219,11 +321,11 @@ const TrackSearch = ({ route }) => {
         <ThreeBar
           setModalVisible={setModalVisible}
           ThreeBarData={ThreeBarData}
-          trackData={tracks}
+          trackData={query !== '' ? searchresult : defaultTrackList.songs}
         />
       </Modal>
-    </GestureHandlerRootView>
+    </View>
   );
 };
 
-export default TrackSearch;
+export default Search;

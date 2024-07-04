@@ -80,6 +80,62 @@ const typeDefs = gql`
       desc
       image
     }
+    getMoodRomance: getPlaylistByMood(query: "Romance") {
+      id
+      title
+      token
+      type
+      desc
+      image
+    }
+    getMoodSad: getPlaylistByMood(query: "Sad") {
+      id
+      title
+      token
+      type
+      desc
+      image
+    }
+    getMoodDance: getPlaylistByMood(query: "Dance") {
+      id
+      title
+      token
+      type
+      desc
+      image
+    }
+    getMoodWorkout: getPlaylistByMood(query: "Workout") {
+      id
+      title
+      token
+      type
+      desc
+      image
+    }
+    getMoodParty: getPlaylistByMood(query: "Party") {
+      id
+      title
+      token
+      type
+      desc
+      image
+    }
+    getMoodDevotional: getPlaylistByMood(query: "Devotional") {
+      id
+      title
+      token
+      type
+      desc
+      image
+    }
+    getMoodKpop: getPlaylistByMood(query: "k-pop") {
+      id
+      title
+      token
+      type
+      desc
+      image
+    }
   }
 `;
 
@@ -87,12 +143,14 @@ const MainComponent = () => {
   const dispatch = useDispatch();
   const { loading, error, data } = useQuery(typeDefs);
   const [keyboardStatus, setKeyboardStatus] = useState(false);
-  const { isDisplay, isReady } = useSelector(state => state.getTrackPlayerData);
+  const { isDisplay, isReady } = useSelector(
+    (state) => state.getTrackPlayerData
+  );
 
   useEffect(() => {
     const setup = async () => {
       const isSetup = await setupPlayer();
-      dispatch(setTrackData(isSetup, 'status'));
+      dispatch(setTrackData({ isReady: isSetup }));
     };
     setup();
   }, [dispatch]);
@@ -128,17 +186,20 @@ const MainComponent = () => {
 
   useEffect(() => {
     const getStorageData = async () => {
-      const data = await getData('TrackData');
-      const lyrics = await getData('currentLyrics')
-      if (data && isReady && lyrics) {
-        await TrackPlayer.reset();
-        await TrackPlayer.setQueue(data.queue);
-        await TrackPlayer.add(data.currentTrack);
-        dispatch(fetchLyrics(lyrics, 'setLyrics'))
-        dispatch(setTrackData(true, 'display'));
-        dispatch(setTrackData(data, 'addTrack'));
-        console.log(data?.currentTrack?.id)
-        dispatch(setTrackData(data?.currentTrack?.id, 'addTrackIndex'));
+      const { queue, currentTrack, currentTrackIndex } = await getData(
+        'TrackData'
+      );
+      if (currentTrack && isReady && queue) {
+        await TrackPlayer.add(queue);
+        await TrackPlayer.skip(currentTrackIndex);
+        const Obj = {
+          isDisplay: true,
+          queue: queue,
+          currentTrack: currentTrack,
+          currentTrackIndex: currentTrackIndex,
+          songStatus: true
+        };
+        dispatch(setTrackData(Obj));
       }
     };
     getStorageData();
@@ -162,27 +223,42 @@ const MainComponent = () => {
         <Stack.Screen
           name="home"
           component={Home}
-          options={{ presentation: 'fullScreenModal', animation: 'simple_push' }}
+          options={{
+            presentation: 'fullScreenModal',
+            animation: 'simple_push'
+          }}
         />
         <Stack.Screen
           name="search"
           component={Search}
-          options={{ presentation: 'fullScreenModal', animation: 'simple_push' }}
+          options={{
+            presentation: 'fullScreenModal',
+            animation: 'simple_push'
+          }}
         />
         <Stack.Screen
           name="library"
           component={Library}
-          options={{ presentation: 'fullScreenModal', animation: 'simple_push' }}
+          options={{
+            presentation: 'fullScreenModal',
+            animation: 'simple_push'
+          }}
         />
         <Stack.Screen
           name="profile"
           component={Profile}
-          options={{ presentation: 'fullScreenModal', animation: 'simple_push' }}
+          options={{
+            presentation: 'fullScreenModal',
+            animation: 'simple_push'
+          }}
         />
         <Stack.Screen
           name="alllist"
           component={VerticalList}
-          options={{ presentation: 'fullScreenModal', animation: 'slide_from_bottom' }}
+          options={{
+            presentation: 'fullScreenModal',
+            animation: 'slide_from_bottom'
+          }}
         />
         <Stack.Screen
           name="tracks"
@@ -192,10 +268,13 @@ const MainComponent = () => {
         <Stack.Screen
           name="tracksearch"
           component={TrackSearch}
-          options={{ presentation: 'fullScreenModal', animation: 'slide_from_bottom' }}
+          options={{
+            presentation: 'fullScreenModal',
+            animation: 'slide_from_bottom'
+          }}
         />
       </Stack.Navigator>
-      {isDisplay && <MiniPlayer />}
+      {isDisplay && !keyboardStatus && <MiniPlayer />}
       {!keyboardStatus && <Navbar />}
     </>
   );

@@ -50,12 +50,17 @@ const Box = memo(
     styles,
     colors,
     dispatch,
+    trackData,
     currentTrackId,
     setModalVisible,
     setThreeBarData
   }) => (
-    <Pressable
-      onPress={() => addOneSong(item, dispatch)}
+    <TouchableOpacity
+      onPress={() => {
+        {
+            addInQueue(trackData?.songs,item, dispatch)
+        }
+      }}
       style={[styles.makealigncenter, styles.song_box]}
     >
       <View style={[styles.makealigncenter, styles.song_left]}>
@@ -106,7 +111,7 @@ const Box = memo(
           <OneBarMenuSvg color={colors.desc} size={32} />
         </TouchableOpacity>
       </View>
-    </Pressable>
+    </TouchableOpacity>
   )
 );
 
@@ -116,7 +121,7 @@ const SongType = {
   album: 'getAlbumByToken',
   artist: 'getRadioByToken',
   playlist: 'getPlaylistByToken',
-  song: 'getSongByToken'
+  song: 'getSongByToken',
 };
 
 //! ------------COMPONENT START ---------------
@@ -253,7 +258,7 @@ const AllTracks = () => {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              addInQueue(trackData?.songs, dispatch);
+              addInQueue(trackData?.songs,trackData?.songs[0], dispatch);
             }}
             style={[styles.makecenter, styles.option_play]}
           >
@@ -294,12 +299,13 @@ const AllTracks = () => {
         colors={colors}
         dispatch={dispatch}
         songStatus={songStatus}
+        trackData={trackData}
         currentTrackId={currentTrackId}
         setModalVisible={setModalVisible}
         setThreeBarData={setThreeBarData}
       />
     ),
-    [styles, colors, dispatch, currentTrackId]
+    [styles, colors, dispatch, currentTrackId,trackData]
   );
 
   const keyExtractor = useCallback((item) => item.id.toString(), []);
@@ -393,7 +399,7 @@ const AllTracks = () => {
         transparent={true}
         onRequestClose={() => setModalVisible(false)}
       >
-        <ThreeBar setModalVisible={setModalVisible} ThreeBarData={ThreeBarData}/>
+        <ThreeBar setModalVisible={setModalVisible} ThreeBarData={ThreeBarData} trackData={trackData.songs}/>
       </Modal>
     </View>
   );

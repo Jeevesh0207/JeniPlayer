@@ -12,33 +12,12 @@ const initialState = {
 export default function TrackPlayerData(state = initialState, action) {
 
     switch (action.type) {
-        case type.SET_TRACK_STATUS:
+        case type.SET_TRACK_PLAYER_DATA:
             return {
                 ...state,
-                isReady: action.data
+                ...action.data
             }
-        case type.SET_TRACK_DISPLAY:
-            return {
-                ...state,
-                isDisplay: action.data
-            }
-        case type.SET_TRACK_QUEUE_AND_CURRENT:
-            return {
-                ...state,
-                queue: action.data.queue,
-                currentTrack: action.data.currentTrack,
-                currentTrackIndex: action.data.index
-            }
-        case type.SET_TRACK_INDEX:
-            return {
-                ...state,
-                currentTrackIndex: action.data
-            }
-        case type.SET_TRACK_PLAY_STATUS:
-            return {
-                ...state,
-                songStatus: action.data
-            }
+        
         default:
             return state;
     }

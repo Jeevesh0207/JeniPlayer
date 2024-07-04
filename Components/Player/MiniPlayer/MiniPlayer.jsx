@@ -32,7 +32,7 @@ import { setVolume } from 'react-native-track-player/lib/src/trackPlayer';
 import { useSelector } from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useDispatch } from 'react-redux';
-import { setTrackData, fetchLyrics } from '../../../redux/actions';
+import { setTrackData } from '../../../redux/actions';
 
 const decodeHtmlEntities = (html) => he.decode(html);
 
@@ -51,7 +51,6 @@ const MiniPlayer = () => {
   const progress = useProgress();
   const [currentTime, setCurrentTime] = useState(progress.position);
 
-
   const { queue, currentTrack, currentTrackIndex, songStatus } = useSelector(
     (state) => state.getTrackPlayerData
   );
@@ -61,15 +60,15 @@ const MiniPlayer = () => {
   const CheckPlayBackState = useCallback(async () => {
     const event = await TrackPlayer.getPlaybackState();
     switch (event.state) {
-      case 'buffering':
+      case 'buffering' || 'loading':
         setSpinner(true);
         break;
       case 'playing':
-        dispatch(setTrackData(true, 'setTrackPlayStatus'));
+        dispatch(setTrackData({ songStatus: true }));
         setSpinner(false);
         break;
       default:
-        dispatch(setTrackData(false, 'setTrackPlayStatus'));
+        dispatch(setTrackData({ songStatus: false }));
         setSpinner(false);
         break;
     }
@@ -99,24 +98,29 @@ const MiniPlayer = () => {
     getImageColor();
   }, [getImageColor, currentTrackIndex]);
 
+  const storeData = async (value, key) => {
+    try {
+      const Value = JSON.stringify(value);
+      await AsyncStorage.setItem(key, Value);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const handleTrackChange = useCallback(
     (event) => {
-      const index = event?.track?.id;
+      const index = event.index;
       const Obj = {
+        isDisplay: true,
         queue: queue,
-        currentTrack: event.track
+        currentTrack: queue[index],
+        currentTrackIndex: index,
+        songStatus: true
       };
-
+      dispatch(setTrackData(Obj));
       storeData(Obj, 'TrackData');
-      dispatch(setTrackData(Obj, 'addTrack'));
-      dispatch(setTrackData(index, 'addTrackIndex'));
-
-      console.log(Obj.currentTrack)
-      console.log("INDEX : ",index)
-
       if (index !== null && index !== undefined && flatListRef.current) {
         const dataLength = flatListRef.current.props.data.length;
-        console.log(index)
         if (index >= 0 && index < dataLength) {
           flatListRef.current.scrollToIndex({
             index: index,
@@ -132,23 +136,6 @@ const MiniPlayer = () => {
       } else {
         console.log(`flatListRef.current not ready...`);
       }
-
-
-      const cleanString = (str) => str?.replace(/[^\w\s]/g, '') ?? '';
-      const artistName = cleanString(event?.track?.singleartist);
-      const trackName = cleanString(event?.track?.title);
-      const albumName = cleanString(event?.track?.album);
-
-      const url = `https://lrclib.net/api/search?artist_name=${artistName}&album_name=${albumName}&track_name=${trackName}`;
-
-      const lyricsData={
-        url:encodeURI(url),
-        name:event?.track?.title ?? "",
-        artistName:event?.track?.artist ?? "",
-        albumName:event?.track?.album
-      }
-
-      dispatch(fetchLyrics(lyricsData));
     },
     [queue, dispatch]
   );
@@ -162,11 +149,11 @@ const MiniPlayer = () => {
           setSpinner(true);
           break;
         case 'playing':
-          dispatch(setTrackData(true, 'setTrackPlayStatus'));
+          dispatch(setTrackData({ songStatus: true }));
           setSpinner(false);
           break;
         default:
-          dispatch(setTrackData(false, 'setTrackPlayStatus'));
+          dispatch(setTrackData({ songStatus: false }));
           setSpinner(false);
           break;
       }
@@ -180,22 +167,13 @@ const MiniPlayer = () => {
     setCurrentTime(progress.position);
   }, [progress.position]);
 
-  const storeData = async (value, key) => {
-    try {
-      const Value = JSON.stringify(value);
-      await AsyncStorage.setItem(key, Value);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
   const togglePlayPauseBtn = useCallback(async () => {
     if (songStatus) {
       TrackPlayer.pause();
-      dispatch(setTrackData(false, 'setTrackPlayStatus'));
+      dispatch(setTrackData({ songStatus: false }));
     } else {
       TrackPlayer.play();
-      dispatch(setTrackData(true, 'setTrackPlayStatus'));
+      dispatch(setTrackData({ songStatus: true }));
     }
   }, [songStatus, dispatch]);
 

@@ -16,10 +16,14 @@ import {
 const decodeHtmlEntities = (html) => he.decode(html);
 
 const replace150with500 = (url) => url?.replace('150x150', '500x500') || url;
+import { useDispatch } from 'react-redux';
 
-const ThreeBar = ({setModalVisible,ThreeBarData}) => {
+import { addInQueue } from '../../constants';
+
+const ThreeBar = ({setModalVisible,ThreeBarData,trackData}) => {
   const { theme } = useTheme();
   const { colors } = theme;
+  const dispatch = useDispatch()
   const styles = useMemo(() => createThreeStyles(colors), [colors]);
   return (
     <View style={styles.maincontainer}>
@@ -46,12 +50,15 @@ const ThreeBar = ({setModalVisible,ThreeBarData}) => {
           </View>
         </View>
         <View style={styles.optionscontainer}>
-          <View style={[styles.makealigncenter, styles.rowbox]}>
+          <TouchableOpacity 
+          onPress={()=>addInQueue(trackData,ThreeBarData,dispatch)}
+          style={[styles.makealigncenter, styles.rowbox]}
+          >
             <View style={[styles.makecenter, styles.rowbannerbox]}>
               <PlayOutlineSvg size={18} color={colors.solidcolor} />
             </View>
             <Text style={styles.rowtext}>Play Now</Text>
-          </View>
+          </TouchableOpacity>
           <View style={[styles.makealigncenter, styles.rowbox]}>
             <View style={[styles.makecenter, styles.rowbannerbox]}>
               <HeartOutlineSvg size={20} color={colors.solidcolor} />
@@ -64,7 +71,7 @@ const ThreeBar = ({setModalVisible,ThreeBarData}) => {
             </View>
             <Text style={styles.rowtext}>Add to Playlist</Text>
           </View>
-          <View style={[styles.makealigncenter, styles.rowbox]}>
+          {/* <View style={[styles.makealigncenter, styles.rowbox]}>
             <View style={[styles.makecenter, styles.rowbannerbox]}>
               <AddInQueueSvg size={21} color={colors.solidcolor} />
             </View>
@@ -75,7 +82,7 @@ const ThreeBar = ({setModalVisible,ThreeBarData}) => {
               <PlayAsNextSvg size={21} color={colors.solidcolor} />
             </View>
             <Text style={styles.rowtext}>Play Next</Text>
-          </View>
+          </View> */}
           <View style={[styles.makealigncenter, styles.rowbox]}>
             <View style={[styles.makecenter, styles.rowbannerbox]}>
               <DownloadSvg size={22} color={colors.solidcolor} />

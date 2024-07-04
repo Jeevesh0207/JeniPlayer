@@ -12,7 +12,7 @@ import {ThemeProvider, useTheme} from './Theme/ThemeContext';
 //https://jeniplayerbackend.vercel.app/graphql
 //http://192.168.68.120:8000/graphql
 const client = new ApolloClient({
-  uri: 'http://192.168.1.102:8000/graphql',
+  uri: 'http://192.168.3.120:8000/graphql',
   cache: new InMemoryCache(),
 });
 

@@ -57,6 +57,7 @@ function Carousel({
     const isNoMansLand = 0.4 < distance;
 
     if (roundIndex !== indexRef.current && !isNoMansLand) {
+      console.log(roundIndex)
       setIndex(roundIndex);
       OnMoveSlideSetSong(roundIndex);
     }

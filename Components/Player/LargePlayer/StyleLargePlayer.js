@@ -10,7 +10,7 @@ const IconBoxWidth = 100
 const gap = 10
 const SongDetailWidth = width - 4 * 10 - 100 - gap
 
-const LyricsTextBox = 50 + 3 * 2 // (3*2 margin)
+const LyricsTextBox = 50 + 3 * 2  // (3*2 margin)
 
 const LyricsContainerHeight = LyricsTextBox * 5 
 
@@ -195,15 +195,16 @@ const createStyles = (colors) => {
         },
         lyricsbox: {
             width: '100%',
-            height: 400,
-            marginBottom: 20,
+            height: 350,
+            // marginBottom: 20,
             marginTop: 20,
             paddingLeft: 10,
-            paddingRight: 10
+            paddingRight: 10,
+            position:'relative'
         },
         lyricscontainer:(color)=>({
             width: '100%',
-            height: 400,
+            height: 330,
             backgroundColor: '#1f1f1f',
             borderRadius: 10,
             overflow: 'hidden',
@@ -241,30 +242,17 @@ const createStyles = (colors) => {
           minHeight:40,
           marginTop:3,
           marginBottom:3,
-          paddingLeft:10,
-          paddingRight:10  
+          paddingLeft:15,
+          paddingRight:15 
         },
         lyricstext:{
             fontFamily:fonts.regular,
-            fontSize:15,
+            fontSize:16,
         },
-        showmorebox:{
-            width:'100%',
-            height:70,
-            paddingLeft:10,
+        lyricspressable:{
+            margin:0,
+            padding:0,
         },
-        showmorebtn:{
-            width:100,
-            height:35,
-            backgroundColor:colors.background,
-            borderRadius:20,
-            
-        },
-        showmoretext:{
-            color:colors.text,
-            fontFamily:fonts.book,
-            fontSize:12
-        }
     })
 }
 

@@ -1,4 +1,4 @@
-import React, { useMemo, useState, useEffect } from 'react';
+import React, { useMemo, useState, useEffect, useRef } from 'react';
 import {
   View,
   Text,
@@ -6,7 +6,8 @@ import {
   Dimensions,
   ScrollView,
   ActivityIndicator,
-  Modal
+  Modal,
+  Pressable
 } from 'react-native';
 import { useTheme } from '../../../Theme/ThemeContext';
 import createStyles from './StyleLargePlayer';
@@ -26,15 +27,14 @@ import {
   ThreeBarMenuSvg
 } from '../../../Svg';
 
-const width = Dimensions.get('window').width;
 import he from 'he';
 import LinearGradient from 'react-native-linear-gradient';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchLyrics } from '../../../redux/actions';
+import { setTrackData } from '../../../redux/actions';
 import Carousel from './MyCarousal';
 import translate from 'translate';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import QueueList from '../Queue/QueueList';
+import { gql, useQuery } from '@apollo/client';
 
 const decodeHtmlEntities = (html) => he.decode(html);
 
@@ -51,13 +51,43 @@ const LargePlayer = ({
   const { colors } = theme;
   const styles = useMemo(() => createStyles(colors), [colors]);
   const dispatch = useDispatch();
-  const [modalQueueVisible, setModalQueueVisible] = useState(false);
   const { queue, currentTrack, currentTrackIndex } = useSelector(
     (state) => state.getTrackPlayerData
   );
   const [lyrics, setLyrics] = useState(null);
-  const { loading, data, error } = useSelector((state) => state.getLyricsData);
   const [currentTime, setCurrentTime] = useState(progress.position);
+
+  const typedef = gql`
+    query GET_LYRICS(
+      $query: String
+      $trackName: String
+      $artistName: String
+      $albumName: String
+    ) {
+      getLyricsByQuery(
+        query: $query
+        trackName: $trackName
+        artistName: $artistName
+        albumName: $albumName
+      ) {
+        text
+        time
+      }
+    }
+  `;
+
+  const {
+    loading: lyricsLoading,
+    error: lyricsError,
+    data: lyricsData
+  } = useQuery(typedef, {
+    variables: {
+      query: currentTrack?.title,
+      trackName: '',
+      artistName: currentTrack?.singleartist,
+      albumName: ''
+    }
+  });
 
   function formatTime(seconds) {
     let mins = parseInt(seconds / 60)
@@ -74,14 +104,28 @@ const LargePlayer = ({
     return minutes * 60 + seconds;
   }
 
+  const storeData = async (value, key) => {
+    try {
+      const Value = JSON.stringify(value);
+      await AsyncStorage.setItem(key, Value);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   const OnMoveSlideSetSong = async (index) => {
     try {
-      if (index === 0) {
-        await TrackPlayer.skipToPrevious()
-      } else {
-        await TrackPlayer.skip(index);
-      }
+      await TrackPlayer.skip(index);
       await TrackPlayer.play();
+      const Obj = {
+        isDisplay: true,
+        queue: queue,
+        currentTrack: queue[index],
+        currentTrackIndex: index,
+        songStatus: true
+      };
+      dispatch(setTrackData(Obj));
+      storeData(Obj, 'TrackData');
     } catch (error) {
       console.log('Failed to change track', error);
     }
@@ -93,6 +137,15 @@ const LargePlayer = ({
     try {
       await TrackPlayer.skip(nextIndex);
       await TrackPlayer.play();
+      const Obj = {
+        isDisplay: true,
+        queue: queue,
+        currentTrack: queue[nextIndex],
+        currentTrackIndex: nextIndex,
+        songStatus: true
+      };
+      dispatch(setTrackData(Obj));
+      storeData(Obj, 'TrackData');
     } catch (error) {
       console.log('Failed to skip to next track', error);
     }
@@ -108,16 +161,27 @@ const LargePlayer = ({
     try {
       await TrackPlayer.skip(prevIndex);
       await TrackPlayer.play();
+      const Obj = {
+        isDisplay: true,
+        queue: queue,
+        currentTrack: queue[prevIndex],
+        currentTrackIndex: prevIndex,
+        songStatus: true
+      };
+      dispatch(setTrackData(Obj));
+      storeData(Obj, 'TrackData');
     } catch (error) {
       console.log('Failed to skip to previous track', error);
     }
   };
 
   useEffect(() => {
-    if (data !== null) {
-      setLyrics(data);
+    if (!lyricsLoading && !lyricsError) {
+      setLyrics(lyricsData['getLyricsByQuery']);
+    } else {
+      setLyrics(null);
     }
-  }, [data]);
+  }, [lyricsData]);
 
   useEffect(() => {
     setCurrentTime(progress.position);
@@ -145,7 +209,6 @@ const LargePlayer = ({
             <TouchableOpacity
               style={[styles.makecenter, styles.threedotbtn]}
               accessibilityLabel="Menu"
-              onPress={() => setModalQueueVisible(true)}
             >
               <ThreeBarMenuSvg
                 color={colors.solidcolor}
@@ -251,62 +314,68 @@ const LargePlayer = ({
                 <RepeatSvg color={colors.solidcolor} size={25} />
               </TouchableOpacity>
             </View>
-            {lyrics && Array.isArray(lyrics) && !loading && error === null && (
-              <View style={styles.lyricsbox}>
-                <View
-                  style={styles.lyricscontainer(
-                    randomcolors?.vibrant || colors.background
-                  )}
-                >
-                  <View style={styles.lyricsheadbox}>
-                    <Text style={styles.lyricsheadtext}>Lyrics Preview</Text>
-                  </View>
-                  <ScrollView
-                    style={styles.lyrictextconatiner}
-                    showsVerticalScrollIndicator={false}
+            {lyrics &&
+              Array.isArray(lyrics) &&
+              !lyricsLoading &&
+              !lyricsError && (
+                <View style={styles.lyricsbox}>
+                  <View
+                    style={styles.lyricscontainer(
+                      randomcolors?.vibrant || colors.background
+                    )}
                   >
-                    {lyrics?.map((item, index) => (
-                      <View
-                        style={[styles.makecolalign, styles.lyricstextbox]}
-                        key={index}
-                      >
-                        <Text
-                          style={[
-                            styles.lyricstext,
-                            {
-                              color: currentTime >= timeToSeconds(item.time) - 1 &&
-                                (lyrics[index + 1] ? currentTime < timeToSeconds(lyrics[index + 1].time) - 1 : true)
-                                ? '#fff'
-                                : colors.iconinactive
-                            }
-                          ]}
-                        >
-                          {item.text}
-                        </Text>
-                      </View>
-                    ))}
-                  </ScrollView>
-                  <View style={[styles.makecolalign, styles.showmorebox]}>
-                    <TouchableOpacity
-                      style={[styles.makecenter, styles.showmorebtn]}
+                    <View style={styles.lyricsheadbox}>
+                      <Text style={styles.lyricsheadtext}>Lyrics Preview</Text>
+                    </View>
+                    <ScrollView
+                      style={styles.lyrictextconatiner}
+                      showsVerticalScrollIndicator={false}
+                      nestedScrollEnabled={true}
                     >
-                      <Text style={styles.showmoretext}>Show More</Text>
-                    </TouchableOpacity>
+                      {lyrics?.map((item, index) => (
+                        <View
+                          style={[styles.makecolalign, styles.lyricstextbox]}
+                          key={index}
+                        >
+                          <Pressable
+                            onPress={async () => {
+                              await TrackPlayer.seekTo(
+                                timeToSeconds(item.time)
+                              );
+                              await TrackPlayer.play();
+                            }}
+                            style={styles.lyricspressable}
+                          >
+                            <Text
+                              style={[
+                                styles.lyricstext,
+                                {
+                                  color:
+                                    currentTime >=
+                                      timeToSeconds(item.time) - 1 &&
+                                    (lyrics[index + 1]
+                                      ? currentTime <
+                                        timeToSeconds(lyrics[index + 1].time) -
+                                          1
+                                      : true)
+                                      ? '#fff'
+                                      : colors.iconinactive
+                                }
+                              ]}
+                            >
+                              {item.text}
+                            </Text>
+                          </Pressable>
+                        </View>
+                      ))}
+                      <View></View>
+                    </ScrollView>
                   </View>
                 </View>
-              </View>
-            )}
+              )}
           </ScrollView>
         </GestureHandlerRootView>
       </LinearGradient>
-      <Modal
-        visible={modalQueueVisible}
-        animationType="slide"
-        transparent={true}
-        onRequestClose={() => setModalQueueVisible(false)}
-      >
-        <QueueList setModalQueueVisible={setModalQueueVisible} />
-      </Modal>
     </GestureHandlerRootView>
   );
 };

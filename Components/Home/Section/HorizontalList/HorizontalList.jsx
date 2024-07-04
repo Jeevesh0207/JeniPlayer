@@ -71,6 +71,34 @@ const SongType = [
     module_name: 'English Playlist',
     module_template: 'topPlaylistEnglish',
   },
+  {
+    module_name: 'Romance',
+    module_template: 'getMoodRomance',
+  },
+  {
+    module_name: 'Sad',
+    module_template: 'getMoodSad',
+  },
+  {
+    module_name: 'Dance',
+    module_template: 'getMoodDance',
+  },
+  {
+    module_name: 'Workout',
+    module_template: 'getMoodWorkout',
+  },
+  {
+    module_name: 'Party',
+    module_template: 'getMoodParty',
+  },
+  {
+    module_name: 'Devotional',
+    module_template: 'getMoodDevotional',
+  },
+  {
+    module_name: 'K-pop',
+    module_template: 'getMoodKpop',
+  },
 ];
 
 //! ------------COMPONENT START ---------------

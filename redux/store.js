@@ -8,8 +8,8 @@ const sagaMiddleware = createSagaMiddleware();
 const store = configureStore({
   reducer: rootReducer,
   middleware: (getDefaultMiddleware) => getDefaultMiddleware({
+    immutableCheck: false,
     serializableCheck: false,
-    immutableStateInvariant:false
   }).concat(sagaMiddleware),
 });
 

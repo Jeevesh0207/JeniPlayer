@@ -26,7 +26,7 @@ const createThreeStyles = (colors) => {
         },
         container:{
             width:'100%',
-            height:450,
+            height:380,
             backgroundColor:colors.background,
             borderRadius:5,
             marginBottom:10
@@ -74,7 +74,7 @@ const createThreeStyles = (colors) => {
         },
         optionscontainer:{
             width:'100%',
-            height:270,
+            height:190,
             marginTop:18
         },
         rowbox:{

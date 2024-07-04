@@ -1,12 +1,10 @@
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import TrackPlayer from "react-native-track-player";
-import { setTrackData,fetchLyrics } from "../../redux/actions";
-import { addTracks } from '../../trackPlayerServices';
-import { isEqual } from 'lodash';
+import TrackPlayer from 'react-native-track-player';
+import { setTrackData, fetchLyrics } from '../../redux/actions';
+
 import {
-    getQueue,
-    load,
     setQueue,
+    skip
 } from 'react-native-track-player/lib/src/trackPlayer';
 
 const storeData = async (value, key) => {
@@ -18,77 +16,40 @@ const storeData = async (value, key) => {
     }
 };
 
+const addInQueue = async (trackData, currentTrack, dispatch) => {
 
-const addOneSong = async (list,dispatch) => {
-    const currentTrack = await TrackPlayer.getActiveTrack()
-    const Track = {
-        id: 0,
-        url: list.downloadUrl[2].url,
-        artwork: list.image,
-        title: list.title,
-        artist: list.desc,
-        album:list.album,
-        image: list.image,
-        singleartist:list.artist,
-        duration: list.duration,
-        songId:list.id
-    };
-
-    if (isEqual(Track, currentTrack)) return;
-    const Obj = {
-        queue: [Track],
-        currentTrack: Track,
-    };
-    dispatch(setTrackData(true, 'display'));
-    dispatch(setTrackData(Obj, 'addTrack'));
-    dispatch(setTrackData(0, 'addTrackIndex'));
-
-    storeData(Obj, 'TrackData')
-
-    await TrackPlayer.reset();
-    await addTracks([Track]);
-    await TrackPlayer.play();
-};
-
-
-
-const addInQueue = async (list,dispatch )=> {
     try {
-        dispatch(setTrackData(true, 'display'));
-        const currentQueue = await getQueue();
-        const formattedData = list.map((item, index) => ({
+        const formattedData = trackData.map((item, index) => ({
             id: index,
             url: item.downloadUrl[2].url,
             artwork: item.image,
             title: item.title,
             artist: item.desc,
-            album:item.album,
+            album: item.album,
             image: item.image,
-            singleartist:item.artist,
+            singleartist: item.artist,
             duration: item.duration,
-            songId:item.id
+            songId: item.id
         }));
 
-        if (isEqual(formattedData, currentQueue)) return;
-
-        console.log('Queues are different, updating the queue.');
+        const currentTrackIndex = formattedData.findIndex(item => item.songId === currentTrack.id);
 
         const Obj = {
+            isDisplay: true,
             queue: formattedData,
-            currentTrack: formattedData[0],
+            currentTrack: formattedData[currentTrackIndex],
+            currentTrackIndex: currentTrackIndex,
+            songStatus: true
         };
-
-        dispatch(setTrackData(Obj, 'addTrack'));
-        dispatch(setTrackData(0, 'addTrackIndex'));
-        storeData(Obj, 'TrackData')
+        dispatch(setTrackData(Obj));
+        storeData(Obj, 'TrackData');
 
         await setQueue(formattedData);
-        await load(formattedData[0]);
+        await skip(currentTrackIndex);
         await TrackPlayer.play();
     } catch (error) {
         console.error('Error adding to queue:', error);
     }
 };
 
-
-export { addInQueue, addOneSong }
+export { addInQueue};
