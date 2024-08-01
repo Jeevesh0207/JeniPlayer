@@ -40,7 +40,7 @@
 ## 📥 Download
 [<img src="https://github.com/machiav3lli/oandbackupx/blob/034b226cea5c1b30eb4f6a6f313e4dadcbb0ece4/badge_github.png"
     alt="Get it on GitHub"
-    height="80">](https://github.com/Jeevesh0207/Melody_Music_App/releases/tag/v.1.0.0)
+    height="80">](https://github.com/Jeevesh0207/JeniPlayer/releases/tag/v.1.0.0)
 
 ## 📢 Disclaimer
 This project and its contents are not affiliated with, funded, authorized, endorsed by, or in any way associated with Jio Saavn, Google LLC or any of its affiliates and subsidiaries.
