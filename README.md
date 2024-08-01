@@ -1,7 +1,8 @@
 <div align="center">
     <img src="./Pictures/logo.png" width="128" height="128" style="display: block; margin: 0 auto"/>
     <h1>🎵 Jeni Player 🎶</h1>
-    <p>Welcome to Jeni Player – your ultimate music companion on Android! Dive into a world of endless melodies, perfectly tailored to suit every mood and moment. 🎧✨</p>
+    <h3>Welcome to Jeni Player </h3> 
+    <p> Your ultimate music companion on Android! Dive into a world of endless melodies, perfectly tailored to suit every mood and moment. 🎧✨</p>
 </div>
 
 ---
