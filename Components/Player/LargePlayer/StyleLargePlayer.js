@@ -89,8 +89,6 @@ const createStyles = (colors) => {
             width: 300,
             height: 300,
             borderRadius: 5,
-            // overflow: 'hidden',
-            backgroundColor:'orange',
             zIndex:1,
         },
         carousel: {

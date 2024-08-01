@@ -7,14 +7,15 @@ import {
   useWindowDimensions,
   FlatList
 } from 'react-native';
-import { Image } from 'expo-image';
 import { createStyles } from './StyleVerticalList';
+import LinearGradient from 'react-native-linear-gradient';
 import { BackSvg, SearchSvg, NoDataSvg, CloseSvg } from '../../../../Svg';
 import { useNavigation } from '@react-navigation/native';
 import { useSelector, useDispatch } from 'react-redux';
 import { setTrackListID } from '../../../../redux/actions';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import { useTheme } from '../../../../Theme/ThemeContext';
+import { Image,Skeleton } from '@rneui/themed';
 
 //! ------------OUTER FUNCIONS ---------------
 const minCols = 3;
@@ -40,13 +41,26 @@ const Box = memo(
     >
       <View>
         <View style={styles.image_box(module_template)}>
-          <Image
-            style={styles.poster}
-            source={{ uri: replace150with500(item?.image) || '' }}
-            contentPosition={'top center'}
-            alt="poster"
-            onError={(error) => console.log('Image failed to load', error)}
-          />
+          {item?.image && (
+            <Image
+              style={styles.poster}
+              PlaceholderContent={
+                <Skeleton
+                  width={'100%'}
+                  height={'100%'}
+                  LinearGradientComponent={LinearGradient}
+                  animation="wave"
+                />
+              }
+              source={{
+                uri: replace150with500(item?.image) || ''
+              }}
+              contentPosition={'top center'}
+              alt="poster"
+              transition={true}
+              onError={(error) => console.log('Image failed to load', error)}
+            />
+          )}
         </View>
         <Text
           style={styles.title(module_template)}

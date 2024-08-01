@@ -7,3 +7,11 @@ export * from './setTrackData'
 export * from './fetchLyrics'
 
 export * from './setActiveNav'
+
+export * from "./setUserData"
+
+export * from "./setSongState"
+
+export * from "./setFetchTrack"
+
+export * from "./setFavouriteSong"

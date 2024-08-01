@@ -42,7 +42,7 @@ const createStyles = (colors) => {
             marginTop: 15,
             marginBottom: 10,
             borderWidth: 1,
-            borderColor:colors.bordercolor
+            borderColor:colors.iconactive
         },
         search_input_box: {
             width: '85%',
@@ -178,7 +178,16 @@ const createStyles = (colors) => {
             fontSize: 18,
             fontFamily: fonts.regular,
             color: colors.text
-        }
+        },
+        song_animated_box:{
+            position:'absolute',
+            top:0,
+            bottom:0,
+            left:0,
+            right:0,
+            zIndex:1,
+            backgroundColor:'rgba(0,0,0,0.8)'
+        },
         
     })
 }

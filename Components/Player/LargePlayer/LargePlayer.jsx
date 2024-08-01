@@ -17,6 +17,7 @@ import TrackPlayer from 'react-native-track-player';
 import {
   BackSvg,
   DownloadSvg,
+  HeartFillSvg,
   HeartOutlineSvg,
   NextSongSvg,
   PauseSvg,
@@ -30,11 +31,13 @@ import {
 import he from 'he';
 import LinearGradient from 'react-native-linear-gradient';
 import { useDispatch, useSelector } from 'react-redux';
-import { setTrackData } from '../../../redux/actions';
+import { setTrackData, setSongState } from '../../../redux/actions';
 import Carousel from './MyCarousal';
-import translate from 'translate';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { gql, useQuery } from '@apollo/client';
+import Toast from 'react-native-toast-message';
+import { getPermission } from '../../../downloadPermission';
+import { StatusBar } from 'react-native';
 
 const decodeHtmlEntities = (html) => he.decode(html);
 
@@ -45,7 +48,8 @@ const LargePlayer = ({
   progress,
   isSpinner,
   randomcolors,
-  flatListRef
+  flatListRef,
+  addtofavourite
 }) => {
   const { theme } = useTheme();
   const { colors } = theme;
@@ -56,7 +60,9 @@ const LargePlayer = ({
   );
   const [lyrics, setLyrics] = useState(null);
   const [currentTime, setCurrentTime] = useState(progress.position);
-
+  const { isShuffle, isRepeat } = useSelector((state) => state.getSongState);
+  const { songsArrayId } = useSelector((state) => state.getFavouriteSong);
+  const modalToastRef = React.useRef();
   const typedef = gql`
     query GET_LYRICS(
       $query: String
@@ -175,6 +181,32 @@ const LargePlayer = ({
     }
   };
 
+  const toggleShuffle = () => {
+    dispatch(
+      setSongState({
+        isShuffle: !isShuffle,
+        isRepeat: false
+      })
+    );
+  };
+
+  const toggleRepeat = () => {
+    dispatch(
+      setSongState({
+        isShuffle: false,
+        isRepeat: !isRepeat
+      })
+    );
+  };
+
+  const toggleDownload = async () => {
+    const trackInfo = await TrackPlayer.getActiveTrack();
+    // console.log(trackInfo);
+    const filenamewithext = trackInfo.title + '.mp3'
+    const fileurl = trackInfo.url
+    getPermission(filenamewithext,fileurl)
+  };
+
   useEffect(() => {
     if (!lyricsLoading && !lyricsError) {
       setLyrics(lyricsData['getLyricsByQuery']);
@@ -194,6 +226,12 @@ const LargePlayer = ({
         style={styles.lineargradient}
         locations={[0, 0.5]}
       >
+        <StatusBar backgroundColor={randomcolors?.vibrant || 'transparent'} />
+        <View style={{
+          zIndex:100,
+        }}>
+        <Toast ref={modalToastRef} />
+        </View>
         <View style={[styles.makecenter, styles.head]}>
           <View style={[styles.makecenter, styles.back_box]}>
             <TouchableOpacity
@@ -250,12 +288,24 @@ const LargePlayer = ({
                 </Text>
               </View>
               <View style={styles.songdetailright}>
-                <View style={[styles.makecenter, styles.songdetailiconbox]}>
-                  <HeartOutlineSvg color={colors.solidcolor} size={25} />
-                </View>
-                <View style={[styles.makecenter, styles.songdetailiconbox]}>
+                <TouchableOpacity
+                  style={[styles.makecenter, styles.songdetailiconbox]}
+                  onPress={() => {
+                    addtofavourite(currentTrack);
+                  }}
+                >
+                  {songsArrayId.includes(currentTrack.songId) ? (
+                    <HeartFillSvg color={colors.solidcolor} size={25} />
+                  ) : (
+                    <HeartOutlineSvg color={colors.solidcolor} size={25} />
+                  )}
+                </TouchableOpacity>
+                <TouchableOpacity
+                  style={[styles.makecenter, styles.songdetailiconbox]}
+                  onPress={toggleDownload}
+                >
                   <DownloadSvg color={colors.solidcolor} size={25} />
-                </View>
+                </TouchableOpacity>
               </View>
             </View>
             <View style={styles.sliderbox}>
@@ -283,8 +333,11 @@ const LargePlayer = ({
               </Text>
             </View>
             <View style={styles.alloptionsbox}>
-              <TouchableOpacity>
-                <ShuffleSvg color={colors.solidcolor} size={25} />
+              <TouchableOpacity onPress={toggleShuffle}>
+                <ShuffleSvg
+                  color={isShuffle ? 'pink' : colors.solidcolor}
+                  size={25}
+                />
               </TouchableOpacity>
               <View style={styles.optionmiddlecontainer}>
                 <TouchableOpacity onPress={togglePrevSong}>
@@ -310,8 +363,12 @@ const LargePlayer = ({
                   <NextSongSvg color={colors.solidcolor} size={30} />
                 </TouchableOpacity>
               </View>
-              <TouchableOpacity>
-                <RepeatSvg color={colors.solidcolor} size={25} />
+              <TouchableOpacity onPress={toggleRepeat}>
+                <RepeatSvg
+                  color={isRepeat ? 'pink' : colors.solidcolor}
+                  size={25}
+                  showOne={isRepeat}
+                />
               </TouchableOpacity>
             </View>
             {lyrics &&

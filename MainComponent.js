@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Keyboard, Text } from 'react-native';
 import {
   Home,
@@ -10,19 +10,29 @@ import {
   Loading,
   AllTracks,
   TrackSearch,
-  MiniPlayer
+  MiniPlayer,
+  AuthPage,
+  Login,
+  SignUp,
+  Otp,
+  Reset,
 } from './Components';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { useQuery, gql } from '@apollo/client';
 import { useDispatch, useSelector } from 'react-redux';
-import { fetchLyrics, setLaunchData, setTrackData } from './redux/actions';
+import { setLaunchData, setTrackData, setUserData, setFetchTrack, setFavouriteSong } from './redux/actions';
 import { setupPlayer } from './trackPlayerServices';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import TrackPlayer from 'react-native-track-player';
+import { useNavigationState } from '@react-navigation/native';
+import Toast, { BaseToast, ErrorToast } from 'react-native-toast-message';
+import axios from 'axios';
+
+import { API_URL } from "@env"
 
 const Stack = createNativeStackNavigator();
 
-const typeDefs = gql`
+const GET_LAUNCH_DATA = gql`
   query GET_LAUNCH_DATA {
     trending {
       id
@@ -141,27 +151,25 @@ const typeDefs = gql`
 
 const MainComponent = () => {
   const dispatch = useDispatch();
-  const { loading, error, data } = useQuery(typeDefs);
+  const { loading, error, data } = useQuery(GET_LAUNCH_DATA, { fetchPolicy: 'cache-and-network' });
   const [keyboardStatus, setKeyboardStatus] = useState(false);
-  const { isDisplay, isReady } = useSelector(
-    (state) => state.getTrackPlayerData
-  );
+  const currentRouteName = useNavigationState((state) => state?.routes[state?.index]?.name);
+  const { isDisplay, isReady } = useSelector((state) => state.getTrackPlayerData);
+  const { isUserLogin } = useSelector((state) => state.getUserData);
+  const { email } = useSelector((state) => state.getUserData);
 
-  useEffect(() => {
-    const setup = async () => {
-      const isSetup = await setupPlayer();
-      dispatch(setTrackData({ isReady: isSetup }));
-    };
-    setup();
+  const setup = useCallback(async () => {
+    const isSetup = await setupPlayer();
+    dispatch(setTrackData({ isReady: isSetup }));
   }, [dispatch]);
 
   useEffect(() => {
-    const showSubscription = Keyboard.addListener('keyboardDidShow', () => {
-      setKeyboardStatus(true);
-    });
-    const hideSubscription = Keyboard.addListener('keyboardDidHide', () => {
-      setKeyboardStatus(false);
-    });
+    setup();
+  }, [setup]);
+
+  useEffect(() => {
+    const showSubscription = Keyboard.addListener('keyboardDidShow', () => setKeyboardStatus(true));
+    const hideSubscription = Keyboard.addListener('keyboardDidHide', () => setKeyboardStatus(false));
 
     return () => {
       showSubscription.remove();
@@ -175,6 +183,29 @@ const MainComponent = () => {
     }
   }, [data, dispatch]);
 
+  useEffect(() => {
+    const checkUserAuth = async () => {
+      const user = await getData('cookies');
+      dispatch(setUserData({ isUserLogin: !!user }));
+    };
+    checkUserAuth();
+  }, [dispatch]);
+
+  useEffect(() => {
+    async function checkUserLogin() {
+      const result = await getData('loginUserData');
+      if (result !== null) {
+        dispatch(
+          setUserData({
+            fullName: result.fullName,
+            email: result.email,
+          })
+        );
+      }
+    }
+    checkUserLogin();
+  }, [dispatch]);
+
   const getData = async (key) => {
     try {
       const value = await AsyncStorage.getItem(key);
@@ -186,27 +217,63 @@ const MainComponent = () => {
 
   useEffect(() => {
     const getStorageData = async () => {
-      const { queue, currentTrack, currentTrackIndex } = await getData(
-        'TrackData'
-      );
-      if (currentTrack && isReady && queue) {
-        await TrackPlayer.add(queue);
-        await TrackPlayer.skip(currentTrackIndex);
-        const Obj = {
-          isDisplay: true,
-          queue: queue,
-          currentTrack: currentTrack,
-          currentTrackIndex: currentTrackIndex,
-          songStatus: true
-        };
-        dispatch(setTrackData(Obj));
+      try {
+        const storedData = await getData('TrackData');
+        if (storedData && isReady) {
+          const { queue, currentTrack, currentTrackIndex } = storedData;
+          if (queue && currentTrack) {
+            await TrackPlayer.add(queue);
+            await TrackPlayer.skip(currentTrackIndex);
+            dispatch(
+              setTrackData({
+                isDisplay: true,
+                queue,
+                currentTrack,
+                currentTrackIndex,
+                songStatus: true,
+              })
+            );
+          }
+        }
+      } catch (error) {
+        console.log(error);
       }
     };
     getStorageData();
   }, [isReady, dispatch]);
 
+  useEffect(() => {
+    async function getfetchtrack() {
+      const fetchtrack = await getData('fetchtrack');
+      dispatch(setFetchTrack(fetchtrack))
+    }
+    getfetchtrack()
+  }, [])
+
+  useEffect(() => {
+    async function getfavouritetrack() {
+      try {
+        const response = await axios.post(API_URL + '/favourite', { email })
+        const result = response.data
+        if(result.ok){
+          dispatch(setFavouriteSong({
+            songs:result?.favourites ?? [],
+            songsId:result?.songArrayId
+          }))
+        }else{
+          console.log(result.message)
+        }
+      } catch (error) {
+        console.log("FAVOURITE : ",error.message)
+      }
+    }
+    getfavouritetrack()
+  }, [email])
+  
+
+
   if (loading) {
-    return <Loading size={200} bgColor={'#fff'} />;
+    return <Loading size={200} bgColor="#fff" />;
   }
 
   if (error) {
@@ -214,68 +281,46 @@ const MainComponent = () => {
     return <Text>Error</Text>;
   }
 
+  // const toastConfig = {
+  //   success: (props) => (
+  //     <BaseToast
+  //       {...props}
+  //       text1NumberOfLines={2}
+  //       text2NumberOfLines={2}
+  //     />
+  //   ),
+  //   error: (props) => (
+  //     <ErrorToast
+  //       {...props}
+  //       text1NumberOfLines={2}
+  //       text2NumberOfLines={2}
+  //     />
+  //   ),
+  // };
+
   return (
     <>
-      <Stack.Navigator
-        initialRouteName="Home"
-        screenOptions={{ headerShown: false }}
-      >
-        <Stack.Screen
-          name="home"
-          component={Home}
-          options={{
-            presentation: 'fullScreenModal',
-            animation: 'simple_push'
-          }}
-        />
-        <Stack.Screen
-          name="search"
-          component={Search}
-          options={{
-            presentation: 'fullScreenModal',
-            animation: 'simple_push'
-          }}
-        />
-        <Stack.Screen
-          name="library"
-          component={Library}
-          options={{
-            presentation: 'fullScreenModal',
-            animation: 'simple_push'
-          }}
-        />
-        <Stack.Screen
-          name="profile"
-          component={Profile}
-          options={{
-            presentation: 'fullScreenModal',
-            animation: 'simple_push'
-          }}
-        />
-        <Stack.Screen
-          name="alllist"
-          component={VerticalList}
-          options={{
-            presentation: 'fullScreenModal',
-            animation: 'slide_from_bottom'
-          }}
-        />
-        <Stack.Screen
-          name="tracks"
-          component={AllTracks}
-          options={{ presentation: 'fullScreenModal', animation: 'fade' }}
-        />
-        <Stack.Screen
-          name="tracksearch"
-          component={TrackSearch}
-          options={{
-            presentation: 'fullScreenModal',
-            animation: 'slide_from_bottom'
-          }}
-        />
+      <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="home" component={Home} options={{ presentation: 'fullScreenModal', animation: 'simple_push' }} />
+        <Stack.Screen name="search" component={Search} options={{ presentation: 'fullScreenModal', animation: 'simple_push' }} />
+        <Stack.Screen name="library" component={Library} options={{ presentation: 'fullScreenModal', animation: 'simple_push' }} />
+        <Stack.Screen name="profile" component={Profile} options={{ presentation: 'fullScreenModal', animation: 'simple_push' }} />
+        <Stack.Screen name="alllist" component={VerticalList} options={{ presentation: 'fullScreenModal', animation: 'slide_from_bottom' }} />
+        <Stack.Screen name="tracks" component={AllTracks} options={{ presentation: 'fullScreenModal', animation: 'fade' }} />
+        <Stack.Screen name="tracksearch" component={TrackSearch} options={{ presentation: 'fullScreenModal', animation: 'slide_from_bottom' }} />
+        <Stack.Screen name="authpage" component={AuthPage} options={{ presentation: 'fullScreenModal', animation: 'slide_from_bottom' }} />
+        <Stack.Screen name="login" component={Login} options={{ presentation: 'fullScreenModal', animation: 'slide_from_bottom' }} />
+        <Stack.Screen name="signup" component={SignUp} options={{ presentation: 'fullScreenModal', animation: 'slide_from_bottom' }} />
+        <Stack.Screen name="otp" component={Otp} options={{ presentation: 'fullScreenModal', animation: 'slide_from_bottom' }} />
+        <Stack.Screen name="reset" component={Reset} options={{ presentation: 'fullScreenModal', animation: 'slide_from_bottom' }} />
       </Stack.Navigator>
-      {isDisplay && !keyboardStatus && <MiniPlayer />}
-      {!keyboardStatus && <Navbar />}
+      {currentRouteName !== 'authpage' && currentRouteName !== 'login' && currentRouteName !== 'signup' && currentRouteName !== 'otp' && currentRouteName !== 'reset' && (
+        <>
+          {isDisplay && !keyboardStatus && isUserLogin && <MiniPlayer />}
+          {!keyboardStatus && <Navbar />}
+        </>
+      )}
+      <Toast ref={(ref) => Toast.setRef(ref)} />
     </>
   );
 };

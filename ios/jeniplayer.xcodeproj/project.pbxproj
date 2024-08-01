@@ -14,12 +14,11 @@
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
 		7699B88040F8A987B510C191 /* libPods-jeniplayer-jeniplayerTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-jeniplayer-jeniplayerTests.a */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
-		D29D9E160B124D3089A2052A /* jeni_medium.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = 399BE87D533348FA991F256C /* jeni_medium.woff2 */; };
-		9D766EFF5096443BAAEAD362 /* jeni_regular.woff2 in Resources */ = {isa = PBXBuildFile; fileRef = 69D732C9F23C422A90EAA93C /* jeni_regular.woff2 */; };
 		8A3FC4DEEC954B4596E87805 /* GothamRndSSm-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 05453037314A45D1A3564BFA /* GothamRndSSm-Bold.otf */; };
 		86FE8DA5B1BB4676BD4D41F9 /* GothamRndSSm-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = 0EF4F8013BB64D12BFD558E4 /* GothamRndSSm-Book.otf */; };
 		986DE5BED2C140B7B3479EDB /* GothamRndSSm-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7B362C964E324303BC8E2A38 /* GothamRndSSm-Light.otf */; };
 		9460B4E850874C70A2675D5D /* GothamRndSSm-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7061EB2D8A774DA9ADABCFCC /* GothamRndSSm-Medium.otf */; };
+		493AE3FB2BA94DD4A6152604 /* Kegilka.otf in Resources */ = {isa = PBXBuildFile; fileRef = 10A3EC5039E143B9A97F3CCD /* Kegilka.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,12 +50,11 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = jeniplayer/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-jeniplayer-jeniplayerTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-jeniplayer-jeniplayerTests.release.xcconfig"; path = "Target Support Files/Pods-jeniplayer-jeniplayerTests/Pods-jeniplayer-jeniplayerTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		399BE87D533348FA991F256C /* jeni_medium.woff2 */ = {isa = PBXFileReference; name = "jeni_medium.woff2"; path = "../assets/fonts/jeni_medium.woff2"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		69D732C9F23C422A90EAA93C /* jeni_regular.woff2 */ = {isa = PBXFileReference; name = "jeni_regular.woff2"; path = "../assets/fonts/jeni_regular.woff2"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		05453037314A45D1A3564BFA /* GothamRndSSm-Bold.otf */ = {isa = PBXFileReference; name = "GothamRndSSm-Bold.otf"; path = "../assets/fonts/GothamRndSSm-Bold.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		0EF4F8013BB64D12BFD558E4 /* GothamRndSSm-Book.otf */ = {isa = PBXFileReference; name = "GothamRndSSm-Book.otf"; path = "../assets/fonts/GothamRndSSm-Book.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		7B362C964E324303BC8E2A38 /* GothamRndSSm-Light.otf */ = {isa = PBXFileReference; name = "GothamRndSSm-Light.otf"; path = "../assets/fonts/GothamRndSSm-Light.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		7061EB2D8A774DA9ADABCFCC /* GothamRndSSm-Medium.otf */ = {isa = PBXFileReference; name = "GothamRndSSm-Medium.otf"; path = "../assets/fonts/GothamRndSSm-Medium.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		10A3EC5039E143B9A97F3CCD /* Kegilka.otf */ = {isa = PBXFileReference; name = "Kegilka.otf"; path = "../assets/fonts/Kegilka.otf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,12 +164,11 @@
 		D40BA6AED1A942E5A75724E6 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				399BE87D533348FA991F256C /* jeni_medium.woff2 */,
-				69D732C9F23C422A90EAA93C /* jeni_regular.woff2 */,
 				05453037314A45D1A3564BFA /* GothamRndSSm-Bold.otf */,
 				0EF4F8013BB64D12BFD558E4 /* GothamRndSSm-Book.otf */,
 				7B362C964E324303BC8E2A38 /* GothamRndSSm-Light.otf */,
 				7061EB2D8A774DA9ADABCFCC /* GothamRndSSm-Medium.otf */,
+				10A3EC5039E143B9A97F3CCD /* Kegilka.otf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -272,12 +269,11 @@
 			files = (
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
-				D29D9E160B124D3089A2052A /* jeni_medium.woff2 in Resources */,
-				9D766EFF5096443BAAEAD362 /* jeni_regular.woff2 in Resources */,
 				8A3FC4DEEC954B4596E87805 /* GothamRndSSm-Bold.otf in Resources */,
 				86FE8DA5B1BB4676BD4D41F9 /* GothamRndSSm-Book.otf in Resources */,
 				986DE5BED2C140B7B3479EDB /* GothamRndSSm-Light.otf in Resources */,
 				9460B4E850874C70A2675D5D /* GothamRndSSm-Medium.otf in Resources */,
+				493AE3FB2BA94DD4A6152604 /* Kegilka.otf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

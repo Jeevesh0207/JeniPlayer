@@ -103,6 +103,15 @@ const createStyles = (colors) =>{
             borderRadius: 3,
             overflow: 'hidden'
         },
+        song_animated_box:{
+            position:'absolute',
+            top:0,
+            bottom:0,
+            left:0,
+            right:0,
+            zIndex:1,
+            backgroundColor:'rgba(0,0,0,0.8)'
+        },
         song_image: {
             width: '100%',
             height: '100%'

@@ -16,51 +16,70 @@ import {
   HeartOutlineSvg,
   OneBarMenuSvg,
   AnimatedPlaySong,
-  NoDataSvg
+  NoDataSvg,
+  HeartFillSvg
 } from '../../Svg';
 import { useNavigation } from '@react-navigation/native';
 import { useDispatch, useSelector } from 'react-redux';
 import ThreeBar from '../AllTracks/ThreeBar';
 import { useQuery, gql } from '@apollo/client';
-import { Image } from 'expo-image';
 import he from 'he';
+import LinearGradient from 'react-native-linear-gradient';
+import { Image, Skeleton } from '@rneui/themed';
 
 import Spinner from '../Spinner/Spinner';
 import Error from '../Error/Error';
 import { addInQueue } from '../../constants';
+import { UpperLoading } from '../../constants/Template';
+import { toggleAddtofavourite } from '../../constants';
+
 
 const Box = memo(
   ({
     item,
     styles,
     colors,
-    dispatch,
-    trackData,
     currentTrackId,
     setModalVisible,
-    setThreeBarData
+    setThreeBarData,
+    addSongInQueue,
+    isUserLogin,
+    addtofavourite,
+    songsArrayId
   }) => (
     <TouchableOpacity
       onPress={() => {
-        addInQueue(trackData?.songs, item, dispatch);
+        addSongInQueue(item);
       }}
       style={[styles.makealigncenter, styles.song_box]}
     >
       <View style={[styles.makealigncenter, styles.song_left]}>
         <View style={styles.song_image_box}>
-          {currentTrackId === item.id && (
+          {isUserLogin && currentTrackId === item.id && (
             <View style={[styles.makecenter, styles.song_animated_box]}>
               <AnimatedPlaySong color={colors.solidcolor} size={30} />
             </View>
           )}
-          <Image
-            style={styles.song_image}
-            source={{ uri: item?.image || '' }}
-            contentPosition={'top center'}
-            alt="poster"
-            onLoad={() => {}}
-            onError={(error) => console.log('Image failed to load', error)}
-          />
+          {item?.image && (
+            <Image
+              style={styles.song_image}
+              PlaceholderContent={
+                <Skeleton
+                  width={'100%'}
+                  height={'100%'}
+                  LinearGradientComponent={LinearGradient}
+                  animation="wave"
+                />
+              }
+              source={{
+                uri: item?.image || ''
+              }}
+              contentPosition={'top center'}
+              alt="poster"
+              transition={true}
+              onError={(error) => console.log('Image failed to load', error)}
+            />
+          )}
         </View>
         <View style={styles.song_details_box}>
           <Text
@@ -80,9 +99,15 @@ const Box = memo(
         </View>
       </View>
       <View style={[styles.makealigncenter, styles.song_right]}>
-        <View style={[styles.makecenter, styles.song_download_box]}>
-          <HeartOutlineSvg color={colors.desc} size={22} />
-        </View>
+        <TouchableOpacity style={[styles.makecenter, styles.song_download_box]} onPress={()=>{
+          addtofavourite(item)
+        }}>
+           {songsArrayId.includes(item.id) ? (
+            <HeartFillSvg color={colors.solidcolor} size={25} />
+          ) : (
+            <HeartOutlineSvg color={colors.solidcolor} size={25} />
+          )}
+        </TouchableOpacity>
         <TouchableOpacity
           onPress={(e) => {
             e.stopPropagation();
@@ -158,9 +183,11 @@ const Search = () => {
   const [modalVisible, setModalVisible] = useState(false);
   const [ThreeBarData, setThreeBarData] = useState(null);
   const [refreshing, setRefreshing] = useState(false);
-  const [searchresult, setSeatchResult] = useState(null);
-
+  const [searchresult, setSearchResult] = useState(null);
+  const { isUserLogin,email } = useSelector((state) => state.getUserData);
+  const { songs } = useSelector((state) => state.getFetchTrack);
   const { loading, error, data, refetch } = useQuery(typedef);
+  const { songsArrayId } = useSelector((state) => state.getFavouriteSong);
 
   const {
     loading: searchloading,
@@ -183,28 +210,19 @@ const Search = () => {
   }, [data, defaultTrackList]);
 
   useEffect(() => {
-    if (currentTrack !== null) {
-      setCurrentTrackId(currentTrack?.songId);
-    }
-  }, [currentTrack]);
-
-  useEffect(() => {
-    if (searchdata !== null && searchdata?.getSearch.length) {
-      setSeatchResult(searchdata.getSearch);
+    if (searchdata !== null && searchdata?.getSearch.length > 0) {
+      // console.log(searchdata?.getSearch[0])
+      setSearchResult(searchdata?.getSearch ?? []);
     }
   }, [searchdata]);
 
-  //   useEffect(() => {
-  //     async function queryRefresh() {
-  //       if (query) {
-  //         refetch();
-  //         if (searchdata !== null && searchdata?.getSearch.length) {
-  //           setSeatchResult(searchdata.getSearch);
-  //         }
-  //       }
-  //     }
-  //     queryRefresh();
-  //   }, [query, refetch]);
+  const addtofavourite = (currentTrack) => {
+    const newtrack ={
+      ...currentTrack,
+      songId:currentTrack.id
+    }
+    toggleAddtofavourite(newtrack, dispatch, email,"search");
+  };
 
   const renderBox = useCallback(
     ({ item }) => (
@@ -212,15 +230,36 @@ const Search = () => {
         item={item}
         styles={styles}
         colors={colors}
-        dispatch={dispatch}
-        trackData={defaultTrackList}
         currentTrackId={currentTrackId}
         setModalVisible={setModalVisible}
         setThreeBarData={setThreeBarData}
+        addSongInQueue={addSongInQueue}
+        isUserLogin={isUserLogin}
+        addtofavourite={addtofavourite}
+        songsArrayId={songsArrayId}
       />
     ),
-    [styles, colors, dispatch, currentTrackId, defaultTrackList]
+    [styles, colors, currentTrackId, isUserLogin,addSongInQueue,addtofavourite,songsArrayId]
   );
+
+  const addSongInQueue = async (item) => {
+    if (isUserLogin) {
+      if (item) {
+        // const songsToUse = query === '' ? defaultTrackList.songs : searchresult;
+        addInQueue([item], item, dispatch);
+      } else {
+        console.log('Queue is Empty');
+      }
+    } else {
+      navigation.navigate('authpage');
+    }
+  };
+
+  useEffect(() => {
+    if (currentTrack !== null) {
+      setCurrentTrackId(currentTrack?.songId);
+    }
+  }, [currentTrack]);
 
   const keyExtractor = useCallback((item) => item.id.toString(), []);
 
@@ -287,8 +326,8 @@ const Search = () => {
           }}
         />
       ) : searchloading ? (
-        <ActivityIndicator color={colors.solidcolor} />
-      ) :  (searchresult?.length > 0) ? (
+        <UpperLoading />
+      ) : searchresult?.length > 0 ? (
         <FlatList
           data={searchresult || []}
           renderItem={renderBox}
@@ -321,11 +360,11 @@ const Search = () => {
         <ThreeBar
           setModalVisible={setModalVisible}
           ThreeBarData={ThreeBarData}
-          trackData={query !== '' ? searchresult : defaultTrackList.songs}
+          trackData={[ThreeBarData]}
         />
       </Modal>
     </View>
   );
 };
 
-export default Search;
+export default memo(Search);

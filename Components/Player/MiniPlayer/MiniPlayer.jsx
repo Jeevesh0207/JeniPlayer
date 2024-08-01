@@ -9,13 +9,13 @@ import {
 } from 'react-native';
 import { useTheme } from '../../../Theme/ThemeContext';
 import createStyles from './StyleMiniPlayer';
-import { Image } from 'expo-image';
 import {
   FullVolumeSvg,
   HeartOutlineSvg,
   MuteVolumeSvg,
   PlayFillSvg,
-  PauseSvg
+  PauseSvg,
+  HeartFillSvg
 } from '../../../Svg';
 import { Slider } from '@react-native-assets/slider';
 import LargePlayer from '../LargePlayer/LargePlayer';
@@ -29,18 +29,17 @@ import he from 'he';
 import { getColors } from 'react-native-image-colors';
 import LinearGradient from 'react-native-linear-gradient';
 import { setVolume } from 'react-native-track-player/lib/src/trackPlayer';
-import { useSelector } from 'react-redux';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { setTrackData } from '../../../redux/actions';
-
+import { Image, Skeleton } from '@rneui/themed';
+import { toggleAddtofavourite } from '../../../constants';
 const decodeHtmlEntities = (html) => he.decode(html);
 
 const MiniPlayer = () => {
   const dispatch = useDispatch();
   const { theme } = useTheme();
   const { colors } = theme;
-
   const flatListRef = useRef(null);
 
   const styles = useMemo(() => createStyles(colors), [colors]);
@@ -50,6 +49,11 @@ const MiniPlayer = () => {
   const [isSpinner, setSpinner] = useState(false);
   const progress = useProgress();
   const [currentTime, setCurrentTime] = useState(progress.position);
+
+  const { isShuffle, isRepeat } = useSelector((state) => state.getSongState);
+  const { email } = useSelector((state) => state.getUserData);
+  const { songsArrayId } = useSelector((state) => state.getFavouriteSong);
+
 
   const { queue, currentTrack, currentTrackIndex, songStatus } = useSelector(
     (state) => state.getTrackPlayerData
@@ -107,9 +111,52 @@ const MiniPlayer = () => {
     }
   };
 
+  const handleRepeatShuffle = async () => {
+    if (isShuffle) {
+      console.log('SHUFFLE');
+      const randomIndex = Math.floor(Math.random() * queue.length);
+      await TrackPlayer.skip(randomIndex);
+      await TrackPlayer.play();
+      setCurrentTime(0);
+      const Obj = {
+        isDisplay: true,
+        queue: queue,
+        currentTrack: queue[randomIndex],
+        currentTrackIndex: randomIndex,
+        songStatus: true
+      };
+      dispatch(setTrackData(Obj));
+      storeData(Obj, 'TrackData');
+    } else if (isRepeat) {
+      console.log('REPEAT');
+      const lastindex = currentTrackIndex;
+      console.log(currentTrackIndex);
+      await TrackPlayer.skip(currentTrackIndex);
+      await TrackPlayer.play();
+      const Obj = {
+        isDisplay: true,
+        queue: queue,
+        currentTrack: queue[lastindex],
+        currentTrackIndex: lastindex,
+        songStatus: true
+      };
+      dispatch(setTrackData(Obj));
+      storeData(Obj, 'TrackData');
+    }
+  };
+
+
+  useEffect(() => {
+    if (progress.position + 2 >= progress.duration && progress.position!=0 && progress.duration!=0) {
+      console.log('REACH AT END OF TRACK');
+      handleRepeatShuffle()
+    }
+  }, [progress]);
+
   const handleTrackChange = useCallback(
-    (event) => {
+    async (event) => {
       const index = event.index;
+      console.log('NONE');
       const Obj = {
         isDisplay: true,
         queue: queue,
@@ -119,6 +166,7 @@ const MiniPlayer = () => {
       };
       dispatch(setTrackData(Obj));
       storeData(Obj, 'TrackData');
+
       if (index !== null && index !== undefined && flatListRef.current) {
         const dataLength = flatListRef.current.props.data.length;
         if (index >= 0 && index < dataLength) {
@@ -187,6 +235,15 @@ const MiniPlayer = () => {
     }
   }, [muteVolume]);
 
+  const addtofavourite = (currentTrack)=>{
+    // console.log(currentTrack)
+    const newtrack={
+      ...currentTrack,
+      songId:currentTrack.songId
+    }
+    toggleAddtofavourite(newtrack,dispatch,email)
+  }
+
   return (
     <Pressable
       onPress={() => setModalVisible(true)}
@@ -200,13 +257,23 @@ const MiniPlayer = () => {
         >
           <View style={[styles.makealigncenter, styles.playerbox]}>
             <View style={styles.poster_box}>
-              <Image
-                style={styles.song_image}
-                source={{ uri: currentTrack?.image || '' }}
-                contentPosition={'top center'}
-                alt="poster"
-                onError={(error) => console.log('Image failed to load', error)}
-              />
+              {currentTrack?.image && (
+                <Image
+                  style={styles.song_image}
+                  source={{ uri: currentTrack?.image }}
+                  contentPosition={'top center'}
+                  PlaceholderContent={
+                    <Skeleton
+                      width={'100%'}
+                      height={'100%'}
+                      LinearGradientComponent={LinearGradient}
+                      animation="wave"
+                    />
+                  }
+                  alt="jpg"
+                  transition={true}
+                />
+              )}
             </View>
             <View style={styles.detailbox}>
               <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">
@@ -231,8 +298,15 @@ const MiniPlayer = () => {
               </TouchableOpacity>
             </View>
             <View style={[styles.makecenter, styles.fav_box]}>
-              <TouchableOpacity onPress={(e) => e.stopPropagation()}>
-                <HeartOutlineSvg color={colors.solidcolor} size={25} />
+              <TouchableOpacity onPress={(e) => {
+                e.stopPropagation()
+                addtofavourite(currentTrack)
+              }} >
+                {
+                  songsArrayId.includes(currentTrack.songId)?
+                  <HeartFillSvg color={colors.solidcolor} size={25}/>:
+                  <HeartOutlineSvg color={colors.solidcolor} size={25} />
+                }
               </TouchableOpacity>
             </View>
             <View style={[styles.makecenter, styles.playpausebox]}>
@@ -290,6 +364,7 @@ const MiniPlayer = () => {
           isSpinner={isSpinner}
           randomcolors={randomcolors}
           flatListRef={flatListRef}
+          addtofavourite={addtofavourite}
         />
       </Modal>
     </Pressable>

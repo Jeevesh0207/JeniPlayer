@@ -10,7 +10,7 @@ const ThemeContext = createContext();
 export const ThemeProvider = ({ children }) => {
   const systemScheme = useColorScheme();
   const [theme, setTheme] = useState(systemScheme);
-  const [type,setType] = useState("default")
+  const [type,setType] = useState("forestwhisper")
 
   const getData = async (key) => {
     try {
@@ -47,7 +47,8 @@ export const ThemeProvider = ({ children }) => {
     },
   }), [type]);
 
-  const currentTheme = theme === 'dark' ? darkTheme : lightTheme;
+  // const currentTheme = theme === 'dark' ? darkTheme : lightTheme;
+  const currentTheme =  darkTheme
 
   const toggleTheme = () => {
     setTheme(prevTheme => (prevTheme === 'dark' ? 'light' : 'dark'));

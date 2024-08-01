@@ -54,7 +54,7 @@ const createStyles = (colors) => {
             bottom: 0,
             left: 0,
             width: '100%',
-            height: 200,
+            height: 100,
         }
     })
 }

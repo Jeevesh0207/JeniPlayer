@@ -10,6 +10,13 @@ import LyricsData from './LyricsData';
 
 import ActiveNav from './ActiveNav';
 
+import UserData from './UserData';
+import SongState from './SongState';
+
+import FetchTrack from './FetchTrack';
+
+import FavouriteSong from './FavouriteSong';
+
 const rootReducer = combineReducers({
     getLaunchData:LaunchData,
     getVerticalListData:VerticalListData,
@@ -17,7 +24,11 @@ const rootReducer = combineReducers({
     getTheme:Theme,
     getTrackPlayerData:TrackPlayerData,
     getLyricsData:LyricsData,
-    getActiveNav:ActiveNav
+    getActiveNav:ActiveNav,
+    getUserData:UserData,
+    getSongState:SongState,
+    getFetchTrack:FetchTrack,
+    getFavouriteSong:FavouriteSong
 });
 
 export default rootReducer;

@@ -14,3 +14,13 @@ export const FETCH_LYRICS_FAILED = 'FETCH_LYRICS_FAILED'
 export const SET_LYRICS = 'SET_LYRICS'
 
 export const SET_ACTIVE_NAV = 'SET_ACTIVE_NAV'
+
+
+export const SET_USER_DATA = 'SET_USER_DATA'
+
+export const SET_SONG_STATE = 'SONG_STATE'
+
+
+export const SET_FETCH_TRACK="SET_FETCH_TRACK"
+
+export const SET_FAVOURITE_SONG ="SET_FAVOURITE_SONG"

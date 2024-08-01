@@ -1,4 +1,4 @@
-import { useMemo, useState, useCallback, memo } from 'react';
+import { useMemo, useState, useCallback, memo, useEffect } from 'react';
 import {
   View,
   Text,
@@ -15,41 +15,62 @@ import {
   HeartOutlineSvg,
   OneBarMenuSvg,
   NoDataSvg,
-  CloseSvg
+  CloseSvg,
+  AnimatedPlaySong,
+  HeartFillSvg
 } from '../../../Svg';
 import { useNavigation } from '@react-navigation/native';
-import { Image } from 'expo-image';
 import he from 'he';
 import { useDispatch, useSelector } from 'react-redux';
 import { addInQueue } from '../../../constants';
 import ThreeBar from '../ThreeBar';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { Image, Skeleton } from '@rneui/themed';
+import LinearGradient from 'react-native-linear-gradient';
+
+import { toggleAddtofavourite } from '../../../constants';
 
 const Box = memo(
   ({
     item,
     styles,
     colors,
-    dispatch,
-    tracks,
+    currentTrackId,
     setThreeBarData,
-    setModalVisible
+    setModalVisible,
+    addSongInQueue,
+    isUserLogin,
+    addtofavourite,
+    songsArrayId
   }) => (
     <TouchableOpacity
-      onPress={() => {
-        addInQueue(tracks, item, dispatch);
-      }}
+      onPress={() => addSongInQueue(item)}
       style={[styles.makealigncenter, styles.song_box]}
     >
       <View style={[styles.makealigncenter, styles.song_left]}>
         <View style={styles.song_image_box}>
-          <Image
-            style={styles.song_image}
-            source={{ uri: item.image || '' }}
-            contentPosition={'top center'}
-            alt="poster"
-            onError={(error) => console.log('Image failed to load', error)}
-          />
+          {isUserLogin && currentTrackId === item.id && (
+            <View style={[styles.makecenter, styles.song_animated_box]}>
+              <AnimatedPlaySong color={colors.solidcolor} size={30} />
+            </View>
+          )}
+          {item?.image && (
+            <Image
+              style={styles.song_image}
+              source={{ uri: item?.image }}
+              contentPosition={'top center'}
+              PlaceholderContent={
+                <Skeleton
+                  width={'100%'}
+                  height={'100%'}
+                  LinearGradientComponent={LinearGradient}
+                  animation="wave"
+                />
+              }
+              alt="jpg"
+              transition={true}
+            />
+          )}
         </View>
         <View style={styles.song_details_box}>
           <Text
@@ -69,9 +90,16 @@ const Box = memo(
         </View>
       </View>
       <View style={[styles.makealigncenter, styles.song_right]}>
-        <View style={[styles.makecenter, styles.song_download_box]}>
-          <HeartOutlineSvg color={colors.desc} size={22} />
-        </View>
+        <TouchableOpacity
+          style={[styles.makecenter, styles.song_download_box]}
+          onPress={()=>{addtofavourite(item)}}
+        >
+          {songsArrayId.includes(item.id) ? (
+            <HeartFillSvg color={colors.solidcolor} size={25} />
+          ) : (
+            <HeartOutlineSvg color={colors.solidcolor} size={25} />
+          )}
+        </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
             setThreeBarData(item);
@@ -95,26 +123,48 @@ const TrackSearch = ({ route }) => {
   const styles = useMemo(() => createStyles(colors), [colors]);
   const [query, setQuery] = useState('');
   const { tracks } = route.params;
+  const [currentTrackId, setCurrentTrackId] = useState(null);
+
   const [modalVisible, setModalVisible] = useState(false);
   const [ThreeBarData, setThreeBarData] = useState(null);
   const { isDisplay, currentTrack } = useSelector(
     (state) => state.getTrackPlayerData
   );
+  const { isUserLogin, email } = useSelector((state) => state.getUserData);
+  const { songs } = useSelector((state) => state.getFetchTrack);
+  const { songsArrayId } = useSelector((state) => state.getFavouriteSong);
+
+  useEffect(() => {
+    if (currentTrack !== null) {
+      setCurrentTrackId(currentTrack?.songId);
+    }
+  }, [currentTrack]);
+
   const renderBox = useCallback(
     ({ item }) => (
       <Box
         item={item}
         styles={styles}
         colors={colors}
-        dispatch={dispatch}
-        tracks={tracks}
-        currentTrack={currentTrack}
+        currentTrackId={currentTrackId}
         setThreeBarData={setThreeBarData}
         setModalVisible={setModalVisible}
+        addSongInQueue={addSongInQueue}
+        isUserLogin={isUserLogin}
+        addtofavourite={addtofavourite}
+        songsArrayId={songsArrayId}
       />
     ),
-    [styles, colors, dispatch]
+    [styles, colors, dispatch, addtofavourite, currentTrackId,songsArrayId]
   );
+
+  const addSongInQueue = async (item) => {
+    if (isUserLogin) {
+      addInQueue(tracks, item, dispatch);
+    } else {
+      navigation.navigate('authpage');
+    }
+  };
 
   const filterResult = useMemo(
     () =>
@@ -126,6 +176,14 @@ const TrackSearch = ({ route }) => {
 
   const ClearQuery = () => {
     setQuery('');
+  };
+
+  const addtofavourite = (currentTrack) => {
+    const newtrack ={
+      ...currentTrack,
+      songId:currentTrack.id
+    }
+    toggleAddtofavourite(newtrack, dispatch, email);
   };
 
   const keyExtractor = useCallback((item) => item.id.toString(), []);

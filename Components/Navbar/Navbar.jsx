@@ -1,11 +1,12 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { View, Text, TouchableOpacity } from 'react-native';
-import { useNavigation, useFocusEffect } from '@react-navigation/native';
+import { useNavigation, useNavigationState } from '@react-navigation/native';
 import createStyles from './StyleNavbar';
 import { HomeSvg, LibrarySvg, ProfileSvg, SearchSvg } from '../../Svg';
 import { useTheme } from '../../Theme/ThemeContext';
 import { useDispatch, useSelector } from 'react-redux';
 import { setActiveNav } from '../../redux/actions';
+
 
 const Navbar = () => {
   const Navigation = useNavigation();
@@ -14,10 +15,13 @@ const Navbar = () => {
   const { colors } = theme;
   const styles = useMemo(() => createStyles(colors), [colors]);
 
-  // const [activeIndex, setActiveIndex] = useState(0);
-  const { activeIndex } = useSelector((state) => state.getActiveNav);
+  const currentRouteName = useNavigationState((state) => state?.routes[state?.index]?.name);
+
+  const { isUserLogin } = useSelector((state) => state.getUserData);
   const activeColor = colors.iconactive;
   const inactiveColor = colors.iconinactive;
+
+
 
   const MenuList = [
     {
@@ -42,22 +46,26 @@ const Navbar = () => {
     }
   ];
 
-  const goToPage = (index, route) => {
-    dispatch(setActiveNav(index))
-    Navigation.navigate(route);
+  const goToPage = (route) => {
+    if((route==='profile' || route==='library') && !isUserLogin){
+      Navigation.navigate('authpage');
+    }else{
+      Navigation.navigate(route);
+    }
+    
   };
 
   return (
     <View style={[styles.container]}>
       {MenuList.map((item, index) => {
-        const isActive = index === activeIndex;
+        const isActive = currentRouteName === item.route;
         const color = isActive ? activeColor : inactiveColor;
         return (
           <TouchableOpacity
             key={index}
             style={[styles.makecenter, styles.nav_btn]}
             onPress={() => {
-              goToPage(index, item.route);
+              goToPage(item.route);
             }}
           >
             {item.component(color)}

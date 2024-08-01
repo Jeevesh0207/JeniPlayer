@@ -94,6 +94,13 @@ android {
             keyAlias 'androiddebugkey'
             keyPassword 'android'
         }
+        release {
+            storeFile file('Jeniplayer.keystore')
+            storePassword 'Jeevesh20@#'
+            keyAlias 'Jeniplayer'
+            keyPassword 'Jeevesh20@#'
+        }
+        
     }
     buildTypes {
         debug {
@@ -107,6 +114,7 @@ android {
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
         }
     }
+
 }
 
 dependencies {
@@ -115,6 +123,7 @@ dependencies {
 
     //Splash Screen
     implementation project(':react-native-splash-screen')
+
 
 
     if (hermesEnabled.toBoolean()) {

@@ -16,12 +16,12 @@ import {
   Pressable
 } from 'react-native';
 import { createStyles } from './StyleAllTracks';
-import { Image } from 'expo-image';
 import { useTheme } from '../../Theme/ThemeContext';
 import he from 'he';
 import {
   AnimatedPlaySong,
   BackSvg,
+  HeartFillSvg,
   HeartOutlineSvg,
   OneBarMenuSvg,
   PlayFillSvg,
@@ -37,8 +37,13 @@ import Spinner from '../Spinner/Spinner';
 import { getColors } from 'react-native-image-colors';
 import LinearGradient from 'react-native-linear-gradient';
 
-import { addInQueue, addOneSong } from '../../constants';
+import { addInQueue, CheckUserAuth } from '../../constants';
 import ThreeBar from './ThreeBar';
+import { Image, Skeleton } from '@rneui/themed';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+import { setFetchTrack } from '../../redux/actions';
+import { toggleAddtofavourite } from '../../constants';
 
 //! ------------OUTER FUNCIONS ---------------
 
@@ -49,35 +54,45 @@ const Box = memo(
     item,
     styles,
     colors,
-    dispatch,
-    trackData,
     currentTrackId,
     setModalVisible,
-    setThreeBarData
+    setThreeBarData,
+    addSongInQueue,
+    isUserLogin,
+    addtofavourite,
+    songsArrayId
   }) => (
     <TouchableOpacity
-      onPress={() => {
-        {
-            addInQueue(trackData?.songs,item, dispatch)
-        }
-      }}
+      onPress={() => addSongInQueue(item)}
       style={[styles.makealigncenter, styles.song_box]}
     >
       <View style={[styles.makealigncenter, styles.song_left]}>
         <View style={styles.song_image_box}>
-          {currentTrackId === item.id && (
+          {isUserLogin && currentTrackId === item.id && (
             <View style={[styles.makecenter, styles.song_animated_box]}>
               <AnimatedPlaySong color={colors.solidcolor} size={30} />
             </View>
           )}
-          <Image
-            style={styles.song_image}
-            source={{ uri: item?.image || '' }}
-            contentPosition={'top center'}
-            alt="poster"
-            onLoad={() => {}}
-            onError={(error) => console.log('Image failed to load', error)}
-          />
+          {item?.image && (
+            <Image
+              style={styles.song_image}
+              PlaceholderContent={
+                <Skeleton
+                  width={'100%'}
+                  height={'100%'}
+                  LinearGradientComponent={LinearGradient}
+                  animation="wave"
+                />
+              }
+              source={{
+                uri: item?.image || ''
+              }}
+              contentPosition={'top center'}
+              alt="poster"
+              transition={true}
+              onError={(error) => console.log('Image failed to load', error)}
+            />
+          )}
         </View>
         <View style={styles.song_details_box}>
           <Text
@@ -97,13 +112,22 @@ const Box = memo(
         </View>
       </View>
       <View style={[styles.makealigncenter, styles.song_right]}>
-        <View style={[styles.makecenter, styles.song_download_box]}>
-          <HeartOutlineSvg color={colors.desc} size={22} />
-        </View>
+        <TouchableOpacity
+          style={[styles.makecenter, styles.song_download_box]}
+          onPress={() => {
+            addtofavourite(item);
+          }}
+        >
+          {songsArrayId.includes(item.id) ? (
+            <HeartFillSvg color={colors.solidcolor} size={25} />
+          ) : (
+            <HeartOutlineSvg color={colors.solidcolor} size={25} />
+          )}
+        </TouchableOpacity>
         <TouchableOpacity
           onPress={(e) => {
             e.stopPropagation();
-            setThreeBarData(item)
+            setThreeBarData(item);
             setModalVisible(true);
           }}
           style={[styles.makecenter, styles.song_three_dot]}
@@ -121,7 +145,7 @@ const SongType = {
   album: 'getAlbumByToken',
   artist: 'getRadioByToken',
   playlist: 'getPlaylistByToken',
-  song: 'getSongByToken',
+  song: 'getSongByToken'
 };
 
 //! ------------COMPONENT START ---------------
@@ -137,10 +161,13 @@ const AllTracks = () => {
   const [randomcolors, setrandomColors] = useState(null);
   const [currentTrackId, setCurrentTrackId] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
-  const [ThreeBarData,setThreeBarData] = useState(null)
-  const { songStatus, currentTrack } = useSelector(
+  const [ThreeBarData, setThreeBarData] = useState(null);
+  const { isUserLogin, email } = useSelector((state) => state.getUserData);
+  const { songs } = useSelector((state) => state.getFetchTrack);
+  const { songStatus, currentTrack, currentTrackIndex } = useSelector(
     (state) => state.getTrackPlayerData
   );
+  const { songsArrayId } = useSelector((state) => state.getFavouriteSong);
 
   const typedef = gql`
     query GET_UNIVERSAL_DATA($token: String, $type: String) {
@@ -185,9 +212,20 @@ const AllTracks = () => {
     }
   }, [currentTrack]);
 
+  const storeData = async (value, key) => {
+    try {
+      const Value = JSON.stringify(value);
+      await AsyncStorage.setItem(key, Value);
+    } catch (error) {
+      console.error('Error storing data:', error);
+    }
+  };
+
   useEffect(() => {
     if (data) {
       setTrackdata(data[SongType[type]]);
+      storeData(data[SongType[type]], 'fetchtrack');
+      dispatch(setFetchTrack(data[SongType[type]]));
     }
   }, [data]);
 
@@ -234,15 +272,28 @@ const AllTracks = () => {
         <View style={[styles.makecenter, styles.top_banner]}>
           <View style={[styles.makecenter, styles.poster_container]}>
             <View style={styles.poster_box}>
-              <Image
-                style={styles.song_image}
-                source={{
-                  uri: replace150with500(trackData?.image) || ''
-                }}
-                contentPosition={'top center'}
-                alt="poster"
-                onError={(error) => console.log('Image failed to load', error)}
-              />
+              {trackData?.image && (
+                <Image
+                  style={styles.song_image}
+                  PlaceholderContent={
+                    <Skeleton
+                      width={'100%'}
+                      height={'100%'}
+                      LinearGradientComponent={LinearGradient}
+                      animation="wave"
+                    />
+                  }
+                  source={{
+                    uri: replace150with500(trackData?.image) || ''
+                  }}
+                  contentPosition={'top center'}
+                  alt="poster"
+                  transition={true}
+                  onError={(error) =>
+                    console.log('Image failed to load', error)
+                  }
+                />
+              )}
             </View>
           </View>
         </View>
@@ -253,19 +304,17 @@ const AllTracks = () => {
             setMainHeight(y);
           }}
         >
-          <TouchableOpacity style={[styles.makecenter, styles.option_heart]}>
-            <HeartOutlineSvg color={colors.text} size={25} />
-          </TouchableOpacity>
           <TouchableOpacity
-            onPress={() => {
-              addInQueue(trackData?.songs,trackData?.songs[0], dispatch);
+            onPress={async () => {
+              if (isUserLogin) {
+                addInQueue(trackData?.songs, trackData?.songs[0], dispatch);
+              } else {
+                navigation.navigate('authpage');
+              }
             }}
             style={[styles.makecenter, styles.option_play]}
           >
             <PlayFillSvg color={colors.text} size={20} />
-          </TouchableOpacity>
-          <TouchableOpacity style={[styles.makecenter, styles.option_threedot]}>
-            <ThreeDotSvg color={colors.text} size={20} />
           </TouchableOpacity>
         </View>
         <View style={[styles.makealigncenter, styles.track_title_box]}>
@@ -297,22 +346,47 @@ const AllTracks = () => {
         item={item}
         styles={styles}
         colors={colors}
-        dispatch={dispatch}
-        songStatus={songStatus}
-        trackData={trackData}
         currentTrackId={currentTrackId}
         setModalVisible={setModalVisible}
         setThreeBarData={setThreeBarData}
+        addSongInQueue={addSongInQueue}
+        isUserLogin={isUserLogin}
+        addtofavourite={addtofavourite}
+        songsArrayId={songsArrayId}
       />
     ),
-    [styles, colors, dispatch, currentTrackId,trackData]
+    [
+      styles,
+      colors,
+      dispatch,
+      currentTrackId,
+      trackData,
+      addtofavourite,
+      songsArrayId
+    ]
   );
+
+  const addSongInQueue = async (item) => {
+    if (isUserLogin) {
+      addInQueue(trackData?.songs, item, dispatch);
+    } else {
+      navigation.navigate('authpage');
+    }
+  };
 
   const keyExtractor = useCallback((item) => item.id.toString(), []);
 
   if (loading) return <Spinner color={colors.solidcolor} size={60} />;
 
   if (error) return <Error error_msg={error?.message} />;
+
+  const addtofavourite = (currentTrack) => {
+    const newtrack = {
+      ...currentTrack,
+      songId: currentTrack.id
+    };
+    toggleAddtofavourite(newtrack, dispatch, email);
+  };
 
   return (
     <View style={styles.outercontainer}>
@@ -350,16 +424,26 @@ const AllTracks = () => {
             }
           ]}
         >
-          <Image
-            style={styles.song_image}
-            source={{
-              uri: trackData?.image || ''
-            }}
-            contentPosition={'top center'}
-            alt="poster"
-            onLoad={() => {}}
-            onError={(error) => console.log('Image failed to load', error)}
-          />
+          {trackData?.image && (
+            <Image
+              style={styles.song_image}
+              PlaceholderContent={
+                <Skeleton
+                  width={'100%'}
+                  height={'100%'}
+                  LinearGradientComponent={LinearGradient}
+                  animation="wave"
+                />
+              }
+              source={{
+                uri: trackData?.image || ''
+              }}
+              contentPosition={'top center'}
+              alt="poster"
+              transition={true}
+              onError={(error) => console.log('Image failed to load', error)}
+            />
+          )}
         </Animated.View>
         <View style={[styles.makecenter, styles.search_box]}>
           <TouchableOpacity
@@ -399,7 +483,11 @@ const AllTracks = () => {
         transparent={true}
         onRequestClose={() => setModalVisible(false)}
       >
-        <ThreeBar setModalVisible={setModalVisible} ThreeBarData={ThreeBarData} trackData={trackData.songs}/>
+        <ThreeBar
+          setModalVisible={setModalVisible}
+          ThreeBarData={ThreeBarData}
+          trackData={trackData.songs}
+        />
       </Modal>
     </View>
   );

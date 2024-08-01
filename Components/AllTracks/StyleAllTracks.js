@@ -112,7 +112,7 @@ const createStyles = (colors) => {
             backgroundColor: colors.background,
             paddingTop:2,
             borderColor:colors.bordercolor,
-            borderWidth:0.5
+            borderWidth:0.5,
         },
         option_play: {
             width: 45,
@@ -120,7 +120,8 @@ const createStyles = (colors) => {
             borderRadius: 50,
             backgroundColor: colors.background,
             borderColor:colors.bordercolor,
-            borderWidth:0.5
+            borderWidth:0.5,
+            marginRight:20
         },
         option_threedot: {
             width: 45,

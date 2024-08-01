@@ -21,7 +21,7 @@ const DarkTheme = {
     },
     "forestwhisper": {
         "background": "#121212",
-        "borders_C3": "#4682B4",
+        "bordercolor": "#4682B4",
         "solidcolor": "#00CED1",
         "iconactive": "#00CED1",
         "iconinactive": "#E0FFFF",

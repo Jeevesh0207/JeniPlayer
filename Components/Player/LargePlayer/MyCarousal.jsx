@@ -1,8 +1,9 @@
 import { useRef, useState, useEffect, useMemo, useCallback, memo } from 'react';
 import { Dimensions, FlatList, View } from 'react-native';
-import { Image } from 'expo-image';
 import createStyles from './StyleLargePlayer';
 import { useTheme } from '../../../Theme/ThemeContext';
+import { Image, Skeleton } from '@rneui/themed';
+import LinearGradient from 'react-native-linear-gradient';
 
 const replace150with500 = (url) => url?.replace('150x150', '500x500') || url;
 
@@ -57,7 +58,7 @@ function Carousel({
     const isNoMansLand = 0.4 < distance;
 
     if (roundIndex !== indexRef.current && !isNoMansLand) {
-      console.log(roundIndex)
+      console.log(roundIndex);
       setIndex(roundIndex);
       OnMoveSlideSetSong(roundIndex);
     }
@@ -66,12 +67,23 @@ function Carousel({
   const renderItem = useCallback(
     ({ item }) => (
       <View style={[styles.makecenter, styles.banner_container]}>
-        <Image
-          style={styles.banner_image}
-          source={{ uri: replace150with500(item?.image) || '' }}
-          alt="jpg"
-          contentFit="contain"
-        />
+        {item?.image && (
+          <Image
+            style={styles.banner_image}
+            source={{ uri: replace150with500(item?.image) }}
+            contentPosition={'top center'}
+            PlaceholderContent={
+              <Skeleton
+                width={'100%'}
+                height={'100%'}
+                LinearGradientComponent={LinearGradient}
+                animation="wave"
+              />
+            }
+            alt="jpg"
+            transition={true}
+          />
+        )}
       </View>
     ),
     [styles, colors]

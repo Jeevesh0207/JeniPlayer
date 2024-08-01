@@ -57,7 +57,7 @@ export async function playbackService() {
 
     TrackPlayer.addEventListener(Event.RemoteNext, async () => {
         console.log('Event.RemoteNext');
-        await NextSong();
+        await TrackPlayer.skipToNext();
     });
 
     TrackPlayer.addEventListener(Event.RemotePrevious, async () => {

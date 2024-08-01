@@ -25,6 +25,13 @@ import AnimatedPlaySong from './AnimatedPlaySvg';
 import AddToPlaylistSvg from './AddToPlaylist';
 import AddInQueueSvg from './AddInQueue';
 import PlayAsNextSvg from './PlayAsNext';
+import RightDirectionSvg from './RightDirectionSvg';
+import PremiumSvg from './PremiumSvg';
+import UserProfile from './UserProfileSvg';
+import TransactionHistorySvg from './TransactionHistorySvg';
+import SettingSvg from './SettingSvg';
+import HelpCenterSvg from './HelpCenter';
+import LogoutSvg from './Logout';
 export {
   BackSvg,
   NoDataSvg,
@@ -52,5 +59,12 @@ export {
   AnimatedPlaySong,
   AddToPlaylistSvg,
   AddInQueueSvg,
-  PlayAsNextSvg
+  PlayAsNextSvg,
+  RightDirectionSvg,
+  PremiumSvg,
+  UserProfile,
+  TransactionHistorySvg,
+  SettingSvg,
+  HelpCenterSvg,
+  LogoutSvg 
 };

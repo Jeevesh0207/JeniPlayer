@@ -1,14 +1,16 @@
-import React, { memo,useMemo } from 'react';
+import React, { memo, useMemo } from 'react';
 import { Text, View, TouchableOpacity } from 'react-native';
 import { Image } from 'expo-image';
 import { createStyles } from './StyleTopNav';
-import { NotificationSvg} from '../../../../Svg';
+import { NotificationSvg } from '../../../../Svg';
 import { useTheme } from '../../../../Theme/ThemeContext';
+import { useSelector } from 'react-redux';
 
 const TopNav = () => {
-  const {theme} = useTheme()
-  const {colors} = theme
+  const { theme } = useTheme();
+  const { colors } = theme;
   const styles = useMemo(() => createStyles(colors), [colors]);
+  const { fullName } = useSelector((state) => state.getUserData);
 
   return (
     <View style={styles.home_nav}>
@@ -22,7 +24,7 @@ const TopNav = () => {
         </View>
         <View style={styles.name_box}>
           <Text style={styles.logo_text}>Welcome Back !</Text>
-          <Text style={styles.username}>Guest</Text>
+          <Text style={styles.username}>{fullName ? fullName : 'Guest'}</Text>
         </View>
       </View>
       <View style={[styles.makecenter, styles.home_nav_right]}>

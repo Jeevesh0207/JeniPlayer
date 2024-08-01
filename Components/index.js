@@ -13,6 +13,8 @@ import ErrorPage from './Error/Error';
 import SpinnerPage from './Spinner/Spinner';
 import { TrackSearch } from './AllTracks';
 import { MiniPlayer,LargePlayer } from './Player';
+import AuthPage from './AuthPage/AuthPage';
+import { Login,Otp,SignUp,Reset } from './AuthPage';
 
 export {
   Home,
@@ -27,5 +29,10 @@ export {
   SpinnerPage,
   TrackSearch,
   MiniPlayer,
-  LargePlayer
+  LargePlayer,
+  AuthPage,
+  Login,
+  SignUp,
+  Otp,
+  Reset
 };
