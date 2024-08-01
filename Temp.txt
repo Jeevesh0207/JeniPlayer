@@ -1,2 +1,0 @@
-# API_URL_GRAPHQL="https://jeniplayerbackend.vercel.app/graphql"
-# API_URL="https://jeniplayerbackend.vercel.app"

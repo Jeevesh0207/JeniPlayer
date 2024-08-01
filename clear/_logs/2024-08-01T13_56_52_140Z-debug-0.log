@@ -1,0 +1,44 @@
+0 verbose cli /opt/homebrew/Cellar/node@20/20.13.1/bin/node /opt/homebrew/opt/node@20/bin/npm
+1 info using npm@10.5.2
+2 info using node@v20.13.1
+3 timing npm:load:whichnode Completed in 1ms
+4 timing config:load:defaults Completed in 1ms
+5 timing config:load:file:/opt/homebrew/Cellar/node@20/20.13.1/lib/node_modules/npm/npmrc Completed in 1ms
+6 timing config:load:builtin Completed in 1ms
+7 timing config:load:cli Completed in 1ms
+8 timing config:load:env Completed in 0ms
+9 timing config:load:file:/Users/jeeveshrai/Desktop/jeniplayer/.npmrc Completed in 0ms
+10 timing config:load:project Completed in 1ms
+11 timing config:load:file:/Users/jeeveshrai/.npmrc Completed in 0ms
+12 timing config:load:user Completed in 0ms
+13 timing config:load:file:/opt/homebrew/etc/npmrc Completed in 0ms
+14 timing config:load:global Completed in 0ms
+15 timing config:load:setEnvs Completed in 1ms
+16 timing config:load Completed in 5ms
+17 timing npm:load:configload Completed in 5ms
+18 timing config:load:flatten Completed in 1ms
+19 timing npm:load:mkdirpcache Completed in 1ms
+20 timing npm:load:mkdirplogs Completed in 0ms
+21 verbose title npm start
+22 verbose argv "start" "--cache" "clear"
+23 timing npm:load:setTitle Completed in 2ms
+24 timing npm:load:display Completed in 0ms
+25 verbose logfile logs-max:10 dir:/Users/jeeveshrai/Desktop/jeniplayer/clear/_logs/2024-08-01T13_56_52_140Z-
+26 verbose logfile /Users/jeeveshrai/Desktop/jeniplayer/clear/_logs/2024-08-01T13_56_52_140Z-debug-0.log
+27 timing npm:load:logFile Completed in 1ms
+28 timing npm:load:timers Completed in 0ms
+29 timing npm:load:configScope Completed in 0ms
+30 timing npm:load Completed in 17ms
+31 silly logfile done cleaning log files
+32 http fetch GET 200 https://registry.npmjs.org/npm 366ms
+33 http fetch GET 200 https://registry.npmjs.org/npm 419ms
+34 timing command:run-script Completed in 177572ms
+35 timing command:start Completed in 177581ms
+36 notice
+36 notice New [33mminor[39m version of npm available! [31m10.5.2[39m -> [32m10.8.2[39m
+36 notice Changelog: [36mhttps://github.com/npm/cli/releases/tag/v10.8.2[39m
+36 notice Run [32mnpm install -g npm@10.8.2[39m to update!
+36 notice
+37 verbose exit 0
+38 timing npm Completed in 177608ms
+39 info ok

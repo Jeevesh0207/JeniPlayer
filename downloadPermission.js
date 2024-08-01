@@ -1,65 +1,36 @@
-import RNFetchBlob from 'rn-fetch-blob';
-import { Platform,PermissionsAndroid } from 'react-native';
+import RNFS from 'react-native-fs';
+import { Platform} from 'react-native';
 import { showToast } from './constants';
 
-export const startdownload = (filename, fileurl) => {
-    showToast('success','Download started')
-    const { dirs } = RNFetchBlob.fs;
-    const dirToSave =
-        Platform.OS === 'ios' ? dirs.DocumentDir : dirs.DownloadDir;
-    const configfb = {
-        fileCache: true,
-        addAndroidDownloads: {
-            useDownloadManager: true,
-            notification: true,
-            mediaScannable: true,
-            title: `${filename}`,
-            path: `${dirs.DownloadDir}/${filename}`,
-        },
-        useDownloadManager: true,
-        notification: true,
-        mediaScannable: true,
-        title: `${filename}`,
-        path: `${dirToSave}/${filename}`,
-    };
-    const configOptions = Platform.select({
-        ios: configfb,
-        android: configfb,
-    });
+export const startDownload = async (filename, fileurl) => {
+    showToast('success', 'Download started');
+    const dirToSave = Platform.OS === 'ios' ? RNFS.DocumentDirectoryPath : RNFS.DownloadDirectoryPath;
 
-    RNFetchBlob.config(configOptions || {})
-        .fetch('GET', fileurl, {})
-        .then(res => {
+    try {
+        const downloadDest = `${dirToSave}/${filename}`;
+        const downloadResult = await RNFS.downloadFile({
+            fromUrl: fileurl,
+            toFile: downloadDest,
+            background: true,
+            progressDivider: 1,
+            progress: (res) => {
+                // Optionally, update download progress
+            }
+        }).promise;
 
+        if (downloadResult.statusCode === 200) {
             if (Platform.OS === 'ios') {
-                RNFetchBlob.fs.writeFile(configfb.path, res.data, 'base64');
-                RNFetchBlob.ios.previewDocument(configfb.path);
+                RNFS.openFile(downloadDest);
             }
-            if (Platform.OS === 'android') {
-                console.log("file downloaded")
-                showToast('success','Download finished')
-            }
-        })
-        .catch(e => {
-            console.log('Song Download==>', e);
-        });
+            showToast('success', 'Download finished');
+        } else {
+            throw new Error(`Failed to download file: ${downloadResult.statusCode}`);
+        }
+    } catch (e) {
+        console.log('File Download Error==>', e);
+    }
 };
 
 export const getPermission = async (filename, fileurl) => {
-    if (Platform.OS === 'ios') {
-        startdownload(filename, fileurl);
-    } else {
-        try {
-            const granted = await PermissionsAndroid.request(
-                PermissionsAndroid.PERMISSIONS.WRITE_EXTERNAL_STORAGE,
-            );
-            if (granted === PermissionsAndroid.RESULTS.GRANTED) {
-                startdownload(filename, fileurl);
-            } else {
-                console.log("please grant permission");
-            }
-        } catch (err) {
-            console.log("display error", err)
-        }
-    }
+    startDownload(filename, fileurl);
 };

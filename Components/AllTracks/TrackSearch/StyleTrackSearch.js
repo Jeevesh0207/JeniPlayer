@@ -67,7 +67,7 @@ const createStyles = (colors) =>{
             marginTop: 5,
             marginBottom: 10,
             borderWidth: 1,
-            borderColor:colors.bordercolor
+            borderColor:colors.iconactive
         },
         search_input_box: {
             width: '85%',
